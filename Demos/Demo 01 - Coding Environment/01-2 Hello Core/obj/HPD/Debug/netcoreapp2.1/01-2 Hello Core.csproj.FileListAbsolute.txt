@@ -1,0 +1,11 @@
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-2 Hello Core\bin\HPD\Debug\netcoreapp2.1\01-2 Hello Core.deps.json
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-2 Hello Core\bin\HPD\Debug\netcoreapp2.1\01-2 Hello Core.runtimeconfig.json
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-2 Hello Core\bin\HPD\Debug\netcoreapp2.1\01-2 Hello Core.runtimeconfig.dev.json
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-2 Hello Core\bin\HPD\Debug\netcoreapp2.1\01-2 Hello Core.dll
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-2 Hello Core\bin\HPD\Debug\netcoreapp2.1\01-2 Hello Core.pdb
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-2 Hello Core\obj\HPD\Debug\netcoreapp2.1\01-2 Hello Core.csprojAssemblyReference.cache
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-2 Hello Core\obj\HPD\Debug\netcoreapp2.1\01-2 Hello Core.csproj.CoreCompileInputs.cache
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-2 Hello Core\obj\HPD\Debug\netcoreapp2.1\01-2 Hello Core.AssemblyInfoInputs.cache
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-2 Hello Core\obj\HPD\Debug\netcoreapp2.1\01-2 Hello Core.AssemblyInfo.cs
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-2 Hello Core\obj\HPD\Debug\netcoreapp2.1\01-2 Hello Core.dll
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-2 Hello Core\obj\HPD\Debug\netcoreapp2.1\01-2 Hello Core.pdb

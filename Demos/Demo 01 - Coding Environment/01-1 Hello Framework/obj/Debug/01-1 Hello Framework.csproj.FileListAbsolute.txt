@@ -1,0 +1,14 @@
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-1 Hello Framework\bin\Debug\01-1 Hello Framework.exe.config
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-1 Hello Framework\bin\Debug\01-1 Hello Framework.exe
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-1 Hello Framework\bin\Debug\01-1 Hello Framework.pdb
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-1 Hello Framework\obj\Debug\01-1 Hello Framework.csprojAssemblyReference.cache
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-1 Hello Framework\obj\Debug\01-1 Hello Framework.csproj.CoreCompileInputs.cache
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-1 Hello Framework\obj\Debug\01-1 Hello Framework.exe
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-1 Hello Framework\obj\Debug\01-1 Hello Framework.pdb
+C:\Source\C# Programming Using .NET Core\Demos\Demo 01 - Coding Environment\01-1 Hello Framework\bin\Debug\01-1 Hello Framework.exe.config
+C:\Source\C# Programming Using .NET Core\Demos\Demo 01 - Coding Environment\01-1 Hello Framework\bin\Debug\01-1 Hello Framework.exe
+C:\Source\C# Programming Using .NET Core\Demos\Demo 01 - Coding Environment\01-1 Hello Framework\bin\Debug\01-1 Hello Framework.pdb
+C:\Source\C# Programming Using .NET Core\Demos\Demo 01 - Coding Environment\01-1 Hello Framework\obj\Debug\01-1 Hello Framework.csprojAssemblyReference.cache
+C:\Source\C# Programming Using .NET Core\Demos\Demo 01 - Coding Environment\01-1 Hello Framework\obj\Debug\01-1 Hello Framework.csproj.CoreCompileInputs.cache
+C:\Source\C# Programming Using .NET Core\Demos\Demo 01 - Coding Environment\01-1 Hello Framework\obj\Debug\01-1 Hello Framework.exe
+C:\Source\C# Programming Using .NET Core\Demos\Demo 01 - Coding Environment\01-1 Hello Framework\obj\Debug\01-1 Hello Framework.pdb

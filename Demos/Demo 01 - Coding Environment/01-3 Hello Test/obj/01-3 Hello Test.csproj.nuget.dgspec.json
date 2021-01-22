@@ -1,0 +1,138 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Source\\C# Programming Using .NET Core\\Demos\\Demo 01 - Coding Environment\\01-3 Hello Test\\01-3 Hello Test.csproj": {}
+  },
+  "projects": {
+    "C:\\Source\\C# Programming Using .NET Core\\Demos\\Demo 01 - Coding Environment\\01-2 Hello Core\\01-2 Hello Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Source\\C# Programming Using .NET Core\\Demos\\Demo 01 - Coding Environment\\01-2 Hello Core\\01-2 Hello Core.csproj",
+        "projectName": "01-2 Hello Core",
+        "projectPath": "C:\\Source\\C# Programming Using .NET Core\\Demos\\Demo 01 - Coding Environment\\01-2 Hello Core\\01-2 Hello Core.csproj",
+        "packagesPath": "C:\\Users\\larspass\\.nuget\\packages\\",
+        "outputPath": "C:\\Source\\C# Programming Using .NET Core\\Demos\\Demo 01 - Coding Environment\\01-2 Hello Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\larspass\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Source\\C# Programming Using .NET Core\\Demos\\Demo 01 - Coding Environment\\01-3 Hello Test\\01-3 Hello Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Source\\C# Programming Using .NET Core\\Demos\\Demo 01 - Coding Environment\\01-3 Hello Test\\01-3 Hello Test.csproj",
+        "projectName": "01-3 Hello Test",
+        "projectPath": "C:\\Source\\C# Programming Using .NET Core\\Demos\\Demo 01 - Coding Environment\\01-3 Hello Test\\01-3 Hello Test.csproj",
+        "packagesPath": "C:\\Users\\larspass\\.nuget\\packages\\",
+        "outputPath": "C:\\Source\\C# Programming Using .NET Core\\Demos\\Demo 01 - Coding Environment\\01-3 Hello Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\larspass\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {
+              "C:\\Source\\C# Programming Using .NET Core\\Demos\\Demo 01 - Coding Environment\\01-2 Hello Core\\01-2 Hello Core.csproj": {
+                "projectPath": "C:\\Source\\C# Programming Using .NET Core\\Demos\\Demo 01 - Coding Environment\\01-2 Hello Core\\01-2 Hello Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[1.3.2, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[1.3.2, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[15.9.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

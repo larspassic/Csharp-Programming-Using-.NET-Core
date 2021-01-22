@@ -1,0 +1,17 @@
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\bin\Debug\netcoreapp2.1\01-3 Hello Test.deps.json
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\bin\Debug\netcoreapp2.1\01-3 Hello Test.runtimeconfig.json
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\bin\Debug\netcoreapp2.1\01-3 Hello Test.runtimeconfig.dev.json
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\bin\Debug\netcoreapp2.1\01-3 Hello Test.dll
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\bin\Debug\netcoreapp2.1\01-3 Hello Test.pdb
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\bin\Debug\netcoreapp2.1\01-2 Hello Core.dll
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\bin\Debug\netcoreapp2.1\01-2 Hello Core.pdb
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\obj\Debug\netcoreapp2.1\01-3 Hello Test.csprojAssemblyReference.cache
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\obj\Debug\netcoreapp2.1\01-3 Hello Test.csproj.CoreCompileInputs.cache
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\obj\Debug\netcoreapp2.1\01-3 Hello Test.AssemblyInfoInputs.cache
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\obj\Debug\netcoreapp2.1\01-3 Hello Test.AssemblyInfo.cs
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\obj\Debug\netcoreapp2.1\01-3 Hello Test.csproj.CopyComplete
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\obj\Debug\netcoreapp2.1\01-3 Hello Test.dll
+C:\Course Material\C# Prog .NET Core\Lessons\Lesson 01\Demos 01\Demo 01 - Coding Environment\01-3 Hello Test\obj\Debug\netcoreapp2.1\01-3 Hello Test.pdb

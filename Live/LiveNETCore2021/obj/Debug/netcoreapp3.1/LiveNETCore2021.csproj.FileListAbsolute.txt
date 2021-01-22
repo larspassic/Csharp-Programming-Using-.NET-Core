@@ -1,0 +1,13 @@
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\bin\Debug\netcoreapp3.1\LiveNETCore2021.exe
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\bin\Debug\netcoreapp3.1\LiveNETCore2021.deps.json
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\bin\Debug\netcoreapp3.1\LiveNETCore2021.runtimeconfig.json
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\bin\Debug\netcoreapp3.1\LiveNETCore2021.runtimeconfig.dev.json
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\bin\Debug\netcoreapp3.1\LiveNETCore2021.dll
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\bin\Debug\netcoreapp3.1\LiveNETCore2021.pdb
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\obj\Debug\netcoreapp3.1\LiveNETCore2021.csprojAssemblyReference.cache
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\obj\Debug\netcoreapp3.1\LiveNETCore2021.AssemblyInfoInputs.cache
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\obj\Debug\netcoreapp3.1\LiveNETCore2021.AssemblyInfo.cs
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\obj\Debug\netcoreapp3.1\LiveNETCore2021.csproj.CoreCompileInputs.cache
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\obj\Debug\netcoreapp3.1\LiveNETCore2021.dll
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\obj\Debug\netcoreapp3.1\LiveNETCore2021.pdb
+C:\Source\C# Programming Using .NET Core\Live\LiveNETCore2021\obj\Debug\netcoreapp3.1\LiveNETCore2021.genruntimeconfig.cache
