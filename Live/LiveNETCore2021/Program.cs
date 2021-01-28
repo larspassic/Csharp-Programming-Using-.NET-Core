@@ -1,8 +1,6 @@
-﻿//using System;
+﻿using System;
 //Author: Passic, Lars 2011958
-
-using System;
-
+larspass
 namespace LiveNETCore2021
 {
     class Program
