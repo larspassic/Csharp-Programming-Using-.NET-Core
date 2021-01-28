@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\VendingMachine\\SodaVendingMachine\\SodaVendingMachine.csproj",
+      "projectUniqueName": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\01 VendingMachine\\SodaVendingMachine\\SodaVendingMachine.csproj",
       "projectName": "SodaVendingMachine",
-      "projectPath": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\VendingMachine\\SodaVendingMachine\\SodaVendingMachine.csproj",
+      "projectPath": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\01 VendingMachine\\SodaVendingMachine\\SodaVendingMachine.csproj",
       "packagesPath": "C:\\Users\\larspass\\.nuget\\packages\\",
-      "outputPath": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\VendingMachine\\SodaVendingMachine\\obj\\",
+      "outputPath": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\01 VendingMachine\\SodaVendingMachine\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\larspass\\AppData\\Roaming\\NuGet\\NuGet.Config",
