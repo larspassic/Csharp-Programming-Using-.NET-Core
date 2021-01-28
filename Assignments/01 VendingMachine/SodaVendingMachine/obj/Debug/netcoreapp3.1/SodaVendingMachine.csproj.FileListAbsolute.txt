@@ -1,0 +1,13 @@
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\bin\Debug\netcoreapp3.1\SodaVendingMachine.exe
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\bin\Debug\netcoreapp3.1\SodaVendingMachine.deps.json
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\bin\Debug\netcoreapp3.1\SodaVendingMachine.runtimeconfig.json
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\bin\Debug\netcoreapp3.1\SodaVendingMachine.runtimeconfig.dev.json
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\bin\Debug\netcoreapp3.1\SodaVendingMachine.dll
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\bin\Debug\netcoreapp3.1\SodaVendingMachine.pdb
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\obj\Debug\netcoreapp3.1\SodaVendingMachine.csprojAssemblyReference.cache
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\obj\Debug\netcoreapp3.1\SodaVendingMachine.AssemblyInfoInputs.cache
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\obj\Debug\netcoreapp3.1\SodaVendingMachine.AssemblyInfo.cs
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\obj\Debug\netcoreapp3.1\SodaVendingMachine.csproj.CoreCompileInputs.cache
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\obj\Debug\netcoreapp3.1\SodaVendingMachine.dll
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\obj\Debug\netcoreapp3.1\SodaVendingMachine.pdb
+C:\Source\C# Programming Using .NET Core\Assignments\VendingMachine\SodaVendingMachine\obj\Debug\netcoreapp3.1\SodaVendingMachine.genruntimeconfig.cache

@@ -1,6 +1,9 @@
 ﻿using System;
+
+//Assignment LiveNetCore
 //Author: Passic, Lars 2011958
-larspass
+
+
 namespace LiveNETCore2021
 {
     class Program
