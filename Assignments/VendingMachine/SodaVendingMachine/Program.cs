@@ -49,13 +49,33 @@ namespace SodaVendingMachine
             //Constructor for a can rack. The rack starts out full
             public CanRack()
             {
-
+                int regularCans = 3;
+                int orangeCans = 3;
+                int lemonCans = 3;
             }
 
             //This method adds a can of the specified flavor to the rack.
             public void AddACanOf(string FlavorOfCanToBeAdded)
             {
-
+                string caseSwitch = FlavorOfCanToBeAdded;
+                switch (caseSwitch)
+                {
+                    case "Regular":
+                    case "regular":
+                        CanRack.RemoveACanOf("Regular");
+                            break;
+                    case "Orange":
+                    case "orange":
+                        CanRack.RemoveACanOf("Orange");
+                        break;
+                    case "Lemon":
+                    case "lemon":
+                        CanRack.RemoveACanOf("Lemon");
+                        break;
+                    default:
+                        Console.WriteLine("That was not a valid flavor. No cans have been added.");
+                        break;
+                }
             }
 
             //This method will remove a can of the specified flavor from the rack.
@@ -80,7 +100,7 @@ namespace SodaVendingMachine
             //false otherwise
             public Boolean IsFull(string FlavorOfBinToCheck)
             {
-                if ()
+                if (true) //need to finish this!
                 {
                     return true;
                 }
@@ -89,7 +109,7 @@ namespace SodaVendingMachine
                     return false;
                 }
             }
-        }
+        }//End CanRack
         
         static void Main(string[] args)
         {
