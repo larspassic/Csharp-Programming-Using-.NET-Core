@@ -7,6 +7,31 @@ namespace SodaVendingMachine
 {
     class Program
     {
+        
+        //This class represents the purchase price of something.
+        //In our software project, we will use it to represent the price of one can of soda.
+        class PurchasePrice
+        {
+            //This constructor sets the purchase price to zero
+            public PurchasePrice()
+            {
+
+            }
+
+            //This constructor allows a new purchase price to be set by the user
+            public PurchasePrice(int initialPrice)
+            {
+
+            }
+
+            //This property gets and sets the value of the purchase price
+            public int Price
+            {
+                get;
+                set;
+            }
+        }
+        
         static void Main(string[] args)
         {
             while (true)
