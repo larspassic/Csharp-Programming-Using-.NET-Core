@@ -16,6 +16,7 @@ namespace SodaVendingMachine
     //(e.g., orangeCans = 1 means there is one can of orange soda in the rack).
     class CanRack
     {
+        
         int regularCans;
         int orangeCans;
         int lemonCans;
@@ -34,17 +35,17 @@ namespace SodaVendingMachine
             FlavorOfCanToBeAdded = FlavorOfCanToBeAdded.ToUpper();
             if (FlavorOfCanToBeAdded == "REGULAR")
             {
-                Debug.WriteLine("Add one can of regular.");
+                Debug.WriteLine("Add one can of regular to the rack.");
                 regularCans += 1;
             }
             else if (FlavorOfCanToBeAdded == "ORANGE")
             {
-                Debug.WriteLine("Add one can of orange.");
+                Debug.WriteLine("Add one can of orange to the rack.");
                 orangeCans += 1;
             }
             else if (FlavorOfCanToBeAdded == "LEMON")
             {
-                Debug.WriteLine("Add one can of lemon.");
+                Debug.WriteLine("Add one can of lemon to the rack.");
                 lemonCans += 1;
             }
             else
@@ -89,32 +90,97 @@ namespace SodaVendingMachine
         public void FillTheCanRack()
         {
             //Write to debug
-            Debug.WriteLine("Fill up the can rack. Set Regular, Orange, and Lemon can racks to 3.");
+            Debug.WriteLine("Fill up the can rack. Setting Regular, Orange, and Lemon can racks to the current technology limitation of 3 cans.");
 
             //Fill each rack to 3.
             regularCans = 3;
             orangeCans = 3;
             lemonCans = 3;
+
         }
 
         //This public void will empty the rack of a given flavor.
         public void EmptyCanRackOf(string FlavorOfBinToBeEmptied)
         {
+            FlavorOfBinToBeEmptied = FlavorOfBinToBeEmptied.ToUpper();
 
+            switch (FlavorOfBinToBeEmptied) //Try to use a switch instead of if/else
+            {
+                case "REGULAR":
+                    Debug.WriteLine("Removing all cans of regular from the rack.");
+                    while (regularCans > 0)
+                    {
+                        RemoveACanOf("Regular");
+                    }
+                    break;
+
+                case "ORANGE":
+                    Debug.WriteLine("Removing all cans of orange from the rack.");
+                    while (orangeCans > 0)
+                    {
+                        RemoveACanOf("Orange");
+                    }
+                    break;
+
+                case "LEMON":
+                    Debug.WriteLine("Removing all cans of lemon from the rack.");
+                    while (lemonCans > 0)
+                    {
+                        RemoveACanOf("Lemon");
+                    }
+                    break;
+
+                default:
+                    Debug.WriteLine("The flavor the user entered was invalid. No bins were emptied.");
+                    break;
+
+            }
         }
 
         //OPTIONAL - returns true if the rack is full of a specified flavor
         //false otherwise
         public Boolean IsFull(string FlavorOfBinToCheck)
         {
-            if (true) //need to finish this!
+            FlavorOfBinToCheck = FlavorOfBinToCheck.ToUpper();
+            if (FlavorOfBinToCheck == "REGULAR")
             {
-                return true;
+                if (regularCans == 3)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (FlavorOfBinToCheck == "ORANGE")
+            {
+                if (orangeCans == 3)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (FlavorOfBinToCheck == "LEMON")
+            {
+                if (lemonCans == 3)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
+                Debug.WriteLine("The flavor the user entered was invalid. No racks were checked.");
                 return false;
             }
+
         }
     }
 }
