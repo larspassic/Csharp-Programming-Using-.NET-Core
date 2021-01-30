@@ -137,7 +137,7 @@ namespace SodaVendingMachine
             }
         }
 
-        //OPTIONAL - returns true if the rack is full of a specified flavor
+        //OPTIONAL - returns true if the rack is FULL of a specified flavor
         //false otherwise
         public Boolean IsFull(string FlavorOfBinToCheck)
         {
@@ -181,7 +181,7 @@ namespace SodaVendingMachine
                 return false;
             }
         }
-            //OPTIONAL - returns true if the rack is empty of a specified flavor
+            //OPTIONAL - returns true if the rack is EMPTY of a specified flavor
             //false otherwise
             public Boolean IsEmpty(string FlavorOfBinToCheck)
             {

@@ -14,3 +14,6 @@ Assignments/VendingMachine/.vs/VendingMachine/DesignTimeBuild/.dtbcache.v2
 Assignments/VendingMachine/.vs/VendingMachine/v16/.suo
 Assignments/VendingMachine/.vs/VendingMachine/v16/.suo
 *.pdb
+*.pdb
+*.cache
+*.pdb

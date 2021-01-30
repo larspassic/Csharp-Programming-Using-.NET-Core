@@ -13,10 +13,10 @@ namespace SodaVendingMachine
     {
         private int price;
         
-        //This constructor sets the purchase price to zero
+        //This constructor sets the purchase price to 35
         public PurchasePrice()
         {
-            price = 0;
+            price = 35;
         }
 
         //This constructor allows a new purchase price to be set by the user
