@@ -180,7 +180,51 @@ namespace SodaVendingMachine
                 Debug.WriteLine("The flavor the user entered was invalid. No racks were checked.");
                 return false;
             }
-
         }
+            //OPTIONAL - returns true if the rack is empty of a specified flavor
+            //false otherwise
+            public Boolean IsEmpty(string FlavorOfBinToCheck)
+            {
+                FlavorOfBinToCheck = FlavorOfBinToCheck.ToUpper();
+                if (FlavorOfBinToCheck == "REGULAR")
+                {
+                    if (regularCans == 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else if (FlavorOfBinToCheck == "ORANGE")
+                {
+                    if (orangeCans == 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else if (FlavorOfBinToCheck == "LEMON")
+                {
+                    if (lemonCans == 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    Debug.WriteLine("The flavor the user entered was invalid. No racks were checked.");
+                    return false;
+                }
+
+            }
     }
 }
