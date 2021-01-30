@@ -30,7 +30,7 @@ namespace SodaVendingMachine
         {
             get
             {
-                return Price;
+                return price;
             }
             set
             {
