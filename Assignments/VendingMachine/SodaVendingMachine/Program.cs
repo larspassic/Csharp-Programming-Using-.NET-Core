@@ -11,11 +11,14 @@ namespace SodaVendingMachine
         
         static void Main(string[] args)
         {
+            
             Debug.WriteLine("This goes to the debug window");
             Debug.WriteLine("To make this window visible use menu item");
             Debug.WriteLine("Debug\\Windows\\Output");
+            
             while (true)
             {
+                
                 //Introduce the program
                 Console.WriteLine("Welcome to the .NET C# Soda Vending Machine");
 
@@ -37,6 +40,7 @@ namespace SodaVendingMachine
                 
                 //Extra line space to prepare for the next run
                 Console.WriteLine();
+
             }
             
         }

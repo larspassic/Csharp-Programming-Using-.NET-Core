@@ -11,16 +11,18 @@ namespace SodaVendingMachine
     //In our software project, we will use it to represent the price of one can of soda.
     class PurchasePrice
     {
+        private int price;
+        
         //This constructor sets the purchase price to zero
         public PurchasePrice()
         {
-            Price = 0;
+            price = 0;
         }
 
         //This constructor allows a new purchase price to be set by the user
         public PurchasePrice(int initialPrice)
         {
-            Price = initialPrice;
+            price = initialPrice;
         }
 
         //This property gets and sets the value of the purchase price
@@ -32,9 +34,9 @@ namespace SodaVendingMachine
             }
             set
             {
-                Price = value;
+                price = value;
             }
         }
 
-    }//end PurchasePrice
+    } //end PurchasePrice
 }
