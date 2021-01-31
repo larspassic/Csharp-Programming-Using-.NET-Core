@@ -39,12 +39,14 @@ namespace SodaVendingMachine
                 int inputInt = int.Parse(input);
 
                 //Echo the input back to the user and report success
-                Console.WriteLine($"You have inserted {inputInt} cents");
+                Debug.WriteLine($"The user deposited {inputInt} cents.");
+                Console.WriteLine($"You have inserted {inputInt} cents.");
 
                 //Check to see if input was enough to buy a soda
                 if (inputInt >= currentPrice.Price)
                 {
                     //Inform the user that they paid enough to purchase a soda
+                    Debug.WriteLine("The user inserted enough cents to purchase a soda.");
                     Console.WriteLine("You inserted enough cents to purchase a soda.");
                     
                     //Start to dispense the soda
@@ -54,14 +56,15 @@ namespace SodaVendingMachine
                         Debug.WriteLine("Dispensing one can of soda to the user");
                         Console.WriteLine("Thanks. Here is your soda.");
                     }
-                    else if (canRack.IsEmpty("Regular") == true)
+                    else if (canRack.IsEmpty("Regular") == true) //If the can rack is empty, inform the user.
                     {
                         Debug.WriteLine("The user attempted to buy a can of soda, but the rack was empty.");
                         Console.WriteLine("Sorry. That rack is empty.");
                     }
                 }
-                else
+                else //If there was not enough cents, inform the user.
                 {
+                    Debug.WriteLine("The user attempted to buy a can of soda, but the user did not insert enough cents.");
                     Console.WriteLine("You did not insert enough cents to purchase a soda.");
                 }
                 
