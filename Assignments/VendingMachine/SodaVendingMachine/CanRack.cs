@@ -102,15 +102,15 @@ namespace SodaVendingMachine
         //This public void will empty the rack of a given flavor.
         public void EmptyCanRackOf(string FlavorOfBinToBeEmptied)
         {
-            FlavorOfBinToBeEmptied = FlavorOfBinToBeEmptied.ToUpper();
+            FlavorOfBinToBeEmptied = FlavorOfBinToBeEmptied.ToUpper(); //First convert the data to uppercase to purify the string matching
 
             switch (FlavorOfBinToBeEmptied) //Try to use a switch instead of if/else
             {
                 case "REGULAR":
                     Debug.WriteLine("Removing all cans of regular from the rack.");
-                    while (regularCans > 0)
+                    while (regularCans > 0) //Use a small loop to keep removing cans
                     {
-                        RemoveACanOf("Regular");
+                        RemoveACanOf("Regular"); //Call the RemoveACanOf function
                     }
                     break;
 
@@ -141,7 +141,7 @@ namespace SodaVendingMachine
         //false otherwise
         public Boolean IsFull(string FlavorOfBinToCheck)
         {
-            FlavorOfBinToCheck = FlavorOfBinToCheck.ToUpper();
+            FlavorOfBinToCheck = FlavorOfBinToCheck.ToUpper(); //First convert the data to uppercase to purify the string matching
             if (FlavorOfBinToCheck == "REGULAR")
             {
                 if (regularCans == 3)
@@ -185,7 +185,7 @@ namespace SodaVendingMachine
             //false otherwise
             public Boolean IsEmpty(string FlavorOfBinToCheck)
             {
-                FlavorOfBinToCheck = FlavorOfBinToCheck.ToUpper();
+                FlavorOfBinToCheck = FlavorOfBinToCheck.ToUpper(); //First convert the data to uppercase to purify the string matching
                 if (FlavorOfBinToCheck == "REGULAR")
                 {
                     if (regularCans == 0)
