@@ -1,6 +1,6 @@
 ﻿using System;
 
-//Assignment 
+//Assignment 03
 //Author: Passic, Lars, 2011958
 
 namespace Ex_3._1_Decimal_Money
@@ -12,9 +12,9 @@ namespace Ex_3._1_Decimal_Money
             PurchasePrice sodaPrice = new PurchasePrice(35);
 
             Console.WriteLine("Welcome to the .NET C# Soda Vending Machine");
-            Console.Write("Please insert {0} cents: ",sodaPrice.Price);
+            Console.Write($"Please insert {sodaPrice.PriceDecimal:c} cents: ");
             int valueInserted = int.Parse(Console.ReadLine());
-            Console.WriteLine("You have inserted {0} cents", valueInserted);
+            Console.WriteLine($"You have inserted {valueInserted} cents");
             Console.WriteLine("Thanks, here is your soda.");
         }
     }

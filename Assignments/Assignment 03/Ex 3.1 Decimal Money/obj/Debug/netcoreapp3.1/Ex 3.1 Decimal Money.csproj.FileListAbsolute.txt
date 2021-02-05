@@ -1,0 +1,13 @@
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\bin\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.exe
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\bin\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.deps.json
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\bin\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.runtimeconfig.json
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\bin\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.runtimeconfig.dev.json
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\bin\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.dll
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\bin\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.pdb
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\obj\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.csprojAssemblyReference.cache
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\obj\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.AssemblyInfoInputs.cache
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\obj\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.AssemblyInfo.cs
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\obj\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.csproj.CoreCompileInputs.cache
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\obj\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.dll
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\obj\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.pdb
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 03\Ex 3.1 Decimal Money\obj\Debug\netcoreapp3.1\Ex 3.1 Decimal Money.genruntimeconfig.cache

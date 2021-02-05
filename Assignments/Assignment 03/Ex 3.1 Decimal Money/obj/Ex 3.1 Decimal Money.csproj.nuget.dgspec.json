@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\larspass\\Downloads\\Assn 02\\Assn 02\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj": {}
+    "C:\\Source\\C# Programming Using .NET Core\\Assignments\\Assignment 03\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj": {}
   },
   "projects": {
-    "C:\\Users\\larspass\\Downloads\\Assn 02\\Assn 02\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj": {
+    "C:\\Source\\C# Programming Using .NET Core\\Assignments\\Assignment 03\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\larspass\\Downloads\\Assn 02\\Assn 02\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj",
+        "projectUniqueName": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\Assignment 03\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj",
         "projectName": "Ex 3.1 Decimal Money",
-        "projectPath": "C:\\Users\\larspass\\Downloads\\Assn 02\\Assn 02\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj",
+        "projectPath": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\Assignment 03\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj",
         "packagesPath": "C:\\Users\\larspass\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\larspass\\Downloads\\Assn 02\\Assn 02\\Ex 3.1 Decimal Money\\obj\\",
+        "outputPath": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\Assignment 03\\Ex 3.1 Decimal Money\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\larspass\\AppData\\Roaming\\NuGet\\NuGet.Config",

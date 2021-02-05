@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 
+//Assignment 03
+//Author: Passic, Lars, 2011958
+
 namespace Ex_3._1_Decimal_Money
 {
     //  This class will represent a can storage rack of the vending machine.  
