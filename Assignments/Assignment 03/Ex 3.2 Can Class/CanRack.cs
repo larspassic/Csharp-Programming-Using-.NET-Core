@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
+
 //Assignment 03
 //Author: Passic, Lars, 2011958
 
@@ -43,6 +44,12 @@ namespace Ex_3_2_Can_Class
                 else if (FlavorOfCanToBeAdded == "LEMON") lemon = lemon + 1;
                 else Debug.WriteLine("Error: attempt to add a can of unknown flavor {0} to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
             }
+        }
+
+        //This is an overload of the AddACanOf method to support using Flavor types
+        public void AddACanOf(Flavor FlavorOfCanToAdd)
+        {
+
         }
 
         //  This method will remove a can of the specified flavor from the rack.
