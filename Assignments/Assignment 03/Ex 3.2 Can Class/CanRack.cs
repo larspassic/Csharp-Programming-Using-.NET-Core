@@ -49,7 +49,10 @@ namespace Ex_3_2_Can_Class
         //This is an overload of the AddACanOf method to support using Flavor types
         public void AddACanOf(Flavor FlavorOfCanToAdd)
         {
+            if (IsFull(FlavorOfCanToAdd))
+            {
 
+            }
         }
 
         //  This method will remove a can of the specified flavor from the rack.
@@ -97,13 +100,24 @@ namespace Ex_3_2_Can_Class
         {
             FlavorOfBinToCheck = FlavorOfBinToCheck.ToUpper();
             Boolean result = false;
-            Debug.WriteLine("Checking if can rack is full of flavor {0}", FlavorOfBinToCheck, DUMMYARGUMENT);
+            Debug.WriteLine("{IsFull-String}Checking if can rack is full of flavor {0}", FlavorOfBinToCheck, DUMMYARGUMENT);
             if (FlavorOfBinToCheck == "REGULAR") result = regular == BINSIZE;
             else if (FlavorOfBinToCheck == "ORANGE") result = orange == BINSIZE;
             else if (FlavorOfBinToCheck == "LEMON") result = lemon == BINSIZE;
             else Debug.WriteLine("Error: attempt to check rack status of unknown flavor {0}", FlavorOfBinToCheck, DUMMYARGUMENT);
             return result;
 
+        }
+        //This is an... overload? of the IsFull method - this one uses Flavor types instead of strings
+        public Boolean IsFull(Flavor FlavorOfBinToCheck)
+        {
+            Boolean result = false;
+            Debug.WriteLine("{IsFull-Flavor}Checking if can rack is full of flavor {0}", FlavorOfBinToCheck, DUMMYARGUMENT);
+            if (FlavorOfBinToCheck == Flavor.REGULAR) result = regular == BINSIZE;
+            else if (FlavorOfBinToCheck == Flavor.ORANGE) result = orange == BINSIZE;
+            else if (FlavorOfBinToCheck == Flavor.ORANGE) result = lemon == BINSIZE;
+            else Debug.WriteLine("Error: {IsFull-Flavor} attempt to check rack status of unknown flavor {0}", FlavorOfBinToCheck, DUMMYARGUMENT);
+            return result;
         }
 
         // OPTIONAL – return true if the rack is empty of a specified flavor

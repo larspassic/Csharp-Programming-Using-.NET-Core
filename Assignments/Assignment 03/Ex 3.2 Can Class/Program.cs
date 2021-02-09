@@ -11,10 +11,16 @@ namespace Ex_3_2_Can_Class
         {
             PurchasePrice sodaPrice = new PurchasePrice(35);
 
+            //Instructions to user
             Console.WriteLine("Welcome to the .NET C# Soda Vending Machine");
             Console.Write($"Please insert {sodaPrice.PriceDecimal:c} cents: ");
+
+            //Convert and communicate back to user
             int valueInserted = int.Parse(Console.ReadLine());
             Console.WriteLine($"You have inserted {valueInserted} cents");
+
+
+
             Console.WriteLine("Thanks, here is your soda.");
         }
     }
