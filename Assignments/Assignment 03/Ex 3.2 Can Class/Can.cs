@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
+//Assignment 
+//Author: Passic, Lars, 2011958
+
 namespace Ex_3_2_Can_Class
 {
     public enum Flavor { REGULAR, ORANGE, LEMON}
