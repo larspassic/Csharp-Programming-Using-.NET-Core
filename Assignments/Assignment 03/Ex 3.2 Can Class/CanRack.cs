@@ -34,15 +34,15 @@ namespace Ex_3_2_Can_Class
             FlavorOfCanToBeAdded = FlavorOfCanToBeAdded.ToUpper();
             if (IsFull(FlavorOfCanToBeAdded))
             {
-                Debug.WriteLine("*** Failed attempt to add a can of {0} to a full rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
+                Debug.WriteLine("***Error: [AddACanOf - String] Failed attempt to add a can of {0} to a full rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
             }
             else
             {
-                Debug.WriteLine("adding a can of {0} flavored soda to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
+                Debug.WriteLine("Info: [AddACanOf - String] adding a can of {0} flavored soda to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
                 if (FlavorOfCanToBeAdded == "REGULAR") regular = regular + 1;
                 else if (FlavorOfCanToBeAdded == "ORANGE") orange = orange + 1;
                 else if (FlavorOfCanToBeAdded == "LEMON") lemon = lemon + 1;
-                else Debug.WriteLine("Error: attempt to add a can of unknown flavor {0} to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
+                else Debug.WriteLine("Error: [AddACanOf - String] attempt to add a can of unknown flavor {0} to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
             }
         }
 
@@ -51,7 +51,15 @@ namespace Ex_3_2_Can_Class
         {
             if (IsFull(FlavorOfCanToAdd))
             {
-
+                Debug.WriteLine("***Error: [AddACanOf - Flavor] Failed attempt to add a can of {0} to a full rack", FlavorOfCanToAdd, DUMMYARGUMENT);
+            }
+            else
+            {
+                Debug.WriteLine($"***Info: [AddACanOf - Flavor] Failed attempt to add a can of {FlavorOfCanToAdd} to a full rack");
+                if (FlavorOfCanToAdd == Flavor.REGULAR) regular = regular + 1;
+                else if (FlavorOfCanToAdd == Flavor.ORANGE) orange = orange + 1;
+                else if (FlavorOfCanToAdd == Flavor.LEMON) lemon = lemon + 1;
+                else Debug.WriteLine($"Error: [AddACanOf - Flavor] attempt to add a can of unknown flavor {FlavorOfCanToAdd} to the rack");
             }
         }
 
@@ -61,15 +69,15 @@ namespace Ex_3_2_Can_Class
             FlavorOfCanToBeRemoved = FlavorOfCanToBeRemoved.ToUpper();
             if (IsEmpty(FlavorOfCanToBeRemoved))
             {
-                Debug.WriteLine("*** Failed attempt to remove a can of {0} from an empty rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
+                Debug.WriteLine("***Error: [RemoveACanOf - String] Failed attempt to remove a can of {0} from an empty rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
             }
             else
             {
-                Debug.WriteLine("removing a can of {0} flavored soda from the rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
+                Debug.WriteLine("Info: [RemoveACanOf - String] removing a can of {0} flavored soda from the rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
                 if (FlavorOfCanToBeRemoved == "REGULAR") regular = regular - 1;
                 else if (FlavorOfCanToBeRemoved == "ORANGE") orange = orange - 1;
                 else if (FlavorOfCanToBeRemoved == "LEMON") lemon = lemon - 1;
-                else Debug.WriteLine("Error: attempt to remove a can of unknown flavor {0} from the rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
+                else Debug.WriteLine("Error: [RemoveACanOf - String]attempt to remove a can of unknown flavor {0} from the rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
             }
         }
 
@@ -100,7 +108,7 @@ namespace Ex_3_2_Can_Class
         {
             FlavorOfBinToCheck = FlavorOfBinToCheck.ToUpper();
             Boolean result = false;
-            Debug.WriteLine("{IsFull-String}Checking if can rack is full of flavor {0}", FlavorOfBinToCheck, DUMMYARGUMENT);
+            Debug.WriteLine("[IsFull-String] Checking if can rack is full of flavor {0}", FlavorOfBinToCheck, DUMMYARGUMENT);
             if (FlavorOfBinToCheck == "REGULAR") result = regular == BINSIZE;
             else if (FlavorOfBinToCheck == "ORANGE") result = orange == BINSIZE;
             else if (FlavorOfBinToCheck == "LEMON") result = lemon == BINSIZE;
@@ -116,7 +124,7 @@ namespace Ex_3_2_Can_Class
             if (FlavorOfBinToCheck == Flavor.REGULAR) result = regular == BINSIZE;
             else if (FlavorOfBinToCheck == Flavor.ORANGE) result = orange == BINSIZE;
             else if (FlavorOfBinToCheck == Flavor.ORANGE) result = lemon == BINSIZE;
-            else Debug.WriteLine("Error: {IsFull-Flavor} attempt to check rack status of unknown flavor {0}", FlavorOfBinToCheck, DUMMYARGUMENT);
+            else Debug.WriteLine("Error: [IsFull-Flavor] attempt to check rack status of unknown flavor {0}", FlavorOfBinToCheck, DUMMYARGUMENT);
             return result;
         }
 
