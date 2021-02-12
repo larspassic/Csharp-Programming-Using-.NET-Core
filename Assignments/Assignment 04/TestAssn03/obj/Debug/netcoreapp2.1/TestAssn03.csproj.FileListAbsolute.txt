@@ -1,0 +1,19 @@
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\obj\Debug\netcoreapp2.1\TestAssn03.csprojAssemblyReference.cache
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\obj\Debug\netcoreapp2.1\TestAssn03.csproj.CoreCompileInputs.cache
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\obj\Debug\netcoreapp2.1\TestAssn03.AssemblyInfoInputs.cache
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\obj\Debug\netcoreapp2.1\TestAssn03.AssemblyInfo.cs
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\TestAssn03.deps.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\TestAssn03.runtimeconfig.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\TestAssn03.runtimeconfig.dev.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\TestAssn03.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\TestAssn03.pdb
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\Ex 3.2 Can.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\Ex 3.3 Coin.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\Ex 3.2 Can.pdb
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\bin\Debug\netcoreapp2.1\Ex 3.3 Coin.pdb
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\obj\Debug\netcoreapp2.1\TestAssn03.csproj.CopyComplete
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\obj\Debug\netcoreapp2.1\TestAssn03.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\TestAssn03\obj\Debug\netcoreapp2.1\TestAssn03.pdb

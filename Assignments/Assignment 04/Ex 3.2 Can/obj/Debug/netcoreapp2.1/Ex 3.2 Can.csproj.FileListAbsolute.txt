@@ -1,0 +1,11 @@
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\bin\Debug\netcoreapp2.1\Ex 3.2 Can.deps.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\bin\Debug\netcoreapp2.1\Ex 3.2 Can.runtimeconfig.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\bin\Debug\netcoreapp2.1\Ex 3.2 Can.runtimeconfig.dev.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\bin\Debug\netcoreapp2.1\Ex 3.2 Can.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\bin\Debug\netcoreapp2.1\Ex 3.2 Can.pdb
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.csproj.CoreCompileInputs.cache
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.AssemblyInfoInputs.cache
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.AssemblyInfo.cs
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.pdb
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.csprojAssemblyReference.cache

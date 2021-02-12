@@ -1,0 +1,11 @@
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.1 Purchase Price decimal\bin\Debug\netcoreapp2.1\Ex 3.1 Purchase Price decimal.deps.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.1 Purchase Price decimal\bin\Debug\netcoreapp2.1\Ex 3.1 Purchase Price decimal.runtimeconfig.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.1 Purchase Price decimal\bin\Debug\netcoreapp2.1\Ex 3.1 Purchase Price decimal.runtimeconfig.dev.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.1 Purchase Price decimal\bin\Debug\netcoreapp2.1\Ex 3.1 Purchase Price decimal.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.1 Purchase Price decimal\bin\Debug\netcoreapp2.1\Ex 3.1 Purchase Price decimal.pdb
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.1 Purchase Price decimal\obj\Debug\netcoreapp2.1\Ex 3.1 Purchase Price decimal.csprojAssemblyReference.cache
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.1 Purchase Price decimal\obj\Debug\netcoreapp2.1\Ex 3.1 Purchase Price decimal.csproj.CoreCompileInputs.cache
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.1 Purchase Price decimal\obj\Debug\netcoreapp2.1\Ex 3.1 Purchase Price decimal.AssemblyInfoInputs.cache
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.1 Purchase Price decimal\obj\Debug\netcoreapp2.1\Ex 3.1 Purchase Price decimal.AssemblyInfo.cs
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.1 Purchase Price decimal\obj\Debug\netcoreapp2.1\Ex 3.1 Purchase Price decimal.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.1 Purchase Price decimal\obj\Debug\netcoreapp2.1\Ex 3.1 Purchase Price decimal.pdb
