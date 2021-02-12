@@ -11,12 +11,22 @@ namespace Ex_4._1_Rework_CanRack
     // (e.g., orangeCans = 1 means there is one can of orange soda in the rack).
     public class CanRack
     {
+        //Create an array of integers represnting the number of cans in the rack indexed by the flavors
+        //The Enum.GetValues().Length value represents the number of flavors (for example, values in the type flavors)
+        
+        // This creates a new array of integers, the size of the array will be the count of elements in the Flavor enum.
+        //This will dynamically increase or decrease depending on the count of type flavor in the enum?
+        private int[] rack = new int[Enum.GetValues(typeof(Flavor)).Length]; 
+
         private const int EMPTYBIN = 0;
         private const int BINSIZE = 3;
 
+        /* commenting this stuff out because this is probably what we are reworking
         private int regular = EMPTYBIN;
         private int orange = EMPTYBIN;
         private int lemon = EMPTYBIN;
+        */
+
 
         private const int DUMMYARGUMENT = 0;
 
@@ -24,8 +34,16 @@ namespace Ex_4._1_Rework_CanRack
         // (i.e., 3 cans of each flavor).
         public CanRack()
         {
+            //Use a quick foreach loop to set them all to an int - "before we touch them arithmatically"
+            foreach (int flavorValue in Enum.GetValues(typeof(Flavor)))
+            {
+                rack[flavorValue] = EMPTYBIN;
+            }
+
             FillTheCanRack();
         }
+
+        
 
         //  This method adds a can of the specified flavor to the rack.  
         public void AddACanOf(string FlavorOfCanToBeAdded)
@@ -38,9 +56,9 @@ namespace Ex_4._1_Rework_CanRack
             else
             {
                 Debug.WriteLine("adding a can of {0} flavored soda to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
-                if (FlavorOfCanToBeAdded == "REGULAR") regular = regular + 1;
-                else if (FlavorOfCanToBeAdded == "ORANGE") orange = orange + 1;
-                else if (FlavorOfCanToBeAdded == "LEMON") lemon = lemon + 1;
+                if (FlavorOfCanToBeAdded == "REGULAR") rack[(int)Flavor.REGULAR] = rack[(int)Flavor.REGULAR] + 1;
+                else if (FlavorOfCanToBeAdded == "ORANGE") rack[(int)Flavor.ORANGE] = rack[(int)Flavor.ORANGE] + 1;
+                else if (FlavorOfCanToBeAdded == "LEMON") rack[(int)Flavor.LEMON] = rack[(int)Flavor.LEMON] + 1;
                 else Debug.WriteLine("Error: attempt to add a can of unknown flavor {0}", FlavorOfCanToBeAdded, DUMMYARGUMENT);
             }
         }
@@ -61,9 +79,9 @@ namespace Ex_4._1_Rework_CanRack
             else
             {
                 Debug.WriteLine("removing a can of {0} flavored soda from the rack", FlavorOfCanToBeRemoved);
-                if (FlavorOfCanToBeRemoved == "REGULAR") regular = regular - 1;
-                else if (FlavorOfCanToBeRemoved == "ORANGE") orange = orange - 1;
-                else if (FlavorOfCanToBeRemoved == "LEMON") lemon = lemon - 1;
+                if (FlavorOfCanToBeRemoved == "REGULAR") rack[(int)Flavor.REGULAR] = rack[(int)Flavor.REGULAR] - 1;
+                else if (FlavorOfCanToBeRemoved == "ORANGE") rack[(int)Flavor.ORANGE] = rack[(int)Flavor.ORANGE] - 1;
+                else if (FlavorOfCanToBeRemoved == "LEMON") rack[(int)Flavor.LEMON] = rack[(int)Flavor.LEMON] - 1;
                 else Debug.WriteLine("Error: attempt to remove a can of unknown flavor {0}", FlavorOfCanToBeRemoved, 0);
             }
         }
@@ -77,9 +95,9 @@ namespace Ex_4._1_Rework_CanRack
         public void FillTheCanRack()
         {
             Debug.WriteLine("Filling the can rack");
-            regular = BINSIZE;
-            orange = BINSIZE;
-            lemon = BINSIZE;
+            rack[(int)Flavor.REGULAR] = BINSIZE;
+            rack[(int)Flavor.ORANGE] = BINSIZE;
+            rack[(int)Flavor.LEMON] = BINSIZE;
         }
 
 
@@ -88,9 +106,9 @@ namespace Ex_4._1_Rework_CanRack
         {
             FlavorOfBinToBeEmptied = FlavorOfBinToBeEmptied.ToUpper();
             Debug.WriteLine("Emptying can rack of flavor {0}", FlavorOfBinToBeEmptied, DUMMYARGUMENT);
-            if (FlavorOfBinToBeEmptied == "REGULAR") regular = EMPTYBIN;
-            else if (FlavorOfBinToBeEmptied == "ORANGE") orange = EMPTYBIN;
-            else if (FlavorOfBinToBeEmptied == "LEMON") lemon = EMPTYBIN;
+            if (FlavorOfBinToBeEmptied == "REGULAR") rack[(int)Flavor.REGULAR] = EMPTYBIN;
+            else if (FlavorOfBinToBeEmptied == "ORANGE") rack[(int)Flavor.ORANGE] = EMPTYBIN;
+            else if (FlavorOfBinToBeEmptied == "LEMON") rack[(int)Flavor.LEMON] = EMPTYBIN;
             else Debug.WriteLine("Error: attempt to empty the rack of unknown flavor {0}", FlavorOfBinToBeEmptied, DUMMYARGUMENT);
         }
 
@@ -106,9 +124,9 @@ namespace Ex_4._1_Rework_CanRack
             FlavorOfBinToBeChecked = FlavorOfBinToBeChecked.ToUpper();
             Boolean result = false;
             Debug.WriteLine("Checking if can rack is full of flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
-            if (FlavorOfBinToBeChecked == "REGULAR") result = regular == BINSIZE;
-            else if (FlavorOfBinToBeChecked == "ORANGE") result = orange == BINSIZE;
-            else if (FlavorOfBinToBeChecked == "LEMON") result = lemon == BINSIZE;
+            if (FlavorOfBinToBeChecked == "REGULAR") result = rack[(int)Flavor.REGULAR] == BINSIZE;
+            else if (FlavorOfBinToBeChecked == "ORANGE") result = rack[(int)Flavor.ORANGE] == BINSIZE;
+            else if (FlavorOfBinToBeChecked == "LEMON") result = rack[(int)Flavor.LEMON] == BINSIZE;
             else Debug.WriteLine("Error: attempt to check status of unknown flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
             return result;
 
@@ -126,9 +144,9 @@ namespace Ex_4._1_Rework_CanRack
             FlavorOfBinToBeChecked = FlavorOfBinToBeChecked.ToUpper();
             Boolean result = false;
             Debug.WriteLine("Checking if can rack is empty of flavor {0}", FlavorOfBinToBeChecked);
-            if (FlavorOfBinToBeChecked == "REGULAR") result = regular == 0;
-            if (FlavorOfBinToBeChecked == "ORANGE") result = orange == 0;
-            if (FlavorOfBinToBeChecked == "LEMON") result = lemon == 0;
+            if (FlavorOfBinToBeChecked == "REGULAR") result = rack[(int)Flavor.REGULAR] == 0;
+            if (FlavorOfBinToBeChecked == "ORANGE") result = rack[(int)Flavor.ORANGE] == 0;
+            if (FlavorOfBinToBeChecked == "LEMON") result = rack[(int)Flavor.LEMON] == 0;
             return result;
         }
 
