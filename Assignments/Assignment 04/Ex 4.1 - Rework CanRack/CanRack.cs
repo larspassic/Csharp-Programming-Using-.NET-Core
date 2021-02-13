@@ -21,6 +21,7 @@ namespace Ex_4._1_Rework_CanRack
         private const int EMPTYBIN = 0;
         private const int BINSIZE = 3;
 
+        //This is our old "rack" aka "instance variables"
         /* commenting this stuff out because this is probably what we are reworking
         private int regular = EMPTYBIN;
         private int orange = EMPTYBIN;
@@ -45,21 +46,28 @@ namespace Ex_4._1_Rework_CanRack
 
         
 
-        //  This method adds a can of the specified flavor to the rack.  
+        //  This method adds a can of the specified flavor to the rack.
+        // Updated to convert the string in to a real flavor value.
         public void AddACanOf(string FlavorOfCanToBeAdded)
         {
-            FlavorOfCanToBeAdded = FlavorOfCanToBeAdded.ToUpper();
-            if (IsFull(FlavorOfCanToBeAdded))
+            //FlavorOfCanToBeAdded = FlavorOfCanToBeAdded.ToUpper(); //no longer needed since we're not using strings
+            
+            //Create the enumeral to hold the real flavor value
+            Flavor flavorEnumeral;
+
+            if (Enum.IsDefined(typeof(Flavor), FlavorOfCanToBeAdded)) //Returns true if the FlavorOfCanToBeAdded was found in the enum
             {
-                Debug.WriteLine("*** Failed attempt to add a can of {0} to a full rack", FlavorOfCanToBeAdded);
+                //Sets flavorEnum to be the Flavor type that was found to match FlavorOfCanToBeAdded.
+                //This essentially translates string FlavorOfCanToBeAdded into a Flavor object
+                flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfCanToBeAdded);
+
+                int flavorIndex = (int)flavorEnumeral;
+                rack[flavorIndex]++;
+                Debug.WriteLine($"adding a can of {FlavorOfCanToBeAdded} flavored soda to the rack");
             }
             else
             {
-                Debug.WriteLine("adding a can of {0} flavored soda to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
-                if (FlavorOfCanToBeAdded == "REGULAR") rack[(int)Flavor.REGULAR] = rack[(int)Flavor.REGULAR] + 1;
-                else if (FlavorOfCanToBeAdded == "ORANGE") rack[(int)Flavor.ORANGE] = rack[(int)Flavor.ORANGE] + 1;
-                else if (FlavorOfCanToBeAdded == "LEMON") rack[(int)Flavor.LEMON] = rack[(int)Flavor.LEMON] + 1;
-                else Debug.WriteLine("Error: attempt to add a can of unknown flavor {0}", FlavorOfCanToBeAdded, DUMMYARGUMENT);
+                 Debug.WriteLine("Error: attempt to add a can of unknown flavor {0}", FlavorOfCanToBeAdded, DUMMYARGUMENT);
             }
         }
 
@@ -153,6 +161,18 @@ namespace Ex_4._1_Rework_CanRack
         public Boolean IsEmpty(Flavor FlavorOfBinToBeChecked)
         {
             return IsEmpty(FlavorOfBinToBeChecked.ToString());
+        }
+
+        //write out the contents of rack array. For example, one flavor per line with the flavor name and
+        //the number of cans of soda of that flavor. In a real system, this function would probasbly be in a
+        //separate class, and the CanRack would export this information as strings. We're doing it this way
+        //for the sake of the simplicity of the exercise.
+        public void DisplayCanRack()
+        {
+            foreach (int flavorValue in rack)
+            {
+                Console.WriteLine($"Flavor {flavorValue} has {rack[flavorValue]} cans of soda.");
+            }
         }
 
     } //end Can_Rack

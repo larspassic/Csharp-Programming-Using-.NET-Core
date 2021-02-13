@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\larsp\\.nuget\\packages\\": {}
+    "C:\\Users\\larspass\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\larsp\\Documents\\GitHub\\Csharp-Programming-Using-.NET-Core\\Assignments\\Assignment 03\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj",
+      "projectUniqueName": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\Assignment 03\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj",
       "projectName": "Ex 3.1 Decimal Money",
-      "projectPath": "C:\\Users\\larsp\\Documents\\GitHub\\Csharp-Programming-Using-.NET-Core\\Assignments\\Assignment 03\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj",
-      "packagesPath": "C:\\Users\\larsp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\larsp\\Documents\\GitHub\\Csharp-Programming-Using-.NET-Core\\Assignments\\Assignment 03\\Ex 3.1 Decimal Money\\obj\\",
+      "projectPath": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\Assignment 03\\Ex 3.1 Decimal Money\\Ex 3.1 Decimal Money.csproj",
+      "packagesPath": "C:\\Users\\larspass\\.nuget\\packages\\",
+      "outputPath": "C:\\Source\\C# Programming Using .NET Core\\Assignments\\Assignment 03\\Ex 3.1 Decimal Money\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\larsp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\larspass\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
