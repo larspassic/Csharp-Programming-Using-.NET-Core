@@ -44,34 +44,44 @@ namespace Ex_4._1_Rework_CanRack
             FillTheCanRack();
         }
 
-        
+
 
         //  This method adds a can of the specified flavor to the rack.
         // Updated to convert the string in to a real flavor value.
+        // This method uses unknown magic sorcery from the Wizard Kevin
+        // So I am writing heavy comments for the first method to help understand what it does.
         public void AddACanOf(string FlavorOfCanToBeAdded)
         {
             //FlavorOfCanToBeAdded = FlavorOfCanToBeAdded.ToUpper(); //no longer needed since we're not using strings
-            
+
             //Create the enumeral to hold the real flavor value
             Flavor flavorEnumeral;
-
-            if (Enum.IsDefined(typeof(Flavor), FlavorOfCanToBeAdded)) //Returns true if the FlavorOfCanToBeAdded was found in the enum
+            if (IsFull(FlavorOfCanToBeAdded)) //Check to see if the bin is already full
             {
-                //Sets flavorEnum to be the Flavor type that was found to match FlavorOfCanToBeAdded.
-                //This essentially translates string FlavorOfCanToBeAdded into a Flavor object
-                flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfCanToBeAdded);
-
-                int flavorIndex = (int)flavorEnumeral;
-                rack[flavorIndex]++;
-                Debug.WriteLine($"adding a can of {FlavorOfCanToBeAdded} flavored soda to the rack");
+                Debug.WriteLine($"Error: Unable to add a can of {FlavorOfCanToBeAdded} because the rack is already full.");
             }
             else
             {
-                 Debug.WriteLine("Error: attempt to add a can of unknown flavor {0}", FlavorOfCanToBeAdded, DUMMYARGUMENT);
+                if (Enum.IsDefined(typeof(Flavor), FlavorOfCanToBeAdded)) //Returns true if the FlavorOfCanToBeAdded was found in the enum
+                {
+                    //Sets flavorEnumeral to be the Flavor type that was found to match FlavorOfCanToBeAdded.
+                    //This essentially translates string FlavorOfCanToBeAdded into a Flavor object
+                    //Enum.Parse definition: "Converts the string representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object."
+                    flavorEnumeral = (Flavor)/*cast as Flavor type*/Enum.Parse(typeof(Flavor)/*pass the type*/, FlavorOfCanToBeAdded/* and pass the string*/ ); //result is that flavorEnumeral is now a legitimate, enumerated Flavor object
+
+                    int flavorIndex = (int)/*When casting the enumeral as an int, returns the index of the enum?*/flavorEnumeral;
+                    rack[flavorIndex]++; //Since the rack was made via the enum, the indexes of the array match the indexes of the enum.
+                    Debug.WriteLine($"adding a can of {FlavorOfCanToBeAdded} flavored soda to the rack");
+                }
+                else //If the Flavor was NOT found in the enum, we can't add a can to the rack.
+                {
+                    //Kind of wondering why Kevin's solution code does this validation. This would have already been exposed during the IsFullvalidation?
+                    Debug.WriteLine("Error: attempt to add a can of unknown flavor {0}", FlavorOfCanToBeAdded, DUMMYARGUMENT); 
+                }
             }
         }
 
-        public void AddACanOf(Flavor FlavorOfCanToBeAdded)
+        public void AddACanOf(Flavor FlavorOfCanToBeAdded) //More advanced method override (that uses Flavor type) simply leans on the backward-compatible version of the method that takes string...
         {
             AddACanOf(FlavorOfCanToBeAdded.ToString());
         }
@@ -79,18 +89,25 @@ namespace Ex_4._1_Rework_CanRack
         //  This method will remove a can of the specified flavor from the rack.
         public void RemoveACanOf(string FlavorOfCanToBeRemoved)
         {
-            FlavorOfCanToBeRemoved = FlavorOfCanToBeRemoved.ToUpper();
+            //Create the enumeral to hold the real flavor value
+            Flavor flavorEnumeral;
             if (IsEmpty(FlavorOfCanToBeRemoved))
             {
-                Debug.WriteLine("*** Failed attempt to remove a can of {0} from an empty rack", FlavorOfCanToBeRemoved);
+                Debug.WriteLine($"Error: Unable to remove a can of {FlavorOfCanToBeRemoved} because the rack is already empty.");
             }
             else
             {
-                Debug.WriteLine("removing a can of {0} flavored soda from the rack", FlavorOfCanToBeRemoved);
-                if (FlavorOfCanToBeRemoved == "REGULAR") rack[(int)Flavor.REGULAR] = rack[(int)Flavor.REGULAR] - 1;
-                else if (FlavorOfCanToBeRemoved == "ORANGE") rack[(int)Flavor.ORANGE] = rack[(int)Flavor.ORANGE] - 1;
-                else if (FlavorOfCanToBeRemoved == "LEMON") rack[(int)Flavor.LEMON] = rack[(int)Flavor.LEMON] - 1;
-                else Debug.WriteLine("Error: attempt to remove a can of unknown flavor {0}", FlavorOfCanToBeRemoved, 0);
+
+                if (Enum.IsDefined(typeof(Flavor), FlavorOfCanToBeRemoved)) //Once we know the rack is not already empty, need to check to see if the flavor exists in the enum
+                {
+                    flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfCanToBeRemoved); //Turn the string in to a Flavor enum object
+                    rack[(int)flavorEnumeral]--; //trying to compress this code and not use the flavorIndex variable, if we already can cast it as an int
+                    Debug.WriteLine($"Info: Successfully removed one can of {FlavorOfCanToBeRemoved} from the rack");
+                }
+                else
+                {
+                    Debug.WriteLine($"Error: Attempt to remove a can of unknown flavor {FlavorOfCanToBeRemoved}");
+                }
             }
         }
 
@@ -102,21 +119,29 @@ namespace Ex_4._1_Rework_CanRack
         //  This method will fill the can rack.
         public void FillTheCanRack()
         {
-            Debug.WriteLine("Filling the can rack");
-            rack[(int)Flavor.REGULAR] = BINSIZE;
-            rack[(int)Flavor.ORANGE] = BINSIZE;
-            rack[(int)Flavor.LEMON] = BINSIZE;
+            
+            foreach (int flavorIndex in Enum.GetValues(typeof(Flavor)))
+            {
+                //My goal is to write out each flavor's name as it's being filled. But I have no idea how to do that so I just guessed. I think this is just going to write out the index. :(
+                Debug.WriteLine($"Info: Filling the can rack of flavor {rack[flavorIndex].ToString()}"); //Maybe try using Enum.GetName()
+
+
+                //Fill the rack by setting it to the maximum size of the bin.
+                rack[flavorIndex] = BINSIZE;
+            }
         }
 
 
         //  This public void will empty the rack of a given flavor.
         public void EmptyCanRackOf(string FlavorOfBinToBeEmptied)
         {
-            FlavorOfBinToBeEmptied = FlavorOfBinToBeEmptied.ToUpper();
-            Debug.WriteLine("Emptying can rack of flavor {0}", FlavorOfBinToBeEmptied, DUMMYARGUMENT);
-            if (FlavorOfBinToBeEmptied == "REGULAR") rack[(int)Flavor.REGULAR] = EMPTYBIN;
-            else if (FlavorOfBinToBeEmptied == "ORANGE") rack[(int)Flavor.ORANGE] = EMPTYBIN;
-            else if (FlavorOfBinToBeEmptied == "LEMON") rack[(int)Flavor.LEMON] = EMPTYBIN;
+            if (Enum.IsDefined(typeof(Flavor), FlavorOfBinToBeEmptied))
+            {
+                
+                Debug.WriteLine("Emptying can rack of flavor {0}", FlavorOfBinToBeEmptied, DUMMYARGUMENT);
+            }
+                
+
             else Debug.WriteLine("Error: attempt to empty the rack of unknown flavor {0}", FlavorOfBinToBeEmptied, DUMMYARGUMENT);
         }
 
@@ -129,15 +154,24 @@ namespace Ex_4._1_Rework_CanRack
         // false otherwise
         public Boolean IsFull(string FlavorOfBinToBeChecked)
         {
-            FlavorOfBinToBeChecked = FlavorOfBinToBeChecked.ToUpper();
             Boolean result = false;
-            Debug.WriteLine("Checking if can rack is full of flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
-            if (FlavorOfBinToBeChecked == "REGULAR") result = rack[(int)Flavor.REGULAR] == BINSIZE;
-            else if (FlavorOfBinToBeChecked == "ORANGE") result = rack[(int)Flavor.ORANGE] == BINSIZE;
-            else if (FlavorOfBinToBeChecked == "LEMON") result = rack[(int)Flavor.LEMON] == BINSIZE;
-            else Debug.WriteLine("Error: attempt to check status of unknown flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
-            return result;
+            Flavor flavorEnumeral;
+            if (Enum.IsDefined(typeof(Flavor), FlavorOfBinToBeChecked)) //Returns true if the FlavorOfBinToBeChecked was found in the enum
+            {
+                flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeChecked);
+                if ((int)flavorEnumeral == BINSIZE)
+                {
+                    result = true;
+                }
+                Debug.WriteLine("Info: Checking if can rack is full of flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
 
+                return result;
+            }
+            else
+            {
+                Debug.WriteLine("Error: attempt to check status of unknown flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
+                return result;
+            }
         }
 
         public Boolean IsFull(Flavor FlavorOfBinToBeChecked)
@@ -149,13 +183,24 @@ namespace Ex_4._1_Rework_CanRack
         // false otherwise 
         public Boolean IsEmpty(string FlavorOfBinToBeChecked)
         {
-            FlavorOfBinToBeChecked = FlavorOfBinToBeChecked.ToUpper();
             Boolean result = false;
-            Debug.WriteLine("Checking if can rack is empty of flavor {0}", FlavorOfBinToBeChecked);
-            if (FlavorOfBinToBeChecked == "REGULAR") result = rack[(int)Flavor.REGULAR] == 0;
-            if (FlavorOfBinToBeChecked == "ORANGE") result = rack[(int)Flavor.ORANGE] == 0;
-            if (FlavorOfBinToBeChecked == "LEMON") result = rack[(int)Flavor.LEMON] == 0;
-            return result;
+            Flavor flavorEnumeral;
+            if (Enum.IsDefined(typeof(Flavor), FlavorOfBinToBeChecked)) //Returns true if the FlavorOfBinToBeChecked was found in the enum
+            {
+                flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeChecked);
+                if ((int)flavorEnumeral == EMPTYBIN)
+                {
+                    result = true;
+                }
+                Debug.WriteLine("Info: Checking if can rack is empty of flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
+
+                return result;
+            }
+            else
+            {
+                Debug.WriteLine("Error: attempt to check status of unknown flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
+                return result;
+            }
         }
 
         public Boolean IsEmpty(Flavor FlavorOfBinToBeChecked)

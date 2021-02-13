@@ -9,3 +9,15 @@ C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 0
 C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.dll
 C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.pdb
 C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 03 - Types\Assn 03\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.csprojAssemblyReference.cache
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\bin\Debug\netcoreapp2.1\Ex 3.2 Can.deps.json
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\bin\Debug\netcoreapp2.1\Ex 3.2 Can.runtimeconfig.json
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\bin\Debug\netcoreapp2.1\Ex 3.2 Can.runtimeconfig.dev.json
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\bin\Debug\netcoreapp2.1\Ex 3.2 Can.dll
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\bin\Debug\netcoreapp2.1\Ex 3.2 Can.pdb
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.csprojAssemblyReference.cache
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.AssemblyInfoInputs.cache
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.AssemblyInfo.cs
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.csproj.CoreCompileInputs.cache
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.dll
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.pdb
+C:\Users\larsp\Documents\GitHub\Csharp-Programming-Using-.NET-Core\Assignments\Assignment 04\Ex 3.2 Can\obj\Debug\netcoreapp2.1\Ex 3.2 Can.genruntimeconfig.cache
