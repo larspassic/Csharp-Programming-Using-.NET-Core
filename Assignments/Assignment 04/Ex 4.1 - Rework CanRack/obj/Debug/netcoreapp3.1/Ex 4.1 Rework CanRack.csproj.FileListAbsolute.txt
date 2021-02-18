@@ -1,0 +1,13 @@
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\bin\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.exe
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\bin\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.deps.json
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\bin\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.runtimeconfig.json
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\bin\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.runtimeconfig.dev.json
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\bin\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.dll
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\bin\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.pdb
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\obj\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.csprojAssemblyReference.cache
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\obj\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.AssemblyInfoInputs.cache
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\obj\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.AssemblyInfo.cs
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\obj\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.csproj.CoreCompileInputs.cache
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\obj\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.dll
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\obj\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.pdb
+C:\Source\C# Programming Using .NET Core\Assignments\Assignment 04\Ex 4.1 - Rework CanRack\obj\Debug\netcoreapp3.1\Ex 4.1 Rework CanRack.genruntimeconfig.cache

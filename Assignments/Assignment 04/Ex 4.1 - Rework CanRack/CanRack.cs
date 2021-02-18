@@ -22,7 +22,7 @@ namespace Ex_4._1_Rework_CanRack
         private const int BINSIZE = 3;
 
         //This is our old "rack" aka "instance variables"
-        /* commenting this stuff out because this is probably what we are reworking
+        /* commenting this stuff out because this is probably maybe what we are reworking
         private int regular = EMPTYBIN;
         private int orange = EMPTYBIN;
         private int lemon = EMPTYBIN;
@@ -94,6 +94,7 @@ namespace Ex_4._1_Rework_CanRack
             if (IsEmpty(FlavorOfCanToBeRemoved))
             {
                 Debug.WriteLine($"Error: Unable to remove a can of {FlavorOfCanToBeRemoved} because the rack is already empty.");
+                Console.WriteLine($"Error: Unable to remove a can of {FlavorOfCanToBeRemoved} because the rack is already empty.");
             }
             else
             {
@@ -103,6 +104,7 @@ namespace Ex_4._1_Rework_CanRack
                     flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfCanToBeRemoved); //Turn the string in to a Flavor enum object
                     rack[(int)flavorEnumeral]--; //trying to compress this code and not use the flavorIndex variable, if we already can cast it as an int
                     Debug.WriteLine($"Info: Successfully removed one can of {FlavorOfCanToBeRemoved} from the rack");
+                    Console.WriteLine($"Thanks, here is your can of {FlavorOfCanToBeRemoved} soda.");
                 }
                 else
                 {
@@ -158,12 +160,16 @@ namespace Ex_4._1_Rework_CanRack
             Flavor flavorEnumeral;
             if (Enum.IsDefined(typeof(Flavor), FlavorOfBinToBeChecked)) //Returns true if the FlavorOfBinToBeChecked was found in the enum
             {
-                flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeChecked);
-                if ((int)flavorEnumeral == BINSIZE)
+                Debug.WriteLine($"Info: Checking if can rack is full of flavor {FlavorOfBinToBeChecked}");
+
+                flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeChecked);//Gets the actual flavor object
+
+                if (rack[(int)flavorEnumeral] == BINSIZE)
                 {
                     result = true;
+                    Debug.WriteLine($"Info: The flavor {flavorEnumeral} was found to have {rack[(int)flavorEnumeral]} cans");
                 }
-                Debug.WriteLine("Info: Checking if can rack is full of flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
+                
 
                 return result;
             }
@@ -187,12 +193,16 @@ namespace Ex_4._1_Rework_CanRack
             Flavor flavorEnumeral;
             if (Enum.IsDefined(typeof(Flavor), FlavorOfBinToBeChecked)) //Returns true if the FlavorOfBinToBeChecked was found in the enum
             {
-                flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeChecked);
-                if ((int)flavorEnumeral == EMPTYBIN)
+                Debug.WriteLine($"Info: Checking if can rack is empty of flavor {FlavorOfBinToBeChecked}");
+                flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeChecked); //I don't really know what this actually does
+
+                
+                if (rack[(int)flavorEnumeral] == EMPTYBIN) //This seems to always evaluate to true :(
                 {
                     result = true;
+                    Debug.WriteLine($"The rack for flavor {flavorEnumeral} was found to have {rack[(int)flavorEnumeral]} cans in it.");
                 }
-                Debug.WriteLine("Info: Checking if can rack is empty of flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
+                ;
 
                 return result;
             }
@@ -214,9 +224,17 @@ namespace Ex_4._1_Rework_CanRack
         //for the sake of the simplicity of the exercise.
         public void DisplayCanRack()
         {
-            foreach (int flavorValue in rack)
+            Console.WriteLine();//Extra space from whatever came before this.
+
+            int i = 0; //I need to set up some sort of index value to be able to call the rack index
+
+            //Hopefully this foreach loop is starting from 0 and working through elements of the enum 
+            //in the same way that I will be starting from 0 and iterating through the rack array
+            foreach (string flavorName in Enum.GetNames(typeof(Flavor))) //I'm glad Kevin included this loop because I really don't understand how to work with Enums :(
             {
-                Console.WriteLine($"Flavor {flavorValue} has {rack[flavorValue]} cans of soda.");
+                Console.WriteLine($"{flavorName} flavor has {rack[i]} cans of soda.");
+                
+                i++; //increment the index
             }
         }
 
