@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 //Assignment 04
 //Author: Passic, Lars, 2011958
@@ -26,17 +27,28 @@ namespace Ex_4._1_Rework_CanRack
 
                 while (valueInserted < sodaPrice.PriceDecimal)
                 {
-                    //Create decimal value for how much is remaining for the user to insert
+                    //Create decimal value to calculate how much is remaining, and request the user to insert in coins
                     decimal priceRemaining = sodaPrice.PriceDecimal - valueInserted;
+                    Console.Write($"You have deposited {valueInserted:c}.  Please insert {priceRemaining:c} in coins: ");
 
-                    //Take input from the user and convert it to, and store it as, a decimal, and communicate what the user inserted
-                    Console.Write($"You have deposited {valueInserted:c}.  Please insert {priceRemaining:c}: ");
-                    decimal valueInserted2 = decimal.Parse(Console.ReadLine());
+                    //Take input from the user and convert it to uppercase
+                    string userInputString = Console.ReadLine();
+                    userInputString = userInputString.ToUpper();
+
+                    if (Enum.IsDefined(typeof(Coin.Denomination), userInputString))
+                    {
+                        coin = new Coin(userInputString);
+                        Console.WriteLine($"You inserted a {coin}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{userInputString} is not a recognized coin type.");
+                    }
 
                     //Add the recent deposit into the total valueInserted decimal
-                    valueInserted += valueInserted2;
+                    valueInserted += coin.ValueOf;
 
-                    Console.WriteLine($"You just inserted {valueInserted2:c}");
+                    Console.WriteLine($"Total inserted: {coin.ValueOf:c}");
                 }
                 
                 //No current logic to choose flavors so remove regular flavor by default.
