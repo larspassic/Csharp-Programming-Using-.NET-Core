@@ -23,6 +23,8 @@ namespace Exercise_5._1_FlavorOps
             sodaVendingMach.sodaPrice = sodaPrice;
             processCommandLine(args);
             sodaVendingMach.Vend();
+
+            Console.WriteLine($"{FlavorOps.AllFlavors[0]}");
         }
  
     }
