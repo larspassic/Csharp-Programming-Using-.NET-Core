@@ -1,0 +1,11 @@
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.1 CanRack Array\bin\Debug\netcoreapp2.1\Exercise 04.1 CanRack Array.deps.json
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.1 CanRack Array\bin\Debug\netcoreapp2.1\Exercise 04.1 CanRack Array.runtimeconfig.json
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.1 CanRack Array\bin\Debug\netcoreapp2.1\Exercise 04.1 CanRack Array.runtimeconfig.dev.json
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.1 CanRack Array\bin\Debug\netcoreapp2.1\Exercise 04.1 CanRack Array.dll
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.1 CanRack Array\bin\Debug\netcoreapp2.1\Exercise 04.1 CanRack Array.pdb
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.1 CanRack Array\obj\Debug\netcoreapp2.1\Exercise 04.1 CanRack Array.csprojAssemblyReference.cache
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.1 CanRack Array\obj\Debug\netcoreapp2.1\Exercise 04.1 CanRack Array.csproj.CoreCompileInputs.cache
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.1 CanRack Array\obj\Debug\netcoreapp2.1\Exercise 04.1 CanRack Array.AssemblyInfoInputs.cache
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.1 CanRack Array\obj\Debug\netcoreapp2.1\Exercise 04.1 CanRack Array.AssemblyInfo.cs
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.1 CanRack Array\obj\Debug\netcoreapp2.1\Exercise 04.1 CanRack Array.dll
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.1 CanRack Array\obj\Debug\netcoreapp2.1\Exercise 04.1 CanRack Array.pdb

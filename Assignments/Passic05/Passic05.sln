@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise 5.1 FlavorOps", "Exercise 5.1 FlavorOps\Exercise 5.1 FlavorOps.csproj", "{2344F929-0A18-4A38-BA43-A9ACB7B4566B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2344F929-0A18-4A38-BA43-A9ACB7B4566B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2344F929-0A18-4A38-BA43-A9ACB7B4566B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2344F929-0A18-4A38-BA43-A9ACB7B4566B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2344F929-0A18-4A38-BA43-A9ACB7B4566B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8958A512-368B-4BB8-A95E-688317E94EE9}
+	EndGlobalSection
+EndGlobal

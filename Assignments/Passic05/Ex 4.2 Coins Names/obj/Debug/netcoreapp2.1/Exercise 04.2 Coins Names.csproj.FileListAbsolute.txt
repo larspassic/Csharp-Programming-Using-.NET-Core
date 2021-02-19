@@ -1,0 +1,20 @@
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.2 Coins Names\bin\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.deps.json
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.2 Coins Names\bin\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.runtimeconfig.json
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.2 Coins Names\bin\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.runtimeconfig.dev.json
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.2 Coins Names\bin\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.dll
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.2 Coins Names\bin\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.pdb
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.2 Coins Names\obj\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.csproj.CoreCompileInputs.cache
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.2 Coins Names\obj\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.AssemblyInfoInputs.cache
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.2 Coins Names\obj\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.AssemblyInfo.cs
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.2 Coins Names\obj\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.dll
+C:\Course Material\UW\Courses\C# Programming using .NET Core\Lessons\Lesson 04 - Control Structures\Assignment 04\Exercise 04.2 Coins Names\obj\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.pdb
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 04 - Control Structures\Assn 04\Ex 4.2 Coins Names\bin\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.deps.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 04 - Control Structures\Assn 04\Ex 4.2 Coins Names\bin\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.runtimeconfig.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 04 - Control Structures\Assn 04\Ex 4.2 Coins Names\bin\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.runtimeconfig.dev.json
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 04 - Control Structures\Assn 04\Ex 4.2 Coins Names\bin\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 04 - Control Structures\Assn 04\Ex 4.2 Coins Names\bin\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.pdb
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 04 - Control Structures\Assn 04\Ex 4.2 Coins Names\obj\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.csproj.CoreCompileInputs.cache
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 04 - Control Structures\Assn 04\Ex 4.2 Coins Names\obj\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.AssemblyInfoInputs.cache
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 04 - Control Structures\Assn 04\Ex 4.2 Coins Names\obj\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.AssemblyInfo.cs
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 04 - Control Structures\Assn 04\Ex 4.2 Coins Names\obj\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.dll
+C:\Course Material\UW\Courses\C# Prog .NET Core\Lessons\Lesson 04 - Control Structures\Assn 04\Ex 4.2 Coins Names\obj\Debug\netcoreapp2.1\Exercise 04.2 Coins Names.pdb
