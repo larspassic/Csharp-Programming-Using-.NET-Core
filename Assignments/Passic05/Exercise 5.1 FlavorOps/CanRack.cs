@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 //Assignment 05
@@ -12,7 +13,8 @@ namespace Exercise_5._1_FlavorOps
     //  that there is one can of orange soda in the rack).
     class CanRack
     {
-        private int[] rack = new int[Enum.GetValues(typeof(Flavor)).Length];
+        //private int[] rack = new int[Enum.GetValues(typeof(Flavor)).Length]; //ancient technology that our ancestors used for Soda Can Rack software
+        private Dictionary<Flavor, int> rack = null;
         public const int EMPTYBIN = 0;
         public const int BINSIZE = 3;
 
@@ -41,8 +43,9 @@ namespace Exercise_5._1_FlavorOps
                 {
                     flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfCanToBeAdded);
                     Debug.WriteLine("adding a can of {0} flavored soda to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
-                    int flavorIndex = (int)flavorEnumeral;
-                    rack[flavorIndex]++;
+                    
+                    //Flavor flavorIndex = flavorEnumeral; 
+                    rack[flavorEnumeral]++;
                 }
                 else
                 {
@@ -72,8 +75,8 @@ namespace Exercise_5._1_FlavorOps
                 {
                     flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfCanToBeRemoved);
                     Debug.WriteLine("removing a can of {0} flavored soda from the rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
-                    int flavorIndex = (int)flavorEnumeral;
-                    rack[flavorIndex]--;
+                    //int flavorIndex = (int)flavorEnumeral;
+                    rack[flavorEnumeral]--;
                 }
                 else
                 {
@@ -91,7 +94,7 @@ namespace Exercise_5._1_FlavorOps
         public void FillTheCanRack()
         {
             Debug.WriteLine("Filling the can rack");
-            foreach (int flavorValue in Enum.GetValues(typeof(Flavor)))
+            foreach (Flavor flavorValue in Enum.GetValues(typeof(Flavor)))
             {
                 rack[flavorValue] = BINSIZE;
             }
@@ -106,7 +109,7 @@ namespace Exercise_5._1_FlavorOps
             {
                 Debug.WriteLine("Emptying can rack of flavor {0}", FlavorOfBinToBeEmptied);
                 Flavor f = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeEmptied);
-                rack[(int)f] = EMPTYBIN;
+                rack[f] = EMPTYBIN;
             }
             else
             {
@@ -132,8 +135,8 @@ namespace Exercise_5._1_FlavorOps
             {
                 flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeChecked);
                 Debug.WriteLine("Checking if can rack is full of flavor {0}", FlavorOfBinToBeChecked); 
-                int flavorIndex = (int)flavorEnumeral;
-                result = rack[flavorIndex] == BINSIZE;
+                //int flavorIndex = (int)flavorEnumeral;
+                result = rack[flavorEnumeral] == BINSIZE;
             }
             else
             {
@@ -159,8 +162,8 @@ namespace Exercise_5._1_FlavorOps
             {
                 flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeChecked);
                 Debug.WriteLine("Checking if can rack is empty of flavor {0}", FlavorOfBinToBeChecked);
-                int flavorIndex = (int)flavorEnumeral;
-                result = rack[flavorIndex] == EMPTYBIN;
+                //int flavorIndex = (int)flavorEnumeral;
+                result = rack[flavorEnumeral] == EMPTYBIN;
             }
             else
             {
@@ -185,8 +188,8 @@ namespace Exercise_5._1_FlavorOps
             foreach (string flavorName in Enum.GetNames(typeof(Flavor)))
             {
                 Flavor flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), flavorName);
-                int flavorIndex = (int)flavorEnumeral;
-                Console.WriteLine("{0}\t{1}", flavorName, rack[flavorIndex]);
+                //int flavorIndex = (int)flavorEnumeral;
+                Console.WriteLine("{0}\t{1}", flavorName, rack[flavorEnumeral]);
             }
             Console.WriteLine("________________________________");
         }
