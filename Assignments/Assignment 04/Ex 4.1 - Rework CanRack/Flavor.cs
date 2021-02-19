@@ -6,4 +6,6 @@ namespace Ex_4._1_Rework_CanRack
 {
     public enum Flavor { REGULAR, ORANGE, LEMON }
 
+    
+
 }

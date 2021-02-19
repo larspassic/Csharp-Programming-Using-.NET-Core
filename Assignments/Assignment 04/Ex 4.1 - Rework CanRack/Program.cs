@@ -38,7 +38,7 @@ namespace Ex_4._1_Rework_CanRack
                     if (Enum.IsDefined(typeof(Coin.Denomination), userInputString))
                     {
                         coin = new Coin(userInputString);
-                        Console.WriteLine($"You inserted a {coin}");
+                        Console.WriteLine($"You inserted a {coin} which is {coin.ValueOf:c}");
                     }
                     else
                     {
@@ -48,14 +48,19 @@ namespace Ex_4._1_Rework_CanRack
                     //Add the recent deposit into the total valueInserted decimal
                     valueInserted += coin.ValueOf;
 
-                    Console.WriteLine($"Total inserted: {coin.ValueOf:c}");
                 }
-                
-                //No current logic to choose flavors so remove regular flavor by default.
-                sodaRack.RemoveACanOf(Flavor.REGULAR);
-
-                //Call the newly-created DisplayCanRack method to display inventory.
+                //Tell the user they have paid enough to make a purchase, and display current inventory.
+                Console.WriteLine();
+                Console.WriteLine($"You may now select a soda.");
                 sodaRack.DisplayCanRack();
+
+                //Tell the user to make a selection, and take input as a string.
+                Console.Write($"Please make a selection. Type the name of the flavor you would like:");
+                string userInputFlavorChoice = Console.ReadLine();
+                userInputFlavorChoice = userInputFlavorChoice.ToUpper();
+
+                //No current logic to choose flavors so remove regular flavor by default.
+                sodaRack.RemoveACanOf(userInputFlavorChoice);
 
                 //Ask the user if they want to quit
                 Console.WriteLine();

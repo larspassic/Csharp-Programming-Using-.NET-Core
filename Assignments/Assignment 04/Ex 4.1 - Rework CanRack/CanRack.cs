@@ -121,15 +121,18 @@ namespace Ex_4._1_Rework_CanRack
         //  This method will fill the can rack.
         public void FillTheCanRack()
         {
-            
-            foreach (int flavorIndex in Enum.GetValues(typeof(Flavor)))
+            int i = 0; //Need to set up an index to fill the rack
+
+            foreach (string flavorName in Enum.GetNames(typeof(Flavor)))
             {
-                //My goal is to write out each flavor's name as it's being filled. But I have no idea how to do that so I just guessed. I think this is just going to write out the index. :(
-                Debug.WriteLine($"Info: Filling the can rack of flavor {rack[flavorIndex].ToString()}"); //Maybe try using Enum.GetName()
+                //My goal is to write out each flavor's name as it's being filled. But I have no idea how to do that so I just guessed.
+                Debug.WriteLine($"Info: Filling the can rack of flavor {flavorName}"); 
 
 
                 //Fill the rack by setting it to the maximum size of the bin.
-                rack[flavorIndex] = BINSIZE;
+                rack[i] = BINSIZE;
+                
+                i++; //Increment the index
             }
         }
 
