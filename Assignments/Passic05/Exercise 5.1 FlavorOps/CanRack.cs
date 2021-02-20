@@ -39,7 +39,8 @@ namespace Exercise_5._1_FlavorOps
             {
                 // convert the string Flavor into the appropriate int value
                 Flavor flavorEnumeral;
-                if (Enum.IsDefined(typeof(Flavor),FlavorOfCanToBeAdded))
+                //if (Enum.IsDefined(typeof(Flavor),FlavorOfCanToBeAdded)) 
+                if(rack.ContainsValue(flavorEnumeral.ToString()))
                 {
                     flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfCanToBeAdded);
                     Debug.WriteLine("adding a can of {0} flavored soda to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
@@ -71,7 +72,8 @@ namespace Exercise_5._1_FlavorOps
             {
                 // convert the string Flavor into the appropriate int value
                 Flavor flavorEnumeral;
-                if (Enum.IsDefined(typeof(Flavor),FlavorOfCanToBeRemoved))
+                //if (Enum.IsDefined(typeof(Flavor),FlavorOfCanToBeRemoved))
+                if()
                 {
                     flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfCanToBeRemoved);
                     Debug.WriteLine("removing a can of {0} flavored soda from the rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
