@@ -94,7 +94,7 @@ namespace Exercise_5._1_FlavorOps
         public void FillTheCanRack()
         {
             Debug.WriteLine("Filling the can rack");
-            foreach (Flavor flavorValue in Enum.GetValues(typeof(Flavor)))
+            foreach (Flavor flavorValue in FlavorOps.AllFlavors)
             {
                 rack[flavorValue] = BINSIZE;
             }
@@ -185,11 +185,11 @@ namespace Exercise_5._1_FlavorOps
         {
             Console.WriteLine(".NET C# Vending Machine contents");
             Console.WriteLine("________________________________");
-            foreach (string flavorName in Enum.GetNames(typeof(Flavor)))
+            foreach (Flavor flavorName in FlavorOps.AllFlavors)
             {
-                Flavor flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), flavorName);
+                //Flavor flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), flavorName);
                 //int flavorIndex = (int)flavorEnumeral;
-                Console.WriteLine("{0}\t{1}", flavorName, rack[flavorEnumeral]);
+                Console.WriteLine($"{flavorName}\t{rack[flavorName]}");
             }
             Console.WriteLine("________________________________");
         }
