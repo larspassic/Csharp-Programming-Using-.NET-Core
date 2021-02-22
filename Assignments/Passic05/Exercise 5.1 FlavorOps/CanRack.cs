@@ -38,9 +38,9 @@ namespace Exercise_5._1_FlavorOps
             else
             {
                 // convert the string Flavor into the appropriate int value
-                Flavor flavorEnumeral;
+                Flavor flavorEnumeral = FlavorOps.ToFlavor(flavorEnumeral);
                 //if (Enum.IsDefined(typeof(Flavor),FlavorOfCanToBeAdded)) 
-                if(rack.ContainsValue(flavorEnumeral.ToString()))
+                if(rack.ContainsKey(flavorEnumeral))
                 {
                     flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfCanToBeAdded);
                     Debug.WriteLine("adding a can of {0} flavored soda to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
@@ -57,6 +57,11 @@ namespace Exercise_5._1_FlavorOps
 
         public void AddACanOf(Flavor FlavorOfCanToBeAdded)
         {
+            if (rack.ContainsKey(FlavorOfCanToBeAdded)) //Check to see if they flavor object exists in the rack dictionary object
+            {
+                FlavorOfCanToBeAdded.ToString();
+            }
+
             AddACanOf(FlavorOfCanToBeAdded.ToString());
         }
 

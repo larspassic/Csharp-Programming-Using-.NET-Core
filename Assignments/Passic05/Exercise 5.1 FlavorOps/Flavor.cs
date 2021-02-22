@@ -14,6 +14,8 @@ namespace Exercise_5._1_FlavorOps
         private static List<Flavor> _allFlavors = new List<Flavor>();
 
         //I don't know what this is
+        //Update - this is something called a static constructor
+        //It constructs the static... ...class? at runtime? I think.
         static FlavorOps()
         {
             int i = 0;
