@@ -38,12 +38,13 @@ namespace Exercise_5._1_FlavorOps
             else
             {
                 // convert the string Flavor into the appropriate int value
-                Flavor flavorEnumeral = FlavorOps.ToFlavor(flavorEnumeral);
-                //if (Enum.IsDefined(typeof(Flavor),FlavorOfCanToBeAdded)) 
+                Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfCanToBeAdded);
+
+                //Check to see if the rack has the flavor value in it
                 if(rack.ContainsKey(flavorEnumeral))
                 {
-                    flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfCanToBeAdded);
-                    Debug.WriteLine("adding a can of {0} flavored soda to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
+                    //Write success to the debug log
+                    Debug.WriteLine($"Info: Adding a can of {flavorEnumeral} flavored soda to the rack");
                     
                     //Flavor flavorIndex = flavorEnumeral; 
                     rack[flavorEnumeral]++;
@@ -65,22 +66,23 @@ namespace Exercise_5._1_FlavorOps
             AddACanOf(FlavorOfCanToBeAdded.ToString());
         }
 
-        //  This method will remove a can of the specified flavor from the rack.
+        // This method will remove a can of the specified flavor from the rack.
         public void RemoveACanOf(string FlavorOfCanToBeRemoved)
         {
             FlavorOfCanToBeRemoved = FlavorOfCanToBeRemoved.ToUpper();
+
             if (IsEmpty(FlavorOfCanToBeRemoved))
             {
-                Debug.WriteLine("*** Failed attempt to remove a can of {0} from an empty rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
+                Debug.WriteLine($"Error: Failed attempt to remove a can of {FlavorOfCanToBeRemoved} from an empty rack");
             }
             else
             {
                 // convert the string Flavor into the appropriate int value
-                Flavor flavorEnumeral;
+                Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfCanToBeRemoved)  ;
                 //if (Enum.IsDefined(typeof(Flavor),FlavorOfCanToBeRemoved))
-                if()
+                if(rack.ContainsKey(flavorEnumeral))
                 {
-                    flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfCanToBeRemoved);
+                    //Write success to the debug log
                     Debug.WriteLine("removing a can of {0} flavored soda from the rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
                     //int flavorIndex = (int)flavorEnumeral;
                     rack[flavorEnumeral]--;
@@ -97,7 +99,7 @@ namespace Exercise_5._1_FlavorOps
             RemoveACanOf(FlavorOfCanToBeRemoved.ToString());
         }
 
-        //  This method will fill the can rack.
+        // This method will fill the can rack.
         public void FillTheCanRack()
         {
             Debug.WriteLine("Filling the can rack");
@@ -108,20 +110,27 @@ namespace Exercise_5._1_FlavorOps
         }
 
 
-        //  This public void will empty the rack of a given flavor.
+        // This public void will empty the rack of a given flavor.
+        // This takes a slightly different approach and sometimes uses f and sometimes uses FlavorOps.ToFlavor on the fly
         public void EmptyCanRackOf(string FlavorOfBinToBeEmptied)
         {
+            //Convert the string value to all uppercase to purify input
             FlavorOfBinToBeEmptied = FlavorOfBinToBeEmptied.ToUpper();
-            if (Enum.IsDefined(typeof(Flavor), FlavorOfBinToBeEmptied))
+
+            if (rack.ContainsKey(FlavorOps.ToFlavor(FlavorOfBinToBeEmptied)))
             {
-                Debug.WriteLine("Emptying can rack of flavor {0}", FlavorOfBinToBeEmptied);
-                Flavor f = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeEmptied);
+                //Convert string to type Flavor using FlavorOps
+                Flavor f = FlavorOps.ToFlavor(FlavorOfBinToBeEmptied);
+
+                //Write success to the debug log
+                Debug.WriteLine($"Info: Emptying can rack of flavor {FlavorOfBinToBeEmptied}");
+
+                //Do the actual emptying of the rack
                 rack[f] = EMPTYBIN;
             }
             else
             {
-                Debug.WriteLine("Illegal attempt to empty bin of invalid flavor {0}",
-                    FlavorOfBinToBeEmptied, DUMMYARGUMENT);
+                Debug.WriteLine($"Error: Illegal attempt to empty bin of invalid flavor {FlavorOfBinToBeEmptied}");
             }
         }
 
@@ -137,11 +146,14 @@ namespace Exercise_5._1_FlavorOps
             FlavorOfBinToBeChecked = FlavorOfBinToBeChecked.ToUpper();
             Boolean result = false;
             // convert the string Flavor into the appropriate int value
-            Flavor flavorEnumeral;
-            if (Enum.IsDefined(typeof(Flavor), FlavorOfBinToBeChecked))
+            
+            
+            Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfBinToBeChecked);
+            if (rack.ContainsKey(flavorEnumeral))
             {
-                flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeChecked);
-                Debug.WriteLine("Checking if can rack is full of flavor {0}", FlavorOfBinToBeChecked); 
+                //Write success to the debug log
+                Debug.WriteLine($"Info: Checking if can rack is full of flavor {FlavorOfBinToBeChecked}"); 
+                
                 //int flavorIndex = (int)flavorEnumeral;
                 result = rack[flavorEnumeral] == BINSIZE;
             }
@@ -163,13 +175,14 @@ namespace Exercise_5._1_FlavorOps
         {
             FlavorOfBinToBeChecked = FlavorOfBinToBeChecked.ToUpper();
             bool result = false;
+            
             // convert the string Flavor into the appropriate int value
-            Flavor flavorEnumeral;
-            if (Enum.IsDefined(typeof(Flavor), FlavorOfBinToBeChecked))
+            Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfBinToBeChecked);
+            if (rack.ContainsKey(flavorEnumeral))
             {
-                flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), FlavorOfBinToBeChecked);
+                //
                 Debug.WriteLine("Checking if can rack is empty of flavor {0}", FlavorOfBinToBeChecked);
-                //int flavorIndex = (int)flavorEnumeral;
+                
                 result = rack[flavorEnumeral] == EMPTYBIN;
             }
             else
