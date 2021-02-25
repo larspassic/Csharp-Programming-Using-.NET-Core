@@ -38,8 +38,27 @@ namespace Exercise_5._1_FlavorOps
         public Boolean Withdraw(Coin.Denomination denomination)
         {
             bool result = false;
+            
+            //Count that type of coin first
+            int foundCoinsCount = CoinCount(denomination);
 
+            //Need to find out if there are more than zero of that type of coin
+            if (foundCoinsCount > 0)
+            {
+                //LINQ query to find the coins of this denomination within the box list
+                var findCoins =
+                    from possibleCandidate in box
+                    where possibleCandidate.CoinEnumeral == denomination
+                    select possibleCandidate;
 
+                //Actual removal of the coin object from the list.
+                box.Remove(findCoins.First());
+
+                result = true;
+            }
+            
+            //If there were zero of that type of coin, withdraw failed, return false
+            else result = false;
 
             return result;
         }
@@ -102,7 +121,10 @@ namespace Exercise_5._1_FlavorOps
             get
             {
                 decimal totalValue = 0m;
-
+                totalValue += (HalfDollarCount * 0.50m);
+                totalValue += (QuarterCount * 0.25m);
+                totalValue += (DimeCount * 0.10m);
+                totalValue += (NickelCount * 0.05m);
 
                 return totalValue;
             }
