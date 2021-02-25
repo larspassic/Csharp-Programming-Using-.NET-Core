@@ -5,3 +5,5 @@
 *.json
 *.props
 *.suo
+*.exe
+*.txt
