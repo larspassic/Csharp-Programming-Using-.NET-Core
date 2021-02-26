@@ -18,20 +18,27 @@ namespace Exercise_5._1_FlavorOps
         //It constructs the static... ...class? at runtime? I think.
         static FlavorOps()
         {
-            int i = 0;
+            
             foreach (Flavor flavorObject in Enum.GetValues(typeof(Flavor)))
             {
-                _allFlavors[i] = flavorObject;
-                i++;
+                _allFlavors.Add(flavorObject);
+
             }
         }
 
         //Method to convert a string value into an enumeral
         public static Flavor ToFlavor(string FlavorName)
         {
-            Flavor convertedToFlavorObject = (Flavor)Enum.Parse(typeof(Flavor), FlavorName);
-            
-            return convertedToFlavorObject;
+            if (Enum.IsDefined(typeof(Flavor), FlavorName))
+            {
+                Flavor convertedToFlavorObject = (Flavor)Enum.Parse(typeof(Flavor), FlavorName);
+
+                return convertedToFlavorObject;
+            }
+            else
+            {
+                throw new System.ComponentModel.InvalidEnumArgumentException();
+            }
         }
 
         //Property to return a List<Flavor> of all of the Varieties

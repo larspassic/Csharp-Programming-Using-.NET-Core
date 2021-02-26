@@ -73,6 +73,7 @@ namespace Exercise_5._1_FlavorOps
                 Console.Write("What flavor would you like? : ");
                 string flavorName = Console.ReadLine().ToUpper();
                 // oooh, this looks like trouble. Why?
+                //We need to add exception handling here
                 flavor = (Flavor)Enum.Parse(typeof(Flavor), flavorName);
                 flavorChosen = true;
             }

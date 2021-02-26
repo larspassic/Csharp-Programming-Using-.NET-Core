@@ -24,6 +24,7 @@ namespace Exercise_5._1_FlavorOps
         // (i.e., BINSIZE cans of each flavor).
         public CanRack()
         {
+            rack = new Dictionary<Flavor, int>();
             FillTheCanRack();
         }
 
