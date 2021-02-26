@@ -1,9 +1,6 @@
 ﻿using System;
 
-//Assignment 06
-//Author: Passic, Lars, 2011958
-
-namespace Assignment_06_WinForms
+namespace Supplied_06._0_Vend_Lib
 {
     public class VENDBADFLAVORException : Exception
     {

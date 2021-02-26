@@ -1,23 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-//Assignment 06
-//Author: Passic, Lars, 2011958
-
-namespace Assignment_06_WinForms
+namespace Supplied_06._0_Vend_Lib
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Create the sodaPrice object
             PurchasePrice sodaPrice = new PurchasePrice(0.35M);
-            
-            //Create the rack object
             CanRack sodaRack = new CanRack();
-
-            //Create a changeBox object
-            //Looks like this is going to use the "seed money" constructor
             CoinBox changeBox = new CoinBox(new List<Coin> { 
                 new Coin(Coin.Denomination.QUARTER), new Coin(Coin.Denomination.DIME), 
                 new Coin(Coin.Denomination.NICKEL), new Coin(Coin.Denomination.QUARTER), 
@@ -29,11 +20,9 @@ namespace Assignment_06_WinForms
             do
             {
                 sodaRack.DisplayCanRack();
-                Console.Write($"Please insert {sodaPrice.PriceDecimal:c} worth of coins: ");
+                Console.Write("Please insert {0:c} worth of coins: ", sodaPrice.PriceDecimal);
 
                 decimal totalValueInserted = 0M;
-
-                //Loop while the user is inserting money
                 while (totalValueInserted < sodaPrice.PriceDecimal)
                 {
                     Coin coinInserted = null;
@@ -43,26 +32,21 @@ namespace Assignment_06_WinForms
                         string coinNameInserted = Console.ReadLine().ToUpper();
                         coinInserted = new Coin(coinNameInserted);
                     }
-                    Console.WriteLine($"You have inserted a {coinInserted} worth {coinInserted.ValueOf:c}");
+                    Console.WriteLine("You have inserted a {0} worth {1:c}", coinInserted, coinInserted.ValueOf);
                     changeBox.Deposit(coinInserted);
 
                     // running total of the value of the coins inserted
                     totalValueInserted += coinInserted.ValueOf;
-                    Console.WriteLine($"Total value inserted is {totalValueInserted:c}");
+                    Console.WriteLine("Total value inserted is {0:c}", totalValueInserted);
                 }
 
                 // select a flavor of soda
                 Boolean canDispensed = false;
-                
-                //Loop until a can gets dispensed
                 while (!canDispensed)
                 {
-                    //Default flavor is REGULAR - kinda weird.
                     Flavor flavorEnumeral = Flavor.REGULAR;
                     Boolean flavorChosen = false;
                     Console.Write("What flavor would you like? : ");
-                    
-                    //Loop until a flavor has been chosen
                     while (!flavorChosen)
                     {
                         try
@@ -83,8 +67,7 @@ namespace Assignment_06_WinForms
                             Console.WriteLine("Please retry.");
                         }
                     }
-                    
-                    //If the sodaRack is NOT empty of the flavor that was found above
+
                     if (!sodaRack.IsEmpty(flavorEnumeral))
                     {
                         sodaRack.RemoveACanOf(flavorEnumeral);
@@ -93,18 +76,15 @@ namespace Assignment_06_WinForms
                     }
                     else
                     {
-                        //Tell the user that the flavor is empty
-                        Console.WriteLine($"We are out of {flavorEnumeral}");
+                        Console.WriteLine("We are out of {0}", flavorEnumeral);
                     }
                 }
 
                 Console.Write("Exit the vending machine? (y/n): ");
                 string response = Console.ReadLine();
-                //This is a super interesting way to get a purified yes/no response!
                 timeToExit = response.Trim().ToUpper().StartsWith("Y");
-                
-             //If it is NOT time to exit...
-            } while (!timeToExit); 
+
+            } while (!timeToExit);
 
             Console.WriteLine("Contents of Coin Box:");
 

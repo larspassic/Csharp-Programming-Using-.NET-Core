@@ -1,9 +1,6 @@
 ﻿using System;
 
-//Assignment 06
-//Author: Passic, Lars, 2011958
-
-namespace Assignment_06_WinForms
+namespace Supplied_06._0_Vend_Lib
 {
     //  This class represents the purchase price of something.
     //  In our software project, we will use it to represent the price of
@@ -17,7 +14,6 @@ namespace Assignment_06_WinForms
         {
             price = 0M;
         }
-        
         // This constructor allows a new purchase price to be set by the user
         [Obsolete("Use the decimal version of this constructor instead", false)]
         public PurchasePrice(int initialPrice)

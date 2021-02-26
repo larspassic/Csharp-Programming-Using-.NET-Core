@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Supplied_06._0_Vend_Lib;
 
 namespace WindowsFormsApp
 {
@@ -14,7 +15,14 @@ namespace WindowsFormsApp
     {
         public Form1()
         {
+            
+            
             InitializeComponent();
+
+            CanRack therackX = new CanRack();
+
+
         }
+
     }
 }

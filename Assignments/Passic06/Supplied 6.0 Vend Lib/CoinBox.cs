@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 
-//Assignment 06
-//Author: Passic, Lars, 2011958
-
-namespace Assignment_06_WinForms
+namespace Supplied_06._0_Vend_Lib
 {
     public class CoinBox
     {
@@ -65,12 +62,13 @@ namespace Assignment_06_WinForms
             decimal amountLeftToRemove = AmountToRemove;
             if ((AmountToRemove % Coin.ValueOfCoin(Coin.Denomination.NICKEL)) != 0)
             {
-                Debug.WriteLine($"Error: Withdrawal failed on amount {AmountToRemove:C}: non multiple of 5 cents");
+                Debug.WriteLine("Withdrawal failed on amount {0:C}: non multiple of 5 cents", AmountToRemove);
                 return false;
             }
             if (!ContainsExactChangeFor(AmountToRemove))
             {
-                Debug.WriteLine($"Error: Withdraw failed: Exact change requirement not met ValueOf={this.ValueOf:c}, AmountToRemove={AmountToRemove:c}");
+                Debug.WriteLine("Withdraw failed: Exact change requirement not met ValueOf={0:c}, AmountToRemove={1:c}",
+                    this.ValueOf,AmountToRemove);
                 return false;
             }
 
@@ -86,7 +84,7 @@ namespace Assignment_06_WinForms
                 }
 
             }
-            Debug.WriteLine($"AmountRemoved {amountRemoved:c}, AmountToRemove {AmountToRemove:c}");
+            Debug.WriteLine("AmountRemoved {0:c}, AmountToRemove {1:c}", amountRemoved, AmountToRemove);
             return amountRemoved == AmountToRemove;
         }
 
