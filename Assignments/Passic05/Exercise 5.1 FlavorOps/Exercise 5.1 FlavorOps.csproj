@@ -6,4 +6,10 @@
     <RootNamespace>Exercise_5._1_FlavorOps</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="OrderProcessor.cs" />
+    <Compile Remove="Programold.cs" />
+    <Compile Remove="VendingMachine.cs" />
+  </ItemGroup>
+
 </Project>
