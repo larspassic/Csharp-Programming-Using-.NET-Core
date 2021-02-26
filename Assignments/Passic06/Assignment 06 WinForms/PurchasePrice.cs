@@ -17,6 +17,7 @@ namespace Assignment_06_WinForms
         {
             price = 0M;
         }
+        
         // This constructor allows a new purchase price to be set by the user
         [Obsolete("Use the decimal version of this constructor instead", false)]
         public PurchasePrice(int initialPrice)

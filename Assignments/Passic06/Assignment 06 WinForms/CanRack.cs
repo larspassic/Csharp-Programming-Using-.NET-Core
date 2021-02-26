@@ -33,11 +33,11 @@ namespace Assignment_06_WinForms
             FlavorOfCanToBeAdded = FlavorOfCanToBeAdded.ToUpper();
             if (IsFull(FlavorOfCanToBeAdded))
             {
-                Debug.WriteLine("*** Failed attempt to add a can of {0} to a full rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
+                Debug.WriteLine($"Error: Failed attempt to add a can of {FlavorOfCanToBeAdded} to a full rack.");
             }
             else
             {
-                Debug.WriteLine("adding a can of {0} flavored soda to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
+                Debug.WriteLine($"Info: adding a can of {FlavorOfCanToBeAdded} flavored soda to the rack.");
                 // convert the string Flavor into the Flavor value
                 Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfCanToBeAdded);
                 rack[flavorEnumeral]++;
@@ -53,13 +53,14 @@ namespace Assignment_06_WinForms
         public void RemoveACanOf(string FlavorOfCanToBeRemoved)
         {
             FlavorOfCanToBeRemoved = FlavorOfCanToBeRemoved.ToUpper();
+            
             if (IsEmpty(FlavorOfCanToBeRemoved))
             {
-                Debug.WriteLine("*** Failed attempt to remove a can of {0} from an empty rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
+                Debug.WriteLine($"Error: Failed attempt to remove a can of {FlavorOfCanToBeRemoved} from an empty rack.");
             }
             else
             {
-                Debug.WriteLine("removing a can of {0} flavored soda from the rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
+                Debug.WriteLine($"Info: Removing a can of {FlavorOfCanToBeRemoved} flavored soda from the rack.");
                 // convert the string Flavor into the appropriate Flavor value
                 Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfCanToBeRemoved);
                 rack[flavorEnumeral]--;
@@ -74,7 +75,7 @@ namespace Assignment_06_WinForms
         //  This method will fill the can rack.
         public void FillTheCanRack()
         {
-            Debug.WriteLine("Filling the can rack");
+            Debug.WriteLine($"Info: Filling the can rack.");
             foreach (Flavor aFlavor in FlavorOps.AllFlavors)
             {
                 rack[aFlavor] = BINSIZE;
@@ -85,7 +86,7 @@ namespace Assignment_06_WinForms
         public void EmptyCanRackOf(string FlavorOfBinToBeEmptied)
         {
             Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfBinToBeEmptied);
-            Debug.WriteLine("Emptying can rack of flavor {0}", FlavorOfBinToBeEmptied);
+            Debug.WriteLine($"Info: Emptying can rack of flavor {FlavorOfBinToBeEmptied}.");
             rack[flavorEnumeral] = EMPTYBIN;
         }
 
@@ -99,7 +100,7 @@ namespace Assignment_06_WinForms
         // false otherwise
         public Boolean IsFull(string FlavorOfBinToBeChecked)
         {
-            Debug.WriteLine("Checking if can rack is full of flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
+            Debug.WriteLine($"Checking if can rack is full of flavor {FlavorOfBinToBeChecked}.");
             // convert the string Flavor into the appropriate int value
             Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfBinToBeChecked);
             return rack[flavorEnumeral] == BINSIZE;
@@ -114,7 +115,7 @@ namespace Assignment_06_WinForms
         // false otherwise 
         public Boolean IsEmpty(string FlavorOfBinToBeChecked)
         {
-            Debug.WriteLine("Checking if can rack is empty of flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
+            Debug.WriteLine($"Checking if can rack is empty of flavor {FlavorOfBinToBeChecked}.");
             // convert the string Flavor into the appropriate int value
             Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfBinToBeChecked);
             return rack[flavorEnumeral] == EMPTYBIN;
@@ -125,6 +126,9 @@ namespace Assignment_06_WinForms
             return IsEmpty(FlavorOfBinToBeChecked.ToString());
         }
 
+        //Apparently "this" is an indexer - need to re-watch lesson 5 videos on "this and indexer" to hope to understand this!
+        //"An indexer is a way to make an object look a little bit like an array"
+        //Still don't get it. Oh well!
         public int this[Flavor FlavorOfBin]
         {
             get
@@ -133,11 +137,11 @@ namespace Assignment_06_WinForms
             }
             set
             {
-                // we could just assign a value
+                // we could just assign a value right here
                 // (once we verify it is not too big or too small),
                 // but let's pretend that AddACanOf() and RemoveACanOf()
                 // perform some kind of data tracking operation 
-                // for sales statistics, or something of that sort
+                // for sales statistics, or something of that sort, so we need to call those.
                 if (rack[FlavorOfBin] == value)
                 {
                     // do nothing
@@ -166,15 +170,13 @@ namespace Assignment_06_WinForms
                 {
                     string pluralCan = string.Format(sodaCansLeftOver == -1 ? "" : "s");
                     string pluralWas = string.Format(sodaCansLeftOver == -1 ? "was" : "were");
-                    Debug.WriteLine("{0} Bin Full. {1} can{2} of flavor {0} {3} not placed in vending machine", 
-                        FlavorOfBin, -sodaCansLeftOver, pluralCan, pluralWas);
+                    Debug.WriteLine($"{FlavorOfBin} Bin Full. {-sodaCansLeftOver} can{pluralCan} of flavor {FlavorOfBin} {pluralWas} not placed in vending machine");
                 }
                 else if (sodaCansLeftOver > 0)
                 {
                     string pluralCan = string.Format(sodaCansLeftOver == 1 ? "" : "s");
                     string pluralWas = string.Format(sodaCansLeftOver == 1 ? "was" : "were");
-                    Debug.WriteLine("{0} Bin Empty. {1} can{2} of flavor {0} {3} not available for removal",
-                        FlavorOfBin, sodaCansLeftOver, pluralCan, pluralWas);
+                    Debug.WriteLine($"{FlavorOfBin} Bin Empty. {sodaCansLeftOver} can{pluralCan} of flavor {FlavorOfBin} {pluralWas} not available for removal");
                 }
             }
         }

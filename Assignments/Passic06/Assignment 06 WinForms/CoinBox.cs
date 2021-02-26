@@ -65,13 +65,12 @@ namespace Assignment_06_WinForms
             decimal amountLeftToRemove = AmountToRemove;
             if ((AmountToRemove % Coin.ValueOfCoin(Coin.Denomination.NICKEL)) != 0)
             {
-                Debug.WriteLine("Withdrawal failed on amount {0:C}: non multiple of 5 cents", AmountToRemove);
+                Debug.WriteLine($"Error: Withdrawal failed on amount {AmountToRemove:C}: non multiple of 5 cents");
                 return false;
             }
             if (!ContainsExactChangeFor(AmountToRemove))
             {
-                Debug.WriteLine("Withdraw failed: Exact change requirement not met ValueOf={0:c}, AmountToRemove={1:c}",
-                    this.ValueOf,AmountToRemove);
+                Debug.WriteLine($"Error: Withdraw failed: Exact change requirement not met ValueOf={this.ValueOf:c}, AmountToRemove={AmountToRemove:c}");
                 return false;
             }
 
@@ -87,7 +86,7 @@ namespace Assignment_06_WinForms
                 }
 
             }
-            Debug.WriteLine("AmountRemoved {0:c}, AmountToRemove {1:c}", amountRemoved, AmountToRemove);
+            Debug.WriteLine($"AmountRemoved {amountRemoved:c}, AmountToRemove {AmountToRemove:c}");
             return amountRemoved == AmountToRemove;
         }
 
