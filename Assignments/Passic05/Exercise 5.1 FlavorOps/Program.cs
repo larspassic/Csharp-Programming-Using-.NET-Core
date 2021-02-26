@@ -38,10 +38,30 @@ namespace Exercise_5._1_FlavorOps
                 while (!canDispensed)
                 {
                     Console.Write("What flavor would you like? : "); 
-                    string flavorName = Console.ReadLine().ToUpper();
+                    
 
                     // oooh, this looks like trouble. Why?
-                    Flavor flavor = (Flavor)Enum.Parse(typeof(Flavor), flavorName);
+                    //Needs exception handling
+                    Flavor flavor = new Flavor();
+                    
+                    bool flavorFound = false;
+                    while (flavorFound == false) //I think this will work for exception handling?
+                    {
+                        try
+                        {
+                            //ask the user for flavor
+                            string flavorName = Console.ReadLine().ToUpper();
+
+                            flavor = FlavorOps.ToFlavor(flavorName); //If this parse is successful...
+                            flavorFound = true; //... this WILL execute and get us out of the loop. Maybe?
+                        }
+                        catch (System.ArgumentException e)
+                        {
+                            Console.WriteLine($"{e.Message}" + " Please try again.");
+                        }
+                    }
+                    
+                    
 
                     if (!sodaRack.IsEmpty(flavor))
                     {
