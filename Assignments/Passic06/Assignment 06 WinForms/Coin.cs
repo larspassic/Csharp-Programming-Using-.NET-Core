@@ -1,14 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 
 //Assignment 06
 //Author: Passic, Lars, 2011958
 
 namespace Assignment_06_WinForms
 {
-    class Coin
+    public class Coin
     {
         private Denomination coinObject;
         public enum Denomination { SLUG = 0, NICKEL = 5, DIME = 10, QUARTER = 25, HALFDOLLAR = 50 }
+        public static readonly Coin HALFDOLLARCOIN = new Coin(Denomination.HALFDOLLAR);
+        public static readonly Coin QUARTERCOIN = new Coin(Denomination.QUARTER);
+        public static readonly Coin DIMECOIN = new Coin(Denomination.DIME);
+        public static readonly Coin NICKELCOIN = new Coin(Denomination.NICKEL);
+        public static readonly Coin SLUGCOIN = new Coin(Denomination.SLUG);
 
         // parameterless constructor – coin will be a slug
         public Coin()
@@ -19,16 +25,16 @@ namespace Assignment_06_WinForms
         // parametered constructor – coin will be of appropriate value
         // if value passed is outside normal set (e.g. 5 cents = Nickel)
         // coin is a slug     
-        public Coin(Denomination CoinEnumeral)
+        public Coin(Denomination DenominationEnumeral)
         {
-            coinObject = CoinEnumeral;
+            coinObject = DenominationEnumeral;
         }
 
         // This constructor will take a string and return the appropriate enumeral
         public Coin(string CoinName)
         {
             Denomination coinEnumeral;
-            if (Enum.IsDefined(typeof(Denomination),CoinName) && 
+            if (Enum.IsDefined(typeof(Denomination), CoinName) &&
                 Enum.TryParse<Denomination>(CoinName, out coinEnumeral))
             {
                 coinObject = coinEnumeral;
@@ -37,6 +43,12 @@ namespace Assignment_06_WinForms
             {
                 coinObject = Coin.Denomination.SLUG;
             }
+        }
+
+        public static Coin.Denomination ConvertStringToEnumeral(string CoinName)
+        {
+            Denomination denominationEnumeral = (Denomination)Enum.Parse(typeof(Denomination), CoinName);
+            return denominationEnumeral;
         }
 
         // parametered constructor – coin will be of appropriate value
@@ -57,17 +69,39 @@ namespace Assignment_06_WinForms
             }
         }
 
+        private static List<Denomination> _allDenominations = new List<Denomination>();
+        static Coin()
+        {
+            foreach (string coinName in Enum.GetNames(typeof(Denomination)))
+            {
+                Denomination denominationEnumeral;
+                Enum.TryParse<Denomination>(coinName, out denominationEnumeral);
+                _allDenominations.Add(denominationEnumeral);
+            }
+        }
+
         //  This property will get the monetary value of the coin.
         public decimal ValueOf
         {
             get
             {
-                return (decimal)coinObject / 100M;
+                return convertEnumeralToDecimal(coinObject);
             }
         }
 
+        // decimal value of the specified coin denomination
+        public static decimal ValueOfCoin(Coin.Denomination denominationEnumeral)
+        {
+            return convertEnumeralToDecimal(denominationEnumeral);
+        }
+
+        private static decimal convertEnumeralToDecimal(Coin.Denomination denominationEnumeral)
+        {
+            return (decimal)denominationEnumeral / 100M;
+        }
+
         //  This property will get the coin name as an enumeral
-        public Denomination CoinEnumeral
+        public Denomination DenominationEnumeral
         {
             get
             {
@@ -75,6 +109,15 @@ namespace Assignment_06_WinForms
             }
         }
 
+
+        // method to return a collection of all coin denominations
+        public static List<Denomination> AllDenominations
+        {
+            get
+            {
+                return _allDenominations;
+            }
+        }
 
         // use Enum.GetName() with a private Denomination instance variable
         // to produce a string

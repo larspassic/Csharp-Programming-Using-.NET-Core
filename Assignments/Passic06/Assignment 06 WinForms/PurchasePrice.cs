@@ -8,7 +8,7 @@ namespace Assignment_06_WinForms
     //  This class represents the purchase price of something.
     //  In our software project, we will use it to represent the price of
     //  one can of soda.
-    class PurchasePrice
+    public class PurchasePrice
     {
         private decimal price = 0M;
 

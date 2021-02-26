@@ -4,44 +4,39 @@ using System.Collections.Generic;
 //Assignment 06
 //Author: Passic, Lars, 2011958
 
-
 namespace Assignment_06_WinForms
 {
     public enum Flavor { REGULAR, ORANGE, LEMON }
-
     public static class FlavorOps
     {
         private static List<Flavor> _allFlavors = new List<Flavor>();
 
-        //I don't know what this is
-        //Update - this is something called a static constructor
-        //It constructs the static... ...class? at runtime? I think.
         static FlavorOps()
         {
-            
-            foreach (Flavor flavorObject in Enum.GetValues(typeof(Flavor)))
+            foreach (string flavorName in Enum.GetNames(typeof(Flavor)))
             {
-                _allFlavors.Add(flavorObject);
-
+                Flavor flavorEnumeral = ToFlavor(flavorName);
+                _allFlavors.Add(flavorEnumeral);
             }
         }
 
-        //Method to convert a string value into an enumeral
+        // method to convert a string value into an enumeral
         public static Flavor ToFlavor(string FlavorName)
         {
+            FlavorName = FlavorName.ToUpper();
+            Flavor result = Flavor.REGULAR;
             if (Enum.IsDefined(typeof(Flavor), FlavorName))
             {
-                Flavor convertedToFlavorObject = (Flavor)Enum.Parse(typeof(Flavor), FlavorName);
-
-                return convertedToFlavorObject;
+                result = (Flavor)Enum.Parse(typeof(Flavor),FlavorName);
             }
             else
             {
-                throw new System.ComponentModel.InvalidEnumArgumentException();
+                throw new VENDBADFLAVORException("Unknown flavor ", FlavorName);
             }
+            return result;
         }
 
-        //Property to return a List<Flavor> of all of the Varieties
+        // property to return a List<Flavor> of all of the Varieties
         public static List<Flavor> AllFlavors
         {
             get

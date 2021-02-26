@@ -11,20 +11,19 @@ namespace Assignment_06_WinForms
     //  A can of soda will simply be represented as a number in an array indexed
     //  by the Flavor enumeration (e.g., rack[Flavor.ORANGE] == 1 means 
     //  that there is one can of orange soda in the rack).
-    class CanRack
+    public class CanRack
     {
-        //private int[] rack = new int[Enum.GetValues(typeof(Flavor)).Length]; //ancient technology that our ancestors used for Soda Can Rack software
-        private Dictionary<Flavor, int> rack = null;
-        public const int EMPTYBIN = 0;
+        private Dictionary<Flavor,int> rack = null;
+        public const int EMPTYBIN = 0; 
         public const int BINSIZE = 3;
 
         private const int DUMMYARGUMENT = 0;
-
+        
         // Constructor for a can rack. The rack starts out full
         // (i.e., BINSIZE cans of each flavor).
         public CanRack()
         {
-            rack = new Dictionary<Flavor, int>();
+            rack = new Dictionary<Flavor,int>();
             FillTheCanRack();
         }
 
@@ -38,60 +37,32 @@ namespace Assignment_06_WinForms
             }
             else
             {
-                // convert the string Flavor into the appropriate int value
+                Debug.WriteLine("adding a can of {0} flavored soda to the rack", FlavorOfCanToBeAdded, DUMMYARGUMENT);
+                // convert the string Flavor into the Flavor value
                 Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfCanToBeAdded);
-
-                //Check to see if the rack has the flavor value in it
-                if(rack.ContainsKey(flavorEnumeral))
-                {
-                    //Write success to the debug log
-                    Debug.WriteLine($"Info: Adding a can of {flavorEnumeral} flavored soda to the rack");
-                    
-                    //Flavor flavorIndex = flavorEnumeral; 
-                    rack[flavorEnumeral]++;
-                }
-                else
-                {
-                    Debug.WriteLine("Error: attempt to add a can of unknown flavor {0}", FlavorOfCanToBeAdded, DUMMYARGUMENT);
-                }
+                rack[flavorEnumeral]++;
             }
         }
 
         public void AddACanOf(Flavor FlavorOfCanToBeAdded)
         {
-            if (rack.ContainsKey(FlavorOfCanToBeAdded)) //Check to see if they flavor object exists in the rack dictionary object
-            {
-                FlavorOfCanToBeAdded.ToString();
-            }
-
             AddACanOf(FlavorOfCanToBeAdded.ToString());
         }
 
-        // This method will remove a can of the specified flavor from the rack.
+        //  This method will remove a can of the specified flavor from the rack.
         public void RemoveACanOf(string FlavorOfCanToBeRemoved)
         {
             FlavorOfCanToBeRemoved = FlavorOfCanToBeRemoved.ToUpper();
-
             if (IsEmpty(FlavorOfCanToBeRemoved))
             {
-                Debug.WriteLine($"Error: Failed attempt to remove a can of {FlavorOfCanToBeRemoved} from an empty rack");
+                Debug.WriteLine("*** Failed attempt to remove a can of {0} from an empty rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
             }
             else
             {
-                // convert the string Flavor into the appropriate int value
-                Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfCanToBeRemoved)  ;
-                //if (Enum.IsDefined(typeof(Flavor),FlavorOfCanToBeRemoved))
-                if(rack.ContainsKey(flavorEnumeral))
-                {
-                    //Write success to the debug log
-                    Debug.WriteLine("removing a can of {0} flavored soda from the rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
-                    //int flavorIndex = (int)flavorEnumeral;
-                    rack[flavorEnumeral]--;
-                }
-                else
-                {
-                    Debug.WriteLine("Error: attempt to remove a can of unknown flavor {0}", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
-                }
+                Debug.WriteLine("removing a can of {0} flavored soda from the rack", FlavorOfCanToBeRemoved, DUMMYARGUMENT);
+                // convert the string Flavor into the appropriate Flavor value
+                Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfCanToBeRemoved);
+                rack[flavorEnumeral]--;
             }
         }
 
@@ -100,40 +71,24 @@ namespace Assignment_06_WinForms
             RemoveACanOf(FlavorOfCanToBeRemoved.ToString());
         }
 
-        // This method will fill the can rack.
+        //  This method will fill the can rack.
         public void FillTheCanRack()
         {
             Debug.WriteLine("Filling the can rack");
-            foreach (Flavor flavorValue in FlavorOps.AllFlavors)
+            foreach (Flavor aFlavor in FlavorOps.AllFlavors)
             {
-                rack[flavorValue] = BINSIZE;
+                rack[aFlavor] = BINSIZE;
             }
         }
 
-
-        // This public void will empty the rack of a given flavor.
-        // This takes a slightly different approach and sometimes uses f and sometimes uses FlavorOps.ToFlavor on the fly
+        //  This public void will empty the rack of a given flavor.
         public void EmptyCanRackOf(string FlavorOfBinToBeEmptied)
         {
-            //Convert the string value to all uppercase to purify input
-            FlavorOfBinToBeEmptied = FlavorOfBinToBeEmptied.ToUpper();
-
-            if (rack.ContainsKey(FlavorOps.ToFlavor(FlavorOfBinToBeEmptied)))
-            {
-                //Convert string to type Flavor using FlavorOps
-                Flavor f = FlavorOps.ToFlavor(FlavorOfBinToBeEmptied);
-
-                //Write success to the debug log
-                Debug.WriteLine($"Info: Emptying can rack of flavor {FlavorOfBinToBeEmptied}");
-
-                //Do the actual emptying of the rack
-                rack[f] = EMPTYBIN;
-            }
-            else
-            {
-                Debug.WriteLine($"Error: Illegal attempt to empty bin of invalid flavor {FlavorOfBinToBeEmptied}");
-            }
+            Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfBinToBeEmptied);
+            Debug.WriteLine("Emptying can rack of flavor {0}", FlavorOfBinToBeEmptied);
+            rack[flavorEnumeral] = EMPTYBIN;
         }
+
 
         public void EmptyCanRackOf(Flavor FlavorOfBinToBeEmptied)
         {
@@ -144,25 +99,10 @@ namespace Assignment_06_WinForms
         // false otherwise
         public Boolean IsFull(string FlavorOfBinToBeChecked)
         {
-            FlavorOfBinToBeChecked = FlavorOfBinToBeChecked.ToUpper();
-            Boolean result = false;
+            Debug.WriteLine("Checking if can rack is full of flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
             // convert the string Flavor into the appropriate int value
-            
-            
             Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfBinToBeChecked);
-            if (rack.ContainsKey(flavorEnumeral))
-            {
-                //Write success to the debug log
-                Debug.WriteLine($"Info: Checking if can rack is full of flavor {FlavorOfBinToBeChecked}"); 
-                
-                //int flavorIndex = (int)flavorEnumeral;
-                result = rack[flavorEnumeral] == BINSIZE;
-            }
-            else
-            {
-                Debug.WriteLine("Error: attempt to check rack status of unknown flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
-            }
-            return result;
+            return rack[flavorEnumeral] == BINSIZE;
         }
 
         public Boolean IsFull(Flavor FlavorOfBinToBeChecked)
@@ -174,29 +114,71 @@ namespace Assignment_06_WinForms
         // false otherwise 
         public Boolean IsEmpty(string FlavorOfBinToBeChecked)
         {
-            FlavorOfBinToBeChecked = FlavorOfBinToBeChecked.ToUpper();
-            bool result = false;
-            
+            Debug.WriteLine("Checking if can rack is empty of flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
             // convert the string Flavor into the appropriate int value
             Flavor flavorEnumeral = FlavorOps.ToFlavor(FlavorOfBinToBeChecked);
-            if (rack.ContainsKey(flavorEnumeral))
-            {
-                //
-                Debug.WriteLine("Checking if can rack is empty of flavor {0}", FlavorOfBinToBeChecked);
-                
-                result = rack[flavorEnumeral] == EMPTYBIN;
-            }
-            else
-            {
-                Debug.WriteLine("Error: attempt to check rack status of unknown flavor {0}", FlavorOfBinToBeChecked, DUMMYARGUMENT);
-            }
-            return result;
+            return rack[flavorEnumeral] == EMPTYBIN;
         }
 
-        public Boolean IsEmpty(Flavor CanBinToCheck)
+        public Boolean IsEmpty(Flavor FlavorOfBinToBeChecked)
         {
-            return IsEmpty(CanBinToCheck.ToString());
+            return IsEmpty(FlavorOfBinToBeChecked.ToString());
         }
+
+        public int this[Flavor FlavorOfBin]
+        {
+            get
+            {
+                return rack[FlavorOfBin];
+            }
+            set
+            {
+                // we could just assign a value
+                // (once we verify it is not too big or too small),
+                // but let's pretend that AddACanOf() and RemoveACanOf()
+                // perform some kind of data tracking operation 
+                // for sales statistics, or something of that sort
+                if (rack[FlavorOfBin] == value)
+                {
+                    // do nothing
+                }
+                else if (rack[FlavorOfBin] < value)
+                {
+                    while (!IsFull(FlavorOfBin) && rack[FlavorOfBin] < value)
+                    {
+                        AddACanOf(FlavorOfBin);
+                    }
+                }
+                else if (rack[FlavorOfBin] > value)
+                {
+                    while (!IsEmpty(FlavorOfBin) && rack[FlavorOfBin] > value)
+                    {
+                        RemoveACanOf(FlavorOfBin);
+                    }
+                }
+
+                int sodaCansLeftOver = rack[FlavorOfBin] - value;
+                if (sodaCansLeftOver == 0)
+                {
+                    // do nothing
+                }
+                else if (sodaCansLeftOver < 0)
+                {
+                    string pluralCan = string.Format(sodaCansLeftOver == -1 ? "" : "s");
+                    string pluralWas = string.Format(sodaCansLeftOver == -1 ? "was" : "were");
+                    Debug.WriteLine("{0} Bin Full. {1} can{2} of flavor {0} {3} not placed in vending machine", 
+                        FlavorOfBin, -sodaCansLeftOver, pluralCan, pluralWas);
+                }
+                else if (sodaCansLeftOver > 0)
+                {
+                    string pluralCan = string.Format(sodaCansLeftOver == 1 ? "" : "s");
+                    string pluralWas = string.Format(sodaCansLeftOver == 1 ? "was" : "were");
+                    Debug.WriteLine("{0} Bin Empty. {1} can{2} of flavor {0} {3} not available for removal",
+                        FlavorOfBin, sodaCansLeftOver, pluralCan, pluralWas);
+                }
+            }
+        }
+
 
         // write out the contents of rack array. For example, one flavor per line with the flavor name and
         // the number of cans of soda of that flavor. In a real system, this function would probably be in a 
@@ -206,15 +188,12 @@ namespace Assignment_06_WinForms
         {
             Console.WriteLine(".NET C# Vending Machine contents");
             Console.WriteLine("________________________________");
-            foreach (Flavor flavorName in FlavorOps.AllFlavors)
+            foreach (Flavor aFlavor in FlavorOps.AllFlavors)
             {
-                //Flavor flavorEnumeral = (Flavor)Enum.Parse(typeof(Flavor), flavorName);
-                //int flavorIndex = (int)flavorEnumeral;
-                Console.WriteLine($"{flavorName}\t{rack[flavorName]}");
+                Console.WriteLine("{0}\t{1}", aFlavor, rack[aFlavor]);
             }
             Console.WriteLine("________________________________");
         }
-
 
     } //end Can_Rack
 
