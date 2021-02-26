@@ -19,6 +19,7 @@ namespace WindowsFormsApp
             
             InitializeComponent();
 
+            //Demo in class
             CanRack therackX = new CanRack();
 
 

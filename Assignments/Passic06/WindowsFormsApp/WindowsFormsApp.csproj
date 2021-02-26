@@ -6,4 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Supplied 6.0 Vend Lib\Supplied 6.0 Vend Lib.csproj" />
+  </ItemGroup>
+
 </Project>
