@@ -11,9 +11,9 @@ using Supplied_06._0_Vend_Lib;
 
 namespace WindowsFormsApp
 {
-    public partial class Form1 : Form
+    public partial class FormSodaMachine : Form
     {
-        public Form1()
+        public FormSodaMachine()
         {
             
             
