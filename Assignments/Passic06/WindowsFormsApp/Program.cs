@@ -14,10 +14,17 @@ namespace WindowsFormsApp
         [STAThread]
         static void Main()
         {
+            //Maybe do stuff before running the form?
+
+            
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormSodaMachine());
+
+            //This is where my project begins.
+
+
         }
     }
 }
