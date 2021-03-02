@@ -25,5 +25,11 @@ namespace WindowsFormsApp
 
         }
 
+        //This code inserts a half-dollar in to the temp box
+        private void buttonInsertHalfDollar_Click(object sender, EventArgs e)
+        {
+            //Write code to insert a half-dollar coin in to the temp box
+
+        }
     }
 }

@@ -168,6 +168,7 @@ namespace WindowsFormsApp
             this.buttonInsertHalfDollar.TabIndex = 12;
             this.buttonInsertHalfDollar.Text = "Half Dollar";
             this.buttonInsertHalfDollar.UseVisualStyleBackColor = true;
+            this.buttonInsertHalfDollar.Click += new System.EventHandler(this.buttonInsertHalfDollar_Click);
             // 
             // buttonInsertQuarter
             // 
