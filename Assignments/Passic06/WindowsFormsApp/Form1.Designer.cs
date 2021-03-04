@@ -137,8 +137,10 @@ namespace WindowsFormsApp
             // 
             // textBoxTotalMoneyInserted
             // 
+            this.textBoxTotalMoneyInserted.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxTotalMoneyInserted.Location = new System.Drawing.Point(673, 41);
             this.textBoxTotalMoneyInserted.Name = "textBoxTotalMoneyInserted";
+            this.textBoxTotalMoneyInserted.ReadOnly = true;
             this.textBoxTotalMoneyInserted.Size = new System.Drawing.Size(100, 23);
             this.textBoxTotalMoneyInserted.TabIndex = 9;
             // 
@@ -150,6 +152,7 @@ namespace WindowsFormsApp
             this.buttonCoinReturn.TabIndex = 10;
             this.buttonCoinReturn.Text = "Coin Return";
             this.buttonCoinReturn.UseVisualStyleBackColor = true;
+            this.buttonCoinReturn.Click += new System.EventHandler(this.buttonCoinReturn_Click);
             // 
             // labelInsertCoins
             // 
@@ -178,6 +181,7 @@ namespace WindowsFormsApp
             this.buttonInsertQuarter.TabIndex = 13;
             this.buttonInsertQuarter.Text = "Quarter";
             this.buttonInsertQuarter.UseVisualStyleBackColor = true;
+            this.buttonInsertQuarter.Click += new System.EventHandler(this.buttonInsertQuarter_Click);
             // 
             // buttonInsertDime
             // 
@@ -187,6 +191,7 @@ namespace WindowsFormsApp
             this.buttonInsertDime.TabIndex = 14;
             this.buttonInsertDime.Text = "Dime";
             this.buttonInsertDime.UseVisualStyleBackColor = true;
+            this.buttonInsertDime.Click += new System.EventHandler(this.buttonInsertDime_Click);
             // 
             // buttonInsertNickel
             // 
@@ -196,6 +201,7 @@ namespace WindowsFormsApp
             this.buttonInsertNickel.TabIndex = 15;
             this.buttonInsertNickel.Text = "Nickel";
             this.buttonInsertNickel.UseVisualStyleBackColor = true;
+            this.buttonInsertNickel.Click += new System.EventHandler(this.buttonInsertNickel_Click);
             // 
             // FormSodaMachine
             // 

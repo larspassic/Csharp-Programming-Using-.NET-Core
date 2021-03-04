@@ -15,8 +15,14 @@ namespace WindowsFormsApp
         [STAThread]
         static void Main()
         {
-            //Maybe do stuff before running the form?
             //This is where my project begins.
+
+            //
+            //I tried to put my PurchasePrice, CanRack, and CoinBox object declarations
+            //here at first, since I thought that Main() would be the beating heart of my program
+            //but that did not work. I had to move them over to Form1.cs and then move them
+            //out of the FormSodaMachine() method, in order for them to work.
+            //
 
             //This was already here before I started working on Program.cs
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
