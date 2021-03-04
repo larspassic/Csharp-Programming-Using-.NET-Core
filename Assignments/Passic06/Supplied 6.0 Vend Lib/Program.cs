@@ -13,7 +13,9 @@ namespace Supplied_06._0_Vend_Lib
                 new Coin(Coin.Denomination.QUARTER), new Coin(Coin.Denomination.DIME), 
                 new Coin(Coin.Denomination.NICKEL), new Coin(Coin.Denomination.QUARTER), 
                 new Coin(Coin.Denomination.QUARTER), new Coin(Coin.Denomination.DIME) });
+            
 
+            //Everything below this point appears to be ancient CLI that our ancestors used to purchase sodas
             Console.WriteLine("Welcome to the .NET C# Soda Vending Machine");
 
             Boolean timeToExit = false;
