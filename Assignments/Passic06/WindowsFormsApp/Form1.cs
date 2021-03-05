@@ -22,7 +22,7 @@ namespace WindowsFormsApp
 
             //Does this part actually create the forms app??
             InitializeComponent();
-
+            
             //At first I had my PurchasePrice, CanRack, and CoinBox declarations here - but nothing worked. Why was that??
         }
 
@@ -46,34 +46,50 @@ namespace WindowsFormsApp
         CoinBox tempBox = new CoinBox();
 
         //I will try to program some of my own stuff here
+        
+        //I am not sure why this does not work
+        //textBoxTotalMoneyInserted.Text = ;
 
-        textBoxTotalMoney
-
-
+        public void UpdateTempBoxTextBox()
+        {
+            textBoxTotalMoneyInserted.Text = tempBox.ValueOf.ToString();
+        }
 
         //This code inserts a half-dollar in to the temp box
         private void buttonInsertHalfDollar_Click(object sender, EventArgs e)
         {
             //Write code to insert a half-dollar coin in to the temp box
             tempBox.Deposit(Coin.HALFDOLLARCOIN);
+
+            //Update the value of the temp box after inserting
+            UpdateTempBoxTextBox();
         }
 
         private void buttonInsertQuarter_Click(object sender, EventArgs e)
         {
             //Insert a quarter coin in to the temp box
             tempBox.Deposit(Coin.QUARTERCOIN);
+
+            //Update the value of the temp box after inserting
+            UpdateTempBoxTextBox();
         }
 
         private void buttonInsertDime_Click(object sender, EventArgs e)
         {
             //Insert a dime coin in to the temp box
             tempBox.Deposit(Coin.DIMECOIN);
+
+            //Update the value of the temp box after inserting
+            UpdateTempBoxTextBox();
         }
 
         private void buttonInsertNickel_Click(object sender, EventArgs e)
         {
             //Insert a nickel coin in to the temp box
             tempBox.Deposit(Coin.NICKELCOIN);
+
+            //Update the value of the temp box after inserting
+            UpdateTempBoxTextBox();
         }
 
         private void buttonCoinReturn_Click(object sender, EventArgs e)
@@ -83,6 +99,11 @@ namespace WindowsFormsApp
 
             //Withdraw the current value from the tempBox
             tempBox.Withdraw(amountInTempBox);
+
+            //Update the value of the temp box after returning coins
+            UpdateTempBoxTextBox();
         }
+
+
     }
 }
