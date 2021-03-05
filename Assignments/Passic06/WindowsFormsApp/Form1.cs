@@ -52,7 +52,7 @@ namespace WindowsFormsApp
 
         public void UpdateTempBoxTextBox()
         {
-            textBoxTotalMoneyInserted.Text = tempBox.ValueOf.ToString();
+            textBoxTotalMoneyInserted.Text = tempBox.ValueOf.ToString("C");
         }
 
         //This code inserts a half-dollar in to the temp box
