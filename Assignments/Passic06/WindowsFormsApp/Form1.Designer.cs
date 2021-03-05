@@ -116,6 +116,7 @@ namespace WindowsFormsApp
             this.buttonRegular.TabIndex = 6;
             this.buttonRegular.Text = "Regular";
             this.buttonRegular.UseVisualStyleBackColor = true;
+            this.buttonRegular.Click += new System.EventHandler(this.buttonRegular_Click);
             // 
             // buttonOrange
             // 

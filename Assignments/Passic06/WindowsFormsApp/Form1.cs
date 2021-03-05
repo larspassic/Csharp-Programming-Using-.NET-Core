@@ -104,6 +104,23 @@ namespace WindowsFormsApp
             UpdateTempBoxTextBox();
         }
 
+        private void buttonRegular_Click(object sender, EventArgs e)
+        {
+            //Check if there is enough money in the temp box compared to the purchase price - to buy a soda
 
+            //Check if the rack of this type of soda is not empty
+
+            //If those are both true:
+            
+            //Eject the soda out to the user, and remove one soda from the rack
+
+            //Make change using tempbox minus purchase price
+
+            //Communicate change being returned to user
+
+            //Check to see if this flavor is out and disable the button
+
+
+        }
     }
 }
