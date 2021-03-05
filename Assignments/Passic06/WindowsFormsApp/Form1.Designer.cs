@@ -46,6 +46,7 @@ namespace WindowsFormsApp
             this.buttonInsertQuarter = new System.Windows.Forms.Button();
             this.buttonInsertDime = new System.Windows.Forms.Button();
             this.buttonInsertNickel = new System.Windows.Forms.Button();
+            this.richTextBoxCoinReturnTray = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegularFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrangeFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLemonFlavor)).BeginInit();
@@ -138,7 +139,8 @@ namespace WindowsFormsApp
             // 
             // textBoxTotalMoneyInserted
             // 
-            this.textBoxTotalMoneyInserted.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxTotalMoneyInserted.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textBoxTotalMoneyInserted.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTotalMoneyInserted.Location = new System.Drawing.Point(673, 41);
             this.textBoxTotalMoneyInserted.Name = "textBoxTotalMoneyInserted";
             this.textBoxTotalMoneyInserted.ReadOnly = true;
@@ -147,7 +149,7 @@ namespace WindowsFormsApp
             // 
             // buttonCoinReturn
             // 
-            this.buttonCoinReturn.Location = new System.Drawing.Point(709, 86);
+            this.buttonCoinReturn.Location = new System.Drawing.Point(687, 347);
             this.buttonCoinReturn.Name = "buttonCoinReturn";
             this.buttonCoinReturn.Size = new System.Drawing.Size(86, 23);
             this.buttonCoinReturn.TabIndex = 10;
@@ -158,7 +160,7 @@ namespace WindowsFormsApp
             // labelInsertCoins
             // 
             this.labelInsertCoins.AutoSize = true;
-            this.labelInsertCoins.Location = new System.Drawing.Point(673, 217);
+            this.labelInsertCoins.Location = new System.Drawing.Point(698, 139);
             this.labelInsertCoins.Name = "labelInsertCoins";
             this.labelInsertCoins.Size = new System.Drawing.Size(72, 15);
             this.labelInsertCoins.TabIndex = 11;
@@ -166,7 +168,7 @@ namespace WindowsFormsApp
             // 
             // buttonInsertHalfDollar
             // 
-            this.buttonInsertHalfDollar.Location = new System.Drawing.Point(673, 235);
+            this.buttonInsertHalfDollar.Location = new System.Drawing.Point(698, 157);
             this.buttonInsertHalfDollar.Name = "buttonInsertHalfDollar";
             this.buttonInsertHalfDollar.Size = new System.Drawing.Size(75, 23);
             this.buttonInsertHalfDollar.TabIndex = 12;
@@ -176,7 +178,7 @@ namespace WindowsFormsApp
             // 
             // buttonInsertQuarter
             // 
-            this.buttonInsertQuarter.Location = new System.Drawing.Point(673, 265);
+            this.buttonInsertQuarter.Location = new System.Drawing.Point(698, 187);
             this.buttonInsertQuarter.Name = "buttonInsertQuarter";
             this.buttonInsertQuarter.Size = new System.Drawing.Size(75, 23);
             this.buttonInsertQuarter.TabIndex = 13;
@@ -186,7 +188,7 @@ namespace WindowsFormsApp
             // 
             // buttonInsertDime
             // 
-            this.buttonInsertDime.Location = new System.Drawing.Point(673, 295);
+            this.buttonInsertDime.Location = new System.Drawing.Point(698, 217);
             this.buttonInsertDime.Name = "buttonInsertDime";
             this.buttonInsertDime.Size = new System.Drawing.Size(75, 23);
             this.buttonInsertDime.TabIndex = 14;
@@ -196,7 +198,7 @@ namespace WindowsFormsApp
             // 
             // buttonInsertNickel
             // 
-            this.buttonInsertNickel.Location = new System.Drawing.Point(673, 325);
+            this.buttonInsertNickel.Location = new System.Drawing.Point(698, 247);
             this.buttonInsertNickel.Name = "buttonInsertNickel";
             this.buttonInsertNickel.Size = new System.Drawing.Size(75, 23);
             this.buttonInsertNickel.TabIndex = 15;
@@ -204,11 +206,21 @@ namespace WindowsFormsApp
             this.buttonInsertNickel.UseVisualStyleBackColor = true;
             this.buttonInsertNickel.Click += new System.EventHandler(this.buttonInsertNickel_Click);
             // 
+            // richTextBoxCoinReturnTray
+            // 
+            this.richTextBoxCoinReturnTray.BackColor = System.Drawing.SystemColors.Menu;
+            this.richTextBoxCoinReturnTray.Location = new System.Drawing.Point(580, 376);
+            this.richTextBoxCoinReturnTray.Name = "richTextBoxCoinReturnTray";
+            this.richTextBoxCoinReturnTray.Size = new System.Drawing.Size(193, 62);
+            this.richTextBoxCoinReturnTray.TabIndex = 16;
+            this.richTextBoxCoinReturnTray.Text = "";
+            // 
             // FormSodaMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.richTextBoxCoinReturnTray);
             this.Controls.Add(this.buttonInsertNickel);
             this.Controls.Add(this.buttonInsertDime);
             this.Controls.Add(this.buttonInsertQuarter);
@@ -253,6 +265,7 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Button buttonInsertQuarter;
         private System.Windows.Forms.Button buttonInsertDime;
         private System.Windows.Forms.Button buttonInsertNickel;
+        private System.Windows.Forms.RichTextBox richTextBoxCoinReturnTray;
     }
 }
 

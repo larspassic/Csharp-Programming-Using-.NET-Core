@@ -94,14 +94,25 @@ namespace WindowsFormsApp
 
         private void buttonCoinReturn_Click(object sender, EventArgs e)
         {
-            //Take the current value of the box and store it as a varaible
-            decimal amountInTempBox = tempBox.ValueOf;
+            if (tempBox.ValueOf > 0)
+            {
+                //Take the current value of the box and store it as a varaible
+                decimal amountInTempBox = tempBox.ValueOf;
 
-            //Withdraw the current value from the tempBox
-            tempBox.Withdraw(amountInTempBox);
+                //Notify user in the coin return tray
+                richTextBoxCoinReturnTray.Text = $"Clink clink clink!! Returning {amountInTempBox:c} to you!!";
 
-            //Update the value of the temp box after returning coins
-            UpdateTempBoxTextBox();
+                //Withdraw the current value from the tempBox
+                tempBox.Withdraw(amountInTempBox);
+
+                //Update the value of the temp box after returning coins
+                UpdateTempBoxTextBox();
+            }
+            else
+            {
+                richTextBoxCoinReturnTray.Text = "";
+            }
+
         }
 
         private void buttonRegular_Click(object sender, EventArgs e)
