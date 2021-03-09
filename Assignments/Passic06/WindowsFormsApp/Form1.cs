@@ -15,10 +15,6 @@ namespace WindowsFormsApp
     {
         public FormSodaMachine()
         {
-            //Demo in class with Kevin
-            //CanRack therackX = new CanRack();
-
-            //Does this part create the forms app?? Looks like it does
             InitializeComponent();
 
             //disable the buttons on startup
@@ -26,8 +22,8 @@ namespace WindowsFormsApp
             buttonOrange.Enabled = false;
             buttonLemon.Enabled = false;
 
+            //Set the exact change label
             labelExactChangeRequired.Visible = !changeBox.CanMakeChange;
-            //At first I had my PurchasePrice, CanRack, and CoinBox declarations here - but nothing worked. Why was that??
         }
 
         //Establish today's soda purcahse price
@@ -50,15 +46,11 @@ namespace WindowsFormsApp
         //Create another CoinBox object which holds coins temporarily while the user inserts them
         CoinBox tempBox = new CoinBox();
 
-        //I will try to program some of my own stuff here
-
-        //I am not sure why this does not work
-        //textBoxTotalMoneyInserted.Text = ;
-
         public void UpdateTempBoxTextBox()
         {
             textBoxTotalMoneyInserted.Text = tempBox.ValueOf.ToString("C");
         }
+
 
         //
         //This section is all of the "Insert coin" buttons
@@ -83,7 +75,10 @@ namespace WindowsFormsApp
             DepositCoin(Coin.NICKELCOIN);
         }
 
+
         //This is the main DepositCoin method that handles the logic
+        //Pass a coin denomination to this method to insert a coin in to the temp box
+        //Also updates each button with can rack stock information during each run of the method
         private void DepositCoin(Coin coinToBeDepositied)
         {
             //Insert a dime coin in to the temp box
@@ -112,12 +107,13 @@ namespace WindowsFormsApp
         }
 
 
-
+        //Event handler for when the Coin Return button is clicked
         private void buttonCoinReturn_Click(object sender, EventArgs e)
         {
                 //Take the current value of the box and store it as a varaible
                 decimal amountInTempBox = tempBox.ValueOf;
-
+                
+                //If there's nothing to return, the coin return box will be reset. Otherwise it will return the coins.
                 ReturnCoins(amountInTempBox);
 
                 //Withdraw the current value from the tempBox
@@ -135,6 +131,7 @@ namespace WindowsFormsApp
             richTextBoxCoinReturnTray.Text = $"\n\n        COIN RETURN TRAY";
         }
 
+
         //Send this method a decimal and it will announce the coin returning to the user
         private void ReturnCoins(decimal amountToBeReturned)
         {
@@ -150,13 +147,8 @@ namespace WindowsFormsApp
 
         }
 
-        ////Call this method and it will reset the coin return tray back to defaults
-        //private void UpdateCoinReturnTray()
-        //{
-        //    //Reset the text to be the default identifier text
-        //    richTextBoxCoinReturnTray.Text = $"\n\n   COIN RETURN TRAY";
-        //}
 
+        //Main method to eject cans of soda - provide with a flavor
         private void EjectCan(Flavor flavorToEject)
         {
             //Do we have enough money and do we have a can of this flavor
