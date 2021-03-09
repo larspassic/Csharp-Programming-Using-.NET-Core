@@ -32,7 +32,8 @@ namespace WindowsFormsApp
         //Create the CanRack object which holds soda counts
         CanRack sodaRack = new CanRack();
 
-        //Create the primary CoinBox object which holds the change - notice that we are adding seed money here!!
+        //Create the primary CoinBox object which holds the change
+        //Adding seed money as a list of coins per the assignment instructions
         CoinBox changeBox = new CoinBox(new List<Coin> {
                 new Coin(Coin.Denomination.QUARTER),
                 new Coin(Coin.Denomination.DIME),
@@ -117,21 +118,45 @@ namespace WindowsFormsApp
 
         private void buttonRegular_Click(object sender, EventArgs e)
         {
-            //Check if there is enough money in the temp box compared to the purchase price - to buy a soda
+            EjectCan();
+        }
 
-            //Check if the rack of this type of soda is not empty
+        private void EjectCan()
+        {
+            //Do we have enough money and do we have a can of this flavor
+            if (tempBox.ValueOf >= sodaPrice.PriceDecimal && sodaRack.IsEmpty(Flavor.REGULAR) == false)
+            {
+                //Check if the change box can make change
+                if (changeBox.CanMakeChange)
+                {
+                    //Make change using tempbox minus purchase price
+                    decimal changeToReturn = tempBox.ValueOf - sodaPrice.PriceDecimal;
 
-            //If those are both true:
-            
-            //Eject the soda out to the user, and remove one soda from the rack
+                    //If there is some change to return
+                    if (changeToReturn > 0M)
+                    {
+                        //Remove the change from the changeBox
+                        changeBox.Withdraw(changeToReturn);
 
-            //Make change using tempbox minus purchase price
+                        //Notify the user
+                        richTextBoxCoinReturnTray.Text = $"Clink clink clink!!\nReturning {changeToReturn:C} in the coin return box.";
+                    }
 
-            //Communicate change being returned to user
+                    //Either way, update the the temp box indicator with zero
+                    textBoxTotalMoneyInserted.Text = "$0.00";
 
-            //Check to see if this flavor is out and disable the button
+                    //Eject the soda out to the user, and remove one soda from the rack
+                    sodaRack.RemoveACanOf(Flavor.REGULAR);
 
+                    //Turn off the eject button
+                    buttonRegular.Enabled = false;
+                    buttonOrange.Enabled = false;
+                    buttonLemon.Enabled = false;
 
+                    //Notify the customer they got a can of soda
+                    MessageBox.Show($"Here is your can of {Flavor.REGULAR}");
+                }
+            }
         }
     }
 }
