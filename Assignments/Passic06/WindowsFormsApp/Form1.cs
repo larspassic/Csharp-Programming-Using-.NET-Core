@@ -15,14 +15,18 @@ namespace WindowsFormsApp
     {
         public FormSodaMachine()
         {
-            //Apparently this section is just for creating the forms app - or something?
-
             //Demo in class with Kevin
             //CanRack therackX = new CanRack();
 
-            //Does this part actually create the forms app??
+            //Does this part create the forms app?? Looks like it does
             InitializeComponent();
-            
+
+            //disable the buttons
+            buttonRegular.Enabled = false;
+            buttonOrange.Enabled = false;
+            buttonLemon.Enabled = false;
+
+            labelExactChangeRequired.Visible = !changeBox.CanMakeChange;
             //At first I had my PurchasePrice, CanRack, and CoinBox declarations here - but nothing worked. Why was that??
         }
 
@@ -47,7 +51,7 @@ namespace WindowsFormsApp
         CoinBox tempBox = new CoinBox();
 
         //I will try to program some of my own stuff here
-        
+
         //I am not sure why this does not work
         //textBoxTotalMoneyInserted.Text = ;
 
@@ -128,7 +132,7 @@ namespace WindowsFormsApp
         private void ReturnCoins()
         {
             //Reset the text to be the default identifier text
-            richTextBoxCoinReturnTray.Text = $"\n\n   COIN RETURN TRAY";
+            richTextBoxCoinReturnTray.Text = $"\n\n        COIN RETURN TRAY";
         }
 
         //Send this method a decimal and it will announce the coin returning to the user
@@ -179,6 +183,9 @@ namespace WindowsFormsApp
 
                     //Transfer the temp box in to the main box
                     tempBox.Transfer(changeBox);
+
+                    //Check the exact change light
+                    labelExactChangeRequired.Visible = !changeBox.CanMakeChange;
 
                     //Eject the soda out to the user, and remove one soda from the rack
                     sodaRack.RemoveACanOf(flavorToEject);
