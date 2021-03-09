@@ -56,42 +56,58 @@ namespace WindowsFormsApp
             textBoxTotalMoneyInserted.Text = tempBox.ValueOf.ToString("C");
         }
 
-        //This code inserts a half-dollar in to the temp box
+        //
+        //This section is all of the "Insert coin" buttons
+        //
         private void buttonInsertHalfDollar_Click(object sender, EventArgs e)
         {
-            //Write code to insert a half-dollar coin in to the temp box
-            tempBox.Deposit(Coin.HALFDOLLARCOIN);
-
-            //Update the value of the temp box after inserting
-            UpdateTempBoxTextBox();
+            DepositCoin(Coin.HALFDOLLARCOIN);
         }
 
         private void buttonInsertQuarter_Click(object sender, EventArgs e)
         {
-            //Insert a quarter coin in to the temp box
-            tempBox.Deposit(Coin.QUARTERCOIN);
-
-            //Update the value of the temp box after inserting
-            UpdateTempBoxTextBox();
+            DepositCoin(Coin.QUARTERCOIN);
         }
 
         private void buttonInsertDime_Click(object sender, EventArgs e)
         {
-            //Insert a dime coin in to the temp box
-            tempBox.Deposit(Coin.DIMECOIN);
-
-            //Update the value of the temp box after inserting
-            UpdateTempBoxTextBox();
+            DepositCoin(Coin.DIMECOIN);
         }
 
         private void buttonInsertNickel_Click(object sender, EventArgs e)
         {
-            //Insert a nickel coin in to the temp box
-            tempBox.Deposit(Coin.NICKELCOIN);
+            DepositCoin(Coin.NICKELCOIN);
+        }
+
+        //This is the main DepositCoin method that handles the logic
+        private void DepositCoin(Coin coinToBeDepositied)
+        {
+            //Insert a dime coin in to the temp box
+            tempBox.Deposit(coinToBeDepositied);
 
             //Update the value of the temp box after inserting
             UpdateTempBoxTextBox();
+
+            //Update the coin return tray
+            UpdateCoinReturnTray();
+
+            //Check if we have enough to buy a soda
+            if (tempBox.ValueOf >= sodaPrice.PriceDecimal)
+            {
+                //For each button, always check to see if that flavor is in-stock
+                buttonRegular.Enabled = !sodaRack.IsEmpty(Flavor.REGULAR);
+                buttonOrange.Enabled = !sodaRack.IsEmpty(Flavor.ORANGE);
+                buttonLemon.Enabled = !sodaRack.IsEmpty(Flavor.LEMON);
+            }
+            else //if we don't have enough to buy a soda - all buttons are disabled
+            {
+                buttonRegular.Enabled = false;
+                buttonOrange.Enabled = false;
+                buttonLemon.Enabled = false;
+            }
         }
+
+
 
         private void buttonCoinReturn_Click(object sender, EventArgs e)
         {
@@ -100,8 +116,7 @@ namespace WindowsFormsApp
                 //Take the current value of the box and store it as a varaible
                 decimal amountInTempBox = tempBox.ValueOf;
 
-                //Notify user in the coin return tray
-                richTextBoxCoinReturnTray.Text = $"Clink clink clink!! Returning {amountInTempBox:c} to you!!";
+                ReturnCoins(amountInTempBox);
 
                 //Withdraw the current value from the tempBox
                 tempBox.Withdraw(amountInTempBox);
@@ -116,15 +131,25 @@ namespace WindowsFormsApp
 
         }
 
-        private void buttonRegular_Click(object sender, EventArgs e)
+
+        //Send this method a decimal and it will announce the coin returning to the user
+        private void ReturnCoins(decimal amountToBeReturned)
         {
-            EjectCan();
+            //Notify user in the coin return tray
+            richTextBoxCoinReturnTray.Text = $"Clink clink clink!!\nReturning {amountToBeReturned:c} in the coin return box.";
         }
 
-        private void EjectCan()
+        //Call this method and it will reset the coin return tray back to defaults
+        private void UpdateCoinReturnTray()
+        {
+            //Reset the text to be the default identifier text
+            richTextBoxCoinReturnTray.Text = $"\n\n   COIN RETURN TRAY";
+        }
+
+        private void EjectCan(Flavor flavorToEject)
         {
             //Do we have enough money and do we have a can of this flavor
-            if (tempBox.ValueOf >= sodaPrice.PriceDecimal && sodaRack.IsEmpty(Flavor.REGULAR) == false)
+            if (tempBox.ValueOf >= sodaPrice.PriceDecimal && sodaRack.IsEmpty(flavorToEject) == false)
             {
                 //Check if the change box can make change
                 if (changeBox.CanMakeChange)
@@ -139,14 +164,14 @@ namespace WindowsFormsApp
                         changeBox.Withdraw(changeToReturn);
 
                         //Notify the user
-                        richTextBoxCoinReturnTray.Text = $"Clink clink clink!!\nReturning {changeToReturn:C} in the coin return box.";
+                        ReturnCoins(changeToReturn);
                     }
 
                     //Either way, update the the temp box indicator with zero
                     textBoxTotalMoneyInserted.Text = "$0.00";
 
                     //Eject the soda out to the user, and remove one soda from the rack
-                    sodaRack.RemoveACanOf(Flavor.REGULAR);
+                    sodaRack.RemoveACanOf(flavorToEject);
 
                     //Turn off the eject button
                     buttonRegular.Enabled = false;
@@ -154,9 +179,25 @@ namespace WindowsFormsApp
                     buttonLemon.Enabled = false;
 
                     //Notify the customer they got a can of soda
-                    MessageBox.Show($"Here is your can of {Flavor.REGULAR}");
+                    MessageBox.Show($"Here is your can of {flavorToEject}");
                 }
             }
+        }
+
+        //Regular button
+        private void buttonRegular_Click(object sender, EventArgs e)
+        {
+            EjectCan(Flavor.REGULAR);
+        }
+        //Orange button
+        private void buttonOrange_Click(object sender, EventArgs e)
+        {
+            EjectCan(Flavor.ORANGE);
+        }
+        //Lemon button
+        private void buttonLemon_Click(object sender, EventArgs e)
+        {
+            EjectCan(Flavor.LEMON);
         }
     }
 }

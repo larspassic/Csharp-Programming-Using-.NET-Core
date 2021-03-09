@@ -127,6 +127,7 @@ namespace WindowsFormsApp
             this.buttonOrange.TabIndex = 7;
             this.buttonOrange.Text = "Orange";
             this.buttonOrange.UseVisualStyleBackColor = true;
+            this.buttonOrange.Click += new System.EventHandler(this.buttonOrange_Click);
             // 
             // buttonLemon
             // 
@@ -136,6 +137,7 @@ namespace WindowsFormsApp
             this.buttonLemon.TabIndex = 8;
             this.buttonLemon.Text = "Lemon";
             this.buttonLemon.UseVisualStyleBackColor = true;
+            this.buttonLemon.Click += new System.EventHandler(this.buttonLemon_Click);
             // 
             // textBoxTotalMoneyInserted
             // 
