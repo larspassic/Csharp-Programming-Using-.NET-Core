@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Supplied_06._0_Vend_Lib;
 
+//Assignment 06
+//Author: Passic, Lars, 2011958
+
 namespace WindowsFormsApp
 {
     public partial class FormSodaMachine : Form
