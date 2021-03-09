@@ -21,7 +21,7 @@ namespace WindowsFormsApp
             //Does this part create the forms app?? Looks like it does
             InitializeComponent();
 
-            //disable the buttons
+            //disable the buttons on startup
             buttonRegular.Enabled = false;
             buttonOrange.Enabled = false;
             buttonLemon.Enabled = false;
@@ -177,27 +177,27 @@ namespace WindowsFormsApp
                         //Notify the user
                         ReturnCoins(changeToReturn);
                     }
-
-                    //Either way, update the the temp box indicator with zero
-                    textBoxTotalMoneyInserted.Text = "$0.00";
-
-                    //Transfer the temp box in to the main box
-                    tempBox.Transfer(changeBox);
-
-                    //Check the exact change light
-                    labelExactChangeRequired.Visible = !changeBox.CanMakeChange;
-
-                    //Eject the soda out to the user, and remove one soda from the rack
-                    sodaRack.RemoveACanOf(flavorToEject);
-
-                    //Turn off the eject button
-                    buttonRegular.Enabled = false;
-                    buttonOrange.Enabled = false;
-                    buttonLemon.Enabled = false;
-
-                    //Notify the customer they got a can of soda
-                    MessageBox.Show($"Here is your can of {flavorToEject}");
                 }
+                //Either way, update the the temp box indicator with zero
+                textBoxTotalMoneyInserted.Text = "$0.00";
+
+                //Transfer the temp box in to the main box
+                tempBox.Transfer(changeBox);
+
+                //Check the exact change light
+                labelExactChangeRequired.Visible = !changeBox.CanMakeChange;
+
+                //Eject the soda out to the user, and remove one soda from the rack
+                sodaRack.RemoveACanOf(flavorToEject);
+
+                //Turn off the eject button
+                buttonRegular.Enabled = false;
+                buttonOrange.Enabled = false;
+                buttonLemon.Enabled = false;
+
+                //Notify the customer they got a can of soda
+                MessageBox.Show($"Here is your can of {flavorToEject}");
+
             }
         }
 

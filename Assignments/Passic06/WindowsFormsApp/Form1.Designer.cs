@@ -65,11 +65,11 @@ namespace WindowsFormsApp
             // 
             this.labelExactChangeRequired.AutoSize = true;
             this.labelExactChangeRequired.ForeColor = System.Drawing.Color.Red;
-            this.labelExactChangeRequired.Location = new System.Drawing.Point(653, 67);
+            this.labelExactChangeRequired.Location = new System.Drawing.Point(144, 49);
             this.labelExactChangeRequired.Name = "labelExactChangeRequired";
-            this.labelExactChangeRequired.Size = new System.Drawing.Size(138, 15);
+            this.labelExactChangeRequired.Size = new System.Drawing.Size(332, 15);
             this.labelExactChangeRequired.TabIndex = 1;
-            this.labelExactChangeRequired.Text = "Exact change is required!";
+            this.labelExactChangeRequired.Text = "WARNING: Exact change is required! No change will be given.";
             // 
             // labelTotalMoneyInserted
             // 
