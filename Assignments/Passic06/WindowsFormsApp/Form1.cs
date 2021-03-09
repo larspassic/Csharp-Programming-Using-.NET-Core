@@ -89,7 +89,7 @@ namespace WindowsFormsApp
             UpdateTempBoxTextBox();
 
             //Update the coin return tray
-            UpdateCoinReturnTray();
+            ReturnCoins();
 
             //Check if we have enough to buy a soda
             if (tempBox.ValueOf >= sodaPrice.PriceDecimal)
@@ -111,8 +111,6 @@ namespace WindowsFormsApp
 
         private void buttonCoinReturn_Click(object sender, EventArgs e)
         {
-            if (tempBox.ValueOf > 0)
-            {
                 //Take the current value of the box and store it as a varaible
                 decimal amountInTempBox = tempBox.ValueOf;
 
@@ -123,28 +121,37 @@ namespace WindowsFormsApp
 
                 //Update the value of the temp box after returning coins
                 UpdateTempBoxTextBox();
-            }
-            else
-            {
-                richTextBoxCoinReturnTray.Text = "";
-            }
-
         }
 
 
-        //Send this method a decimal and it will announce the coin returning to the user
-        private void ReturnCoins(decimal amountToBeReturned)
-        {
-            //Notify user in the coin return tray
-            richTextBoxCoinReturnTray.Text = $"Clink clink clink!!\nReturning {amountToBeReturned:c} in the coin return box.";
-        }
-
-        //Call this method and it will reset the coin return tray back to defaults
-        private void UpdateCoinReturnTray()
+        //Send this method nothing, and it will simply zero out the coin return tray
+        private void ReturnCoins()
         {
             //Reset the text to be the default identifier text
             richTextBoxCoinReturnTray.Text = $"\n\n   COIN RETURN TRAY";
         }
+
+        //Send this method a decimal and it will announce the coin returning to the user
+        private void ReturnCoins(decimal amountToBeReturned)
+        {
+            if (amountToBeReturned > 0M)
+            {
+                //Notify user in the coin return tray
+                richTextBoxCoinReturnTray.Text = $"Clink clink clink!!\nReturning {amountToBeReturned:c} in the coin return box.";
+            }
+            else //no coins to be returned so reset the coin return tray
+            {
+                ReturnCoins();
+            }
+
+        }
+
+        ////Call this method and it will reset the coin return tray back to defaults
+        //private void UpdateCoinReturnTray()
+        //{
+        //    //Reset the text to be the default identifier text
+        //    richTextBoxCoinReturnTray.Text = $"\n\n   COIN RETURN TRAY";
+        //}
 
         private void EjectCan(Flavor flavorToEject)
         {
@@ -169,6 +176,9 @@ namespace WindowsFormsApp
 
                     //Either way, update the the temp box indicator with zero
                     textBoxTotalMoneyInserted.Text = "$0.00";
+
+                    //Transfer the temp box in to the main box
+                    tempBox.Transfer(changeBox);
 
                     //Eject the soda out to the user, and remove one soda from the rack
                     sodaRack.RemoveACanOf(flavorToEject);
