@@ -211,5 +211,34 @@ namespace WindowsFormsApp
         {
             EjectCan(Flavor.LEMON);
         }
+
+        //Service tab entered
+        private void tabService_Enter(object sender, EventArgs e)
+        {
+            RefreshCanStockListBox();
+        }
+
+        private void RefreshCanStockListBox()
+        {
+            //First clear out the old listBox entries
+            listBoxCanStock.Items.Clear();
+
+            //Loop through and make a list entry for each actual can of each flavor type
+            foreach (Flavor aFlavor in FlavorOps.AllFlavors)
+            {
+                for (int i = 0; i < sodaRack[aFlavor]; i++)
+                {
+                    listBoxCanStock.Items.Add($"{aFlavor}");
+                }
+            }
+
+            //Count the total list items
+            numericUpDownCanCount.Value = (listBoxCanStock.Items.Count);
+        }
+
+        private void buttonRefillCanRack_Click(object sender, EventArgs e)
+        {
+            sodaRack.FillTheCanRack();
+        }
     }
 }

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp", "WindowsFormsApp\WindowsFormsApp.csproj", "{A74B9D73-C026-418C-9187-67DCCF1858EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsApp", "WindowsFormsApp\WindowsFormsApp.csproj", "{A74B9D73-C026-418C-9187-67DCCF1858EF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Supplied 6.0 Vend Lib", "Supplied 6.0 Vend Lib\Supplied 6.0 Vend Lib.csproj", "{80F28C11-C5BE-476E-82C8-32E3A2AFECD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{C6A1AFAA-7ADB-4045-8201-AE6F395CC442}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{80F28C11-C5BE-476E-82C8-32E3A2AFECD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80F28C11-C5BE-476E-82C8-32E3A2AFECD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80F28C11-C5BE-476E-82C8-32E3A2AFECD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A1AFAA-7ADB-4045-8201-AE6F395CC442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A1AFAA-7ADB-4045-8201-AE6F395CC442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A1AFAA-7ADB-4045-8201-AE6F395CC442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A1AFAA-7ADB-4045-8201-AE6F395CC442}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
