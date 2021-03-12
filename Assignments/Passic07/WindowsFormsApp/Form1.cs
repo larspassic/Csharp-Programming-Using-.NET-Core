@@ -239,6 +239,7 @@ namespace WindowsFormsApp
         private void buttonRefillCanRack_Click(object sender, EventArgs e)
         {
             sodaRack.FillTheCanRack();
+            RefreshCanStockListBox();
         }
     }
 }
