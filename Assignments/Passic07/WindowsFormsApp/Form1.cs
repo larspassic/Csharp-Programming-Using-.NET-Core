@@ -216,6 +216,18 @@ namespace WindowsFormsApp
         private void tabService_Enter(object sender, EventArgs e)
         {
             RefreshCanStockListBox();
+
+            //First clear out the old listView entries
+            listViewChangeBoxInventory.Items.Clear();
+
+            //Loop through and make a list for each coin type
+            foreach (Coin aCoin in changeBox)
+            {
+
+            }
+
+            //Count the total amount of coins in the change box
+
         }
 
         private void RefreshCanStockListBox()
@@ -240,6 +252,11 @@ namespace WindowsFormsApp
         {
             sodaRack.FillTheCanRack();
             RefreshCanStockListBox();
+        }
+
+        private void buttonEmptyTempBox_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

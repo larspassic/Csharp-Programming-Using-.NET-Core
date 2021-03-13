@@ -61,6 +61,9 @@ namespace WindowsFormsApp
             this.labelService = new System.Windows.Forms.Label();
             this.buttonEmptyTempBox = new System.Windows.Forms.Button();
             this.labelServiceControls = new System.Windows.Forms.Label();
+            this.columnHeaderCoinType = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderCount = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderValue = new System.Windows.Forms.ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegularFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrangeFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLemonFlavor)).BeginInit();
@@ -304,12 +307,17 @@ namespace WindowsFormsApp
             // 
             // listViewChangeBoxInventory
             // 
+            this.listViewChangeBoxInventory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderCoinType,
+            this.columnHeaderCount,
+            this.columnHeaderValue});
             this.listViewChangeBoxInventory.HideSelection = false;
             this.listViewChangeBoxInventory.Location = new System.Drawing.Point(6, 22);
             this.listViewChangeBoxInventory.Name = "listViewChangeBoxInventory";
             this.listViewChangeBoxInventory.Size = new System.Drawing.Size(188, 154);
             this.listViewChangeBoxInventory.TabIndex = 6;
             this.listViewChangeBoxInventory.UseCompatibleStateImageBehavior = false;
+            this.listViewChangeBoxInventory.View = System.Windows.Forms.View.Details;
             // 
             // buttonEmptyChangeBox
             // 
@@ -392,6 +400,7 @@ namespace WindowsFormsApp
             this.buttonEmptyTempBox.TabIndex = 3;
             this.buttonEmptyTempBox.Text = "Empty Temp Box";
             this.buttonEmptyTempBox.UseVisualStyleBackColor = true;
+            this.buttonEmptyTempBox.Click += new System.EventHandler(this.buttonEmptyTempBox_Click);
             // 
             // labelServiceControls
             // 
@@ -401,6 +410,18 @@ namespace WindowsFormsApp
             this.labelServiceControls.Size = new System.Drawing.Size(92, 15);
             this.labelServiceControls.TabIndex = 1;
             this.labelServiceControls.Text = "Service Controls";
+            // 
+            // columnHeaderCoinType
+            // 
+            this.columnHeaderCoinType.Text = "Coin type";
+            // 
+            // columnHeaderCount
+            // 
+            this.columnHeaderCount.Text = "Count";
+            // 
+            // columnHeaderValue
+            // 
+            this.columnHeaderValue.Text = "Value";
             // 
             // FormSodaMachine
             // 
@@ -459,6 +480,9 @@ namespace WindowsFormsApp
         private System.Windows.Forms.GroupBox groupBoxCanStock;
         private System.Windows.Forms.NumericUpDown numericUpDownCanCount;
         private System.Windows.Forms.Label labelCanCount;
+        private System.Windows.Forms.ColumnHeader columnHeaderCoinType;
+        private System.Windows.Forms.ColumnHeader columnHeaderCount;
+        private System.Windows.Forms.ColumnHeader columnHeaderValue;
     }
 }
 
