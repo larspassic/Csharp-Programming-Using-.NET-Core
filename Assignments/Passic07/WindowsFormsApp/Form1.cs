@@ -216,18 +216,42 @@ namespace WindowsFormsApp
         private void tabService_Enter(object sender, EventArgs e)
         {
             RefreshCanStockListBox();
+            RefreshCoinStockListView();
+        }
 
+        private void RefreshCoinStockListView()
+        {
             //First clear out the old listView entries
             listViewChangeBoxInventory.Items.Clear();
 
-            //Loop through and make a list for each coin type
-            foreach (Coin aCoin in changeBox)
+            //Loop through each type of coin and add it to the listview
+            foreach (Coin.Denomination aCoin in Coin.AllDenominations)
             {
+                //Special case to skip SLUGs
+                if (aCoin == Coin.Denomination.SLUG)
+                {
+                    continue;
+                }
 
+                //Create a row item and add two columns to it
+                ListViewItem lviRow = new ListViewItem(aCoin.ToString());
+                lviRow.SubItems.Add($"{changeBox.coinCount(aCoin)}");
+                lviRow.SubItems.Add($"{(Coin.ValueOfCoin(aCoin) * changeBox.coinCount(aCoin)).ToString("C")}");
+
+                //Add the row item to the listview 
+                listViewChangeBoxInventory.Items.Add(lviRow);
             }
 
-            //Count the total amount of coins in the change box
+            //Create a TOTAL row to show the total amount of coins in the coin box
+            ListViewItem lviTotalRow = new ListViewItem("TOTAL");
+            lviTotalRow.Font = new Font(lviTotalRow.Font, lviTotalRow.Font.Style | FontStyle.Bold);
+            lviTotalRow.SubItems.Add($"");
+            lviTotalRow.SubItems.Add($"{changeBox.ValueOf.ToString("C")}");
+            listViewChangeBoxInventory.Items.Add(lviTotalRow);
 
+            //After pulling data in, set to auto resize
+            listViewChangeBoxInventory.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listViewChangeBoxInventory.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void RefreshCanStockListBox()
