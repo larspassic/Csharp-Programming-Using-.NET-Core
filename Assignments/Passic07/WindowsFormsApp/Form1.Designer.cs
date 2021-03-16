@@ -50,6 +50,13 @@ namespace WindowsFormsApp
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabVend = new System.Windows.Forms.TabPage();
             this.tabService = new System.Windows.Forms.TabPage();
+            this.textBoxPasswordBox = new System.Windows.Forms.TextBox();
+            this.groupBoxTempBoxCoinStock = new System.Windows.Forms.GroupBox();
+            this.listViewTempBoxInventory = new System.Windows.Forms.ListView();
+            this.columnHeaderCoinTypeTEMP = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderCointTEMP = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderValueTEMP = new System.Windows.Forms.ColumnHeader();
+            this.buttonEmptyTempBox = new System.Windows.Forms.Button();
             this.groupBoxChangeBoxCoinStock = new System.Windows.Forms.GroupBox();
             this.listViewChangeBoxInventory = new System.Windows.Forms.ListView();
             this.columnHeaderCoinType = new System.Windows.Forms.ColumnHeader();
@@ -62,22 +69,19 @@ namespace WindowsFormsApp
             this.listBoxCanStock = new System.Windows.Forms.ListBox();
             this.buttonRefillCanRack = new System.Windows.Forms.Button();
             this.labelService = new System.Windows.Forms.Label();
-            this.buttonEmptyTempBox = new System.Windows.Forms.Button();
-            this.groupBoxTempBoxCoinStock = new System.Windows.Forms.GroupBox();
-            this.listViewTempBoxInventory = new System.Windows.Forms.ListView();
-            this.columnHeaderCoinTypeTEMP = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderCointTEMP = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderValueTEMP = new System.Windows.Forms.ColumnHeader();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.buttonPasswordSubmit = new System.Windows.Forms.Button();
+            this.labelIncorrectPassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegularFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrangeFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLemonFlavor)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabVend.SuspendLayout();
             this.tabService.SuspendLayout();
+            this.groupBoxTempBoxCoinStock.SuspendLayout();
             this.groupBoxChangeBoxCoinStock.SuspendLayout();
             this.groupBoxCanStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCanCount)).BeginInit();
-            this.groupBoxTempBoxCoinStock.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -282,9 +286,14 @@ namespace WindowsFormsApp
             this.tabVend.TabIndex = 0;
             this.tabVend.Text = "Vend";
             this.tabVend.UseVisualStyleBackColor = true;
+            this.tabVend.Enter += new System.EventHandler(this.tabVend_Enter);
             // 
             // tabService
             // 
+            this.tabService.Controls.Add(this.labelIncorrectPassword);
+            this.tabService.Controls.Add(this.buttonPasswordSubmit);
+            this.tabService.Controls.Add(this.labelPassword);
+            this.tabService.Controls.Add(this.textBoxPasswordBox);
             this.tabService.Controls.Add(this.groupBoxTempBoxCoinStock);
             this.tabService.Controls.Add(this.groupBoxChangeBoxCoinStock);
             this.tabService.Controls.Add(this.groupBoxCanStock);
@@ -297,6 +306,61 @@ namespace WindowsFormsApp
             this.tabService.Text = "Service";
             this.tabService.UseVisualStyleBackColor = true;
             this.tabService.Enter += new System.EventHandler(this.tabService_Enter);
+            // 
+            // textBoxPasswordBox
+            // 
+            this.textBoxPasswordBox.Location = new System.Drawing.Point(320, 385);
+            this.textBoxPasswordBox.Name = "textBoxPasswordBox";
+            this.textBoxPasswordBox.Size = new System.Drawing.Size(100, 23);
+            this.textBoxPasswordBox.TabIndex = 12;
+            this.textBoxPasswordBox.UseSystemPasswordChar = true;
+            // 
+            // groupBoxTempBoxCoinStock
+            // 
+            this.groupBoxTempBoxCoinStock.Controls.Add(this.listViewTempBoxInventory);
+            this.groupBoxTempBoxCoinStock.Controls.Add(this.buttonEmptyTempBox);
+            this.groupBoxTempBoxCoinStock.Location = new System.Drawing.Point(426, 50);
+            this.groupBoxTempBoxCoinStock.Name = "groupBoxTempBoxCoinStock";
+            this.groupBoxTempBoxCoinStock.Size = new System.Drawing.Size(200, 300);
+            this.groupBoxTempBoxCoinStock.TabIndex = 11;
+            this.groupBoxTempBoxCoinStock.TabStop = false;
+            this.groupBoxTempBoxCoinStock.Text = "Temp Box Coin Stock";
+            // 
+            // listViewTempBoxInventory
+            // 
+            this.listViewTempBoxInventory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderCoinTypeTEMP,
+            this.columnHeaderCointTEMP,
+            this.columnHeaderValueTEMP});
+            this.listViewTempBoxInventory.HideSelection = false;
+            this.listViewTempBoxInventory.Location = new System.Drawing.Point(7, 22);
+            this.listViewTempBoxInventory.Name = "listViewTempBoxInventory";
+            this.listViewTempBoxInventory.Size = new System.Drawing.Size(187, 154);
+            this.listViewTempBoxInventory.TabIndex = 4;
+            this.listViewTempBoxInventory.UseCompatibleStateImageBehavior = false;
+            this.listViewTempBoxInventory.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderCoinTypeTEMP
+            // 
+            this.columnHeaderCoinTypeTEMP.Text = "Coin type";
+            // 
+            // columnHeaderCointTEMP
+            // 
+            this.columnHeaderCointTEMP.Text = "Count";
+            // 
+            // columnHeaderValueTEMP
+            // 
+            this.columnHeaderValueTEMP.Text = "Value";
+            // 
+            // buttonEmptyTempBox
+            // 
+            this.buttonEmptyTempBox.Location = new System.Drawing.Point(60, 271);
+            this.buttonEmptyTempBox.Name = "buttonEmptyTempBox";
+            this.buttonEmptyTempBox.Size = new System.Drawing.Size(134, 23);
+            this.buttonEmptyTempBox.TabIndex = 3;
+            this.buttonEmptyTempBox.Text = "Empty Temp Box";
+            this.buttonEmptyTempBox.UseVisualStyleBackColor = true;
+            this.buttonEmptyTempBox.Click += new System.EventHandler(this.buttonEmptyTempBox_Click);
             // 
             // groupBoxChangeBoxCoinStock
             // 
@@ -343,6 +407,7 @@ namespace WindowsFormsApp
             this.buttonEmptyChangeBox.TabIndex = 2;
             this.buttonEmptyChangeBox.Text = "Empty Change Box";
             this.buttonEmptyChangeBox.UseVisualStyleBackColor = true;
+            this.buttonEmptyChangeBox.Click += new System.EventHandler(this.buttonEmptyChangeBox_Click);
             // 
             // groupBoxCanStock
             // 
@@ -408,52 +473,35 @@ namespace WindowsFormsApp
             this.labelService.TabIndex = 4;
             this.labelService.Text = "Service";
             // 
-            // buttonEmptyTempBox
+            // labelPassword
             // 
-            this.buttonEmptyTempBox.Location = new System.Drawing.Point(60, 271);
-            this.buttonEmptyTempBox.Name = "buttonEmptyTempBox";
-            this.buttonEmptyTempBox.Size = new System.Drawing.Size(134, 23);
-            this.buttonEmptyTempBox.TabIndex = 3;
-            this.buttonEmptyTempBox.Text = "Empty Temp Box";
-            this.buttonEmptyTempBox.UseVisualStyleBackColor = true;
-            this.buttonEmptyTempBox.Click += new System.EventHandler(this.buttonEmptyTempBox_Click);
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(254, 388);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(60, 15);
+            this.labelPassword.TabIndex = 13;
+            this.labelPassword.Text = "Password:";
             // 
-            // groupBoxTempBoxCoinStock
+            // buttonPasswordSubmit
             // 
-            this.groupBoxTempBoxCoinStock.Controls.Add(this.listViewTempBoxInventory);
-            this.groupBoxTempBoxCoinStock.Controls.Add(this.buttonEmptyTempBox);
-            this.groupBoxTempBoxCoinStock.Location = new System.Drawing.Point(426, 50);
-            this.groupBoxTempBoxCoinStock.Name = "groupBoxTempBoxCoinStock";
-            this.groupBoxTempBoxCoinStock.Size = new System.Drawing.Size(200, 300);
-            this.groupBoxTempBoxCoinStock.TabIndex = 11;
-            this.groupBoxTempBoxCoinStock.TabStop = false;
-            this.groupBoxTempBoxCoinStock.Text = "Temp Box Coin Stock";
+            this.buttonPasswordSubmit.Location = new System.Drawing.Point(426, 384);
+            this.buttonPasswordSubmit.Name = "buttonPasswordSubmit";
+            this.buttonPasswordSubmit.Size = new System.Drawing.Size(75, 23);
+            this.buttonPasswordSubmit.TabIndex = 14;
+            this.buttonPasswordSubmit.Text = "Submit";
+            this.buttonPasswordSubmit.UseVisualStyleBackColor = true;
+            this.buttonPasswordSubmit.Click += new System.EventHandler(this.buttonPasswordSubmit_Click);
             // 
-            // listViewTempBoxInventory
+            // labelIncorrectPassword
             // 
-            this.listViewTempBoxInventory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderCoinTypeTEMP,
-            this.columnHeaderCointTEMP,
-            this.columnHeaderValueTEMP});
-            this.listViewTempBoxInventory.HideSelection = false;
-            this.listViewTempBoxInventory.Location = new System.Drawing.Point(7, 22);
-            this.listViewTempBoxInventory.Name = "listViewTempBoxInventory";
-            this.listViewTempBoxInventory.Size = new System.Drawing.Size(187, 154);
-            this.listViewTempBoxInventory.TabIndex = 4;
-            this.listViewTempBoxInventory.UseCompatibleStateImageBehavior = false;
-            this.listViewTempBoxInventory.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeaderCoinTypeTEMP
-            // 
-            this.columnHeaderCoinTypeTEMP.Text = "Coin type";
-            // 
-            // columnHeaderCointTEMP
-            // 
-            this.columnHeaderCointTEMP.Text = "Count";
-            // 
-            // columnHeaderValueTEMP
-            // 
-            this.columnHeaderValueTEMP.Text = "Value";
+            this.labelIncorrectPassword.AutoSize = true;
+            this.labelIncorrectPassword.ForeColor = System.Drawing.Color.Red;
+            this.labelIncorrectPassword.Location = new System.Drawing.Point(271, 367);
+            this.labelIncorrectPassword.Name = "labelIncorrectPassword";
+            this.labelIncorrectPassword.Size = new System.Drawing.Size(198, 15);
+            this.labelIncorrectPassword.TabIndex = 15;
+            this.labelIncorrectPassword.Text = "Incorrect password. Please try again.";
+            this.labelIncorrectPassword.Visible = false;
             // 
             // FormSodaMachine
             // 
@@ -471,11 +519,11 @@ namespace WindowsFormsApp
             this.tabVend.PerformLayout();
             this.tabService.ResumeLayout(false);
             this.tabService.PerformLayout();
+            this.groupBoxTempBoxCoinStock.ResumeLayout(false);
             this.groupBoxChangeBoxCoinStock.ResumeLayout(false);
             this.groupBoxCanStock.ResumeLayout(false);
             this.groupBoxCanStock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCanCount)).EndInit();
-            this.groupBoxTempBoxCoinStock.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -520,6 +568,10 @@ namespace WindowsFormsApp
         private System.Windows.Forms.ColumnHeader columnHeaderCoinTypeTEMP;
         private System.Windows.Forms.ColumnHeader columnHeaderCointTEMP;
         private System.Windows.Forms.ColumnHeader columnHeaderValueTEMP;
+        private System.Windows.Forms.TextBox textBoxPasswordBox;
+        private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Button buttonPasswordSubmit;
+        private System.Windows.Forms.Label labelIncorrectPassword;
     }
 }
 

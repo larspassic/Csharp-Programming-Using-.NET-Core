@@ -21,12 +21,10 @@ namespace WindowsFormsApp
             InitializeComponent();
 
             //disable the buttons on startup
-            buttonRegular.Enabled = false;
-            buttonOrange.Enabled = false;
-            buttonLemon.Enabled = false;
+            RefreshSodaButtons();
 
             //Set the exact change label
-            labelExactChangeRequired.Visible = !changeBox.CanMakeChange;
+            RefreshExactChangeWarningLabel();
         }
 
         //Establish today's soda purcahse price
@@ -34,6 +32,12 @@ namespace WindowsFormsApp
 
         //Create the CanRack object which holds soda counts
         CanRack sodaRack = new CanRack();
+
+        //Security check for the service tab - locked by default
+        bool isLocked = true;
+
+        //Hard-code the password as a string?
+        string actualPassword = "service";
 
         //Create the primary CoinBox object which holds the change
         //Adding seed money as a list of coins per the assignment instructions
@@ -49,7 +53,7 @@ namespace WindowsFormsApp
         //Create another CoinBox object which holds coins temporarily while the user inserts them
         CoinBox tempBox = new CoinBox();
 
-        public void UpdateTempBoxTextBox()
+        public void RefreshTempBoxTextBox()
         {
             textBoxTotalMoneyInserted.Text = tempBox.ValueOf.ToString("C");
         }
@@ -88,15 +92,21 @@ namespace WindowsFormsApp
             tempBox.Deposit(coinToBeDepositied);
 
             //Update the value of the temp box after inserting
-            UpdateTempBoxTextBox();
+            RefreshTempBoxTextBox();
 
             //Update the coin return tray
             ReturnCoins();
+            
+            //Refresh the buttons based on soda availability and temp box money
+            RefreshSodaButtons();
+        }
 
+        private void RefreshSodaButtons()
+        {
             //Check if we have enough to buy a soda
             if (tempBox.ValueOf >= sodaPrice.PriceDecimal)
             {
-                //For each button, always check to see if that flavor is in-stock
+                //For each button, always check to see if that flavor is in-stock, and if so, enable the button
                 buttonRegular.Enabled = !sodaRack.IsEmpty(Flavor.REGULAR);
                 buttonOrange.Enabled = !sodaRack.IsEmpty(Flavor.ORANGE);
                 buttonLemon.Enabled = !sodaRack.IsEmpty(Flavor.LEMON);
@@ -123,7 +133,7 @@ namespace WindowsFormsApp
                 tempBox.Withdraw(amountInTempBox);
 
                 //Update the value of the temp box after returning coins
-                UpdateTempBoxTextBox();
+                RefreshTempBoxTextBox();
         }
 
 
@@ -180,20 +190,24 @@ namespace WindowsFormsApp
                 tempBox.Transfer(changeBox);
 
                 //Check the exact change light
-                labelExactChangeRequired.Visible = !changeBox.CanMakeChange;
+                RefreshExactChangeWarningLabel();
 
                 //Eject the soda out to the user, and remove one soda from the rack
                 sodaRack.RemoveACanOf(flavorToEject);
 
-                //Turn off the eject button
-                buttonRegular.Enabled = false;
-                buttonOrange.Enabled = false;
-                buttonLemon.Enabled = false;
+                //Refresh soda buttons
+                RefreshSodaButtons();
 
                 //Notify the customer they got a can of soda
                 MessageBox.Show($"Here is your can of {flavorToEject}");
 
             }
+        }
+
+        //Method to refresh the warning level for exact change
+        private void RefreshExactChangeWarningLabel()
+        {
+            labelExactChangeRequired.Visible = !changeBox.CanMakeChange;
         }
 
         //Regular button
@@ -212,12 +226,57 @@ namespace WindowsFormsApp
             EjectCan(Flavor.LEMON);
         }
 
+        //Vend tab entered
+        private void tabVend_Enter(object sender, EventArgs e)
+        {
+            RefreshTempBoxTextBox();
+            RefreshExactChangeWarningLabel();
+            RefreshSodaButtons();
+        }
+
         //Service tab entered
         private void tabService_Enter(object sender, EventArgs e)
         {
-            RefreshCanStockListBox();
-            RefreshCoinBoxListView(changeBox, listViewChangeBoxInventory);
-            RefreshCoinBoxListView(tempBox, listViewTempBoxInventory);
+            RefreshServiceTab();
+
+        }
+
+        private void RefreshServiceTab()
+        {
+            //things to do if service tab is locked
+            if (isLocked == true)
+            {
+                //Make the group boxes locked
+                labelService.Text = "Service is locked";
+                groupBoxCanStock.Visible = false;
+                groupBoxChangeBoxCoinStock.Visible = false;
+                groupBoxTempBoxCoinStock.Visible = false;
+
+                //Make the password elements visible
+                labelPassword.Visible = true;
+                textBoxPasswordBox.Visible = true;
+
+            }
+
+            //Things to do if the service tab is unlocked
+            if (isLocked == false)
+            {
+                //Make the password elements invisible
+                labelPassword.Visible = false;
+                textBoxPasswordBox.Visible = false;
+                labelIncorrectPassword.Visible = false;
+                
+                //Make the service tab elements visible
+                labelService.Text = "Service";
+                groupBoxCanStock.Visible = true;
+                groupBoxChangeBoxCoinStock.Visible = true;
+                groupBoxTempBoxCoinStock.Visible = true;
+
+                //Refresh everything
+                RefreshCanStockListBox();
+                RefreshCoinBoxListView(changeBox, listViewChangeBoxInventory);
+                RefreshCoinBoxListView(tempBox, listViewTempBoxInventory);
+            }
         }
 
         private void RefreshCoinBoxListView(CoinBox coinBoxToRead, ListView listViewToRefresh)
@@ -279,9 +338,34 @@ namespace WindowsFormsApp
             RefreshCanStockListBox();
         }
 
+        private void buttonEmptyChangeBox_Click(object sender, EventArgs e)
+        {
+            changeBox.Withdraw(changeBox.ValueOf);
+            RefreshCoinBoxListView(changeBox, listViewChangeBoxInventory);
+        }
+
         private void buttonEmptyTempBox_Click(object sender, EventArgs e)
         {
-            
+            tempBox.Withdraw(tempBox.ValueOf);
+            RefreshCoinBoxListView(tempBox, listViewTempBoxInventory);
+        }
+
+        private void buttonPasswordSubmit_Click(object sender, EventArgs e)
+        {
+            //Load the inserted password in to a variable
+            string insertedPassword = textBoxPasswordBox.Text;
+
+            if (insertedPassword == actualPassword)
+            {
+                textBoxPasswordBox.Text = "";
+                isLocked = false;
+                RefreshServiceTab();
+            }
+            else
+            {
+                textBoxPasswordBox.Text = "";
+                labelIncorrectPassword.Visible = true;
+            }
         }
     }
 }
