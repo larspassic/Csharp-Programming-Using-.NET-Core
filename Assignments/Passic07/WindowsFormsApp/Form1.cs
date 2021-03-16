@@ -251,11 +251,12 @@ namespace WindowsFormsApp
                 groupBoxCanStock.Visible = false;
                 groupBoxChangeBoxCoinStock.Visible = false;
                 groupBoxTempBoxCoinStock.Visible = false;
+                buttonLockServiceTab.Visible = false;
 
                 //Make the password elements visible
                 labelPassword.Visible = true;
                 textBoxPasswordBox.Visible = true;
-
+                buttonPasswordSubmit.Visible = true;
             }
 
             //Things to do if the service tab is unlocked
@@ -265,12 +266,14 @@ namespace WindowsFormsApp
                 labelPassword.Visible = false;
                 textBoxPasswordBox.Visible = false;
                 labelIncorrectPassword.Visible = false;
+                buttonPasswordSubmit.Visible = false;
                 
                 //Make the service tab elements visible
                 labelService.Text = "Service";
                 groupBoxCanStock.Visible = true;
                 groupBoxChangeBoxCoinStock.Visible = true;
                 groupBoxTempBoxCoinStock.Visible = true;
+                buttonLockServiceTab.Visible = true;
 
                 //Refresh everything
                 RefreshCanStockListBox();
@@ -366,6 +369,17 @@ namespace WindowsFormsApp
                 textBoxPasswordBox.Text = "";
                 labelIncorrectPassword.Visible = true;
             }
+        }
+
+        private void textBoxPasswordBox_Enter(object sender, EventArgs e)
+        {
+            ActiveForm.AcceptButton = buttonPasswordSubmit;
+        }
+
+        private void buttonLockServiceTab_Click(object sender, EventArgs e)
+        {
+            isLocked = true;
+            RefreshServiceTab();
         }
     }
 }

@@ -50,6 +50,9 @@ namespace WindowsFormsApp
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabVend = new System.Windows.Forms.TabPage();
             this.tabService = new System.Windows.Forms.TabPage();
+            this.labelIncorrectPassword = new System.Windows.Forms.Label();
+            this.buttonPasswordSubmit = new System.Windows.Forms.Button();
+            this.labelPassword = new System.Windows.Forms.Label();
             this.textBoxPasswordBox = new System.Windows.Forms.TextBox();
             this.groupBoxTempBoxCoinStock = new System.Windows.Forms.GroupBox();
             this.listViewTempBoxInventory = new System.Windows.Forms.ListView();
@@ -69,9 +72,7 @@ namespace WindowsFormsApp
             this.listBoxCanStock = new System.Windows.Forms.ListBox();
             this.buttonRefillCanRack = new System.Windows.Forms.Button();
             this.labelService = new System.Windows.Forms.Label();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.buttonPasswordSubmit = new System.Windows.Forms.Button();
-            this.labelIncorrectPassword = new System.Windows.Forms.Label();
+            this.buttonLockServiceTab = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegularFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrangeFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLemonFlavor)).BeginInit();
@@ -290,6 +291,7 @@ namespace WindowsFormsApp
             // 
             // tabService
             // 
+            this.tabService.Controls.Add(this.buttonLockServiceTab);
             this.tabService.Controls.Add(this.labelIncorrectPassword);
             this.tabService.Controls.Add(this.buttonPasswordSubmit);
             this.tabService.Controls.Add(this.labelPassword);
@@ -307,6 +309,36 @@ namespace WindowsFormsApp
             this.tabService.UseVisualStyleBackColor = true;
             this.tabService.Enter += new System.EventHandler(this.tabService_Enter);
             // 
+            // labelIncorrectPassword
+            // 
+            this.labelIncorrectPassword.AutoSize = true;
+            this.labelIncorrectPassword.ForeColor = System.Drawing.Color.Red;
+            this.labelIncorrectPassword.Location = new System.Drawing.Point(271, 367);
+            this.labelIncorrectPassword.Name = "labelIncorrectPassword";
+            this.labelIncorrectPassword.Size = new System.Drawing.Size(198, 15);
+            this.labelIncorrectPassword.TabIndex = 15;
+            this.labelIncorrectPassword.Text = "Incorrect password. Please try again.";
+            this.labelIncorrectPassword.Visible = false;
+            // 
+            // buttonPasswordSubmit
+            // 
+            this.buttonPasswordSubmit.Location = new System.Drawing.Point(426, 384);
+            this.buttonPasswordSubmit.Name = "buttonPasswordSubmit";
+            this.buttonPasswordSubmit.Size = new System.Drawing.Size(75, 23);
+            this.buttonPasswordSubmit.TabIndex = 14;
+            this.buttonPasswordSubmit.Text = "Submit";
+            this.buttonPasswordSubmit.UseVisualStyleBackColor = true;
+            this.buttonPasswordSubmit.Click += new System.EventHandler(this.buttonPasswordSubmit_Click);
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(254, 388);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(60, 15);
+            this.labelPassword.TabIndex = 13;
+            this.labelPassword.Text = "Password:";
+            // 
             // textBoxPasswordBox
             // 
             this.textBoxPasswordBox.Location = new System.Drawing.Point(320, 385);
@@ -314,6 +346,7 @@ namespace WindowsFormsApp
             this.textBoxPasswordBox.Size = new System.Drawing.Size(100, 23);
             this.textBoxPasswordBox.TabIndex = 12;
             this.textBoxPasswordBox.UseSystemPasswordChar = true;
+            this.textBoxPasswordBox.Enter += new System.EventHandler(this.textBoxPasswordBox_Enter);
             // 
             // groupBoxTempBoxCoinStock
             // 
@@ -473,35 +506,15 @@ namespace WindowsFormsApp
             this.labelService.TabIndex = 4;
             this.labelService.Text = "Service";
             // 
-            // labelPassword
+            // buttonLockServiceTab
             // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(254, 388);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(60, 15);
-            this.labelPassword.TabIndex = 13;
-            this.labelPassword.Text = "Password:";
-            // 
-            // buttonPasswordSubmit
-            // 
-            this.buttonPasswordSubmit.Location = new System.Drawing.Point(426, 384);
-            this.buttonPasswordSubmit.Name = "buttonPasswordSubmit";
-            this.buttonPasswordSubmit.Size = new System.Drawing.Size(75, 23);
-            this.buttonPasswordSubmit.TabIndex = 14;
-            this.buttonPasswordSubmit.Text = "Submit";
-            this.buttonPasswordSubmit.UseVisualStyleBackColor = true;
-            this.buttonPasswordSubmit.Click += new System.EventHandler(this.buttonPasswordSubmit_Click);
-            // 
-            // labelIncorrectPassword
-            // 
-            this.labelIncorrectPassword.AutoSize = true;
-            this.labelIncorrectPassword.ForeColor = System.Drawing.Color.Red;
-            this.labelIncorrectPassword.Location = new System.Drawing.Point(271, 367);
-            this.labelIncorrectPassword.Name = "labelIncorrectPassword";
-            this.labelIncorrectPassword.Size = new System.Drawing.Size(198, 15);
-            this.labelIncorrectPassword.TabIndex = 15;
-            this.labelIncorrectPassword.Text = "Incorrect password. Please try again.";
-            this.labelIncorrectPassword.Visible = false;
+            this.buttonLockServiceTab.Location = new System.Drawing.Point(618, 384);
+            this.buttonLockServiceTab.Name = "buttonLockServiceTab";
+            this.buttonLockServiceTab.Size = new System.Drawing.Size(132, 23);
+            this.buttonLockServiceTab.TabIndex = 16;
+            this.buttonLockServiceTab.Text = "Lock Service Tab 🔒";
+            this.buttonLockServiceTab.UseVisualStyleBackColor = true;
+            this.buttonLockServiceTab.Click += new System.EventHandler(this.buttonLockServiceTab_Click);
             // 
             // FormSodaMachine
             // 
@@ -572,6 +585,7 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Button buttonPasswordSubmit;
         private System.Windows.Forms.Label labelIncorrectPassword;
+        private System.Windows.Forms.Button buttonLockServiceTab;
     }
 }
 
