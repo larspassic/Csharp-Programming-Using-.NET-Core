@@ -216,13 +216,14 @@ namespace WindowsFormsApp
         private void tabService_Enter(object sender, EventArgs e)
         {
             RefreshCanStockListBox();
-            RefreshCoinStockListView();
+            RefreshCoinBoxListView(changeBox, listViewChangeBoxInventory);
+            RefreshCoinBoxListView(tempBox, listViewTempBoxInventory);
         }
 
-        private void RefreshCoinStockListView()
+        private void RefreshCoinBoxListView(CoinBox coinBoxToRead, ListView listViewToRefresh)
         {
             //First clear out the old listView entries
-            listViewChangeBoxInventory.Items.Clear();
+            listViewToRefresh.Items.Clear();
 
             //Loop through each type of coin and add it to the listview
             foreach (Coin.Denomination aCoin in Coin.AllDenominations)
@@ -235,23 +236,23 @@ namespace WindowsFormsApp
 
                 //Create a row item and add two columns to it
                 ListViewItem lviRow = new ListViewItem(aCoin.ToString());
-                lviRow.SubItems.Add($"{changeBox.coinCount(aCoin)}");
-                lviRow.SubItems.Add($"{(Coin.ValueOfCoin(aCoin) * changeBox.coinCount(aCoin)).ToString("C")}");
+                lviRow.SubItems.Add($"{coinBoxToRead.coinCount(aCoin)}");
+                lviRow.SubItems.Add($"{(Coin.ValueOfCoin(aCoin) * coinBoxToRead.coinCount(aCoin)).ToString("C")}");
 
                 //Add the row item to the listview 
-                listViewChangeBoxInventory.Items.Add(lviRow);
+                listViewToRefresh.Items.Add(lviRow);
             }
 
             //Create a TOTAL row to show the total amount of coins in the coin box
             ListViewItem lviTotalRow = new ListViewItem("TOTAL");
             lviTotalRow.Font = new Font(lviTotalRow.Font, lviTotalRow.Font.Style | FontStyle.Bold);
             lviTotalRow.SubItems.Add($"");
-            lviTotalRow.SubItems.Add($"{changeBox.ValueOf.ToString("C")}");
-            listViewChangeBoxInventory.Items.Add(lviTotalRow);
+            lviTotalRow.SubItems.Add($"{coinBoxToRead.ValueOf.ToString("C")}");
+            listViewToRefresh.Items.Add(lviTotalRow);
 
             //After pulling data in, set to auto resize
-            listViewChangeBoxInventory.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            listViewChangeBoxInventory.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            listViewToRefresh.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listViewToRefresh.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void RefreshCanStockListBox()

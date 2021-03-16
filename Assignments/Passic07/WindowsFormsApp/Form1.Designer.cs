@@ -52,6 +52,9 @@ namespace WindowsFormsApp
             this.tabService = new System.Windows.Forms.TabPage();
             this.groupBoxChangeBoxCoinStock = new System.Windows.Forms.GroupBox();
             this.listViewChangeBoxInventory = new System.Windows.Forms.ListView();
+            this.columnHeaderCoinType = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderCount = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderValue = new System.Windows.Forms.ColumnHeader();
             this.buttonEmptyChangeBox = new System.Windows.Forms.Button();
             this.groupBoxCanStock = new System.Windows.Forms.GroupBox();
             this.numericUpDownCanCount = new System.Windows.Forms.NumericUpDown();
@@ -60,10 +63,11 @@ namespace WindowsFormsApp
             this.buttonRefillCanRack = new System.Windows.Forms.Button();
             this.labelService = new System.Windows.Forms.Label();
             this.buttonEmptyTempBox = new System.Windows.Forms.Button();
-            this.labelServiceControls = new System.Windows.Forms.Label();
-            this.columnHeaderCoinType = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderCount = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderValue = new System.Windows.Forms.ColumnHeader();
+            this.groupBoxTempBoxCoinStock = new System.Windows.Forms.GroupBox();
+            this.listViewTempBoxInventory = new System.Windows.Forms.ListView();
+            this.columnHeaderCoinTypeTEMP = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderCointTEMP = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderValueTEMP = new System.Windows.Forms.ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegularFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrangeFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLemonFlavor)).BeginInit();
@@ -73,6 +77,7 @@ namespace WindowsFormsApp
             this.groupBoxChangeBoxCoinStock.SuspendLayout();
             this.groupBoxCanStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCanCount)).BeginInit();
+            this.groupBoxTempBoxCoinStock.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -280,11 +285,10 @@ namespace WindowsFormsApp
             // 
             // tabService
             // 
+            this.tabService.Controls.Add(this.groupBoxTempBoxCoinStock);
             this.tabService.Controls.Add(this.groupBoxChangeBoxCoinStock);
             this.tabService.Controls.Add(this.groupBoxCanStock);
             this.tabService.Controls.Add(this.labelService);
-            this.tabService.Controls.Add(this.buttonEmptyTempBox);
-            this.tabService.Controls.Add(this.labelServiceControls);
             this.tabService.Location = new System.Drawing.Point(4, 24);
             this.tabService.Name = "tabService";
             this.tabService.Padding = new System.Windows.Forms.Padding(3);
@@ -298,7 +302,7 @@ namespace WindowsFormsApp
             // 
             this.groupBoxChangeBoxCoinStock.Controls.Add(this.listViewChangeBoxInventory);
             this.groupBoxChangeBoxCoinStock.Controls.Add(this.buttonEmptyChangeBox);
-            this.groupBoxChangeBoxCoinStock.Location = new System.Drawing.Point(244, 50);
+            this.groupBoxChangeBoxCoinStock.Location = new System.Drawing.Point(220, 50);
             this.groupBoxChangeBoxCoinStock.Name = "groupBoxChangeBoxCoinStock";
             this.groupBoxChangeBoxCoinStock.Size = new System.Drawing.Size(200, 300);
             this.groupBoxChangeBoxCoinStock.TabIndex = 10;
@@ -318,6 +322,18 @@ namespace WindowsFormsApp
             this.listViewChangeBoxInventory.TabIndex = 6;
             this.listViewChangeBoxInventory.UseCompatibleStateImageBehavior = false;
             this.listViewChangeBoxInventory.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderCoinType
+            // 
+            this.columnHeaderCoinType.Text = "Coin type";
+            // 
+            // columnHeaderCount
+            // 
+            this.columnHeaderCount.Text = "Count";
+            // 
+            // columnHeaderValue
+            // 
+            this.columnHeaderValue.Text = "Value";
             // 
             // buttonEmptyChangeBox
             // 
@@ -394,7 +410,7 @@ namespace WindowsFormsApp
             // 
             // buttonEmptyTempBox
             // 
-            this.buttonEmptyTempBox.Location = new System.Drawing.Point(614, 136);
+            this.buttonEmptyTempBox.Location = new System.Drawing.Point(60, 271);
             this.buttonEmptyTempBox.Name = "buttonEmptyTempBox";
             this.buttonEmptyTempBox.Size = new System.Drawing.Size(134, 23);
             this.buttonEmptyTempBox.TabIndex = 3;
@@ -402,26 +418,42 @@ namespace WindowsFormsApp
             this.buttonEmptyTempBox.UseVisualStyleBackColor = true;
             this.buttonEmptyTempBox.Click += new System.EventHandler(this.buttonEmptyTempBox_Click);
             // 
-            // labelServiceControls
+            // groupBoxTempBoxCoinStock
             // 
-            this.labelServiceControls.AutoSize = true;
-            this.labelServiceControls.Location = new System.Drawing.Point(636, 50);
-            this.labelServiceControls.Name = "labelServiceControls";
-            this.labelServiceControls.Size = new System.Drawing.Size(92, 15);
-            this.labelServiceControls.TabIndex = 1;
-            this.labelServiceControls.Text = "Service Controls";
+            this.groupBoxTempBoxCoinStock.Controls.Add(this.listViewTempBoxInventory);
+            this.groupBoxTempBoxCoinStock.Controls.Add(this.buttonEmptyTempBox);
+            this.groupBoxTempBoxCoinStock.Location = new System.Drawing.Point(426, 50);
+            this.groupBoxTempBoxCoinStock.Name = "groupBoxTempBoxCoinStock";
+            this.groupBoxTempBoxCoinStock.Size = new System.Drawing.Size(200, 300);
+            this.groupBoxTempBoxCoinStock.TabIndex = 11;
+            this.groupBoxTempBoxCoinStock.TabStop = false;
+            this.groupBoxTempBoxCoinStock.Text = "Temp Box Coin Stock";
             // 
-            // columnHeaderCoinType
+            // listViewTempBoxInventory
             // 
-            this.columnHeaderCoinType.Text = "Coin type";
+            this.listViewTempBoxInventory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderCoinTypeTEMP,
+            this.columnHeaderCointTEMP,
+            this.columnHeaderValueTEMP});
+            this.listViewTempBoxInventory.HideSelection = false;
+            this.listViewTempBoxInventory.Location = new System.Drawing.Point(7, 22);
+            this.listViewTempBoxInventory.Name = "listViewTempBoxInventory";
+            this.listViewTempBoxInventory.Size = new System.Drawing.Size(187, 154);
+            this.listViewTempBoxInventory.TabIndex = 4;
+            this.listViewTempBoxInventory.UseCompatibleStateImageBehavior = false;
+            this.listViewTempBoxInventory.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeaderCount
+            // columnHeaderCoinTypeTEMP
             // 
-            this.columnHeaderCount.Text = "Count";
+            this.columnHeaderCoinTypeTEMP.Text = "Coin type";
             // 
-            // columnHeaderValue
+            // columnHeaderCointTEMP
             // 
-            this.columnHeaderValue.Text = "Value";
+            this.columnHeaderCointTEMP.Text = "Count";
+            // 
+            // columnHeaderValueTEMP
+            // 
+            this.columnHeaderValueTEMP.Text = "Value";
             // 
             // FormSodaMachine
             // 
@@ -443,6 +475,7 @@ namespace WindowsFormsApp
             this.groupBoxCanStock.ResumeLayout(false);
             this.groupBoxCanStock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCanCount)).EndInit();
+            this.groupBoxTempBoxCoinStock.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -473,7 +506,6 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Label labelService;
         private System.Windows.Forms.Button buttonEmptyTempBox;
         private System.Windows.Forms.Button buttonEmptyChangeBox;
-        private System.Windows.Forms.Label labelServiceControls;
         private System.Windows.Forms.ListView listViewChangeBoxInventory;
         private System.Windows.Forms.ListBox listBoxCanStock;
         private System.Windows.Forms.GroupBox groupBoxChangeBoxCoinStock;
@@ -483,6 +515,11 @@ namespace WindowsFormsApp
         private System.Windows.Forms.ColumnHeader columnHeaderCoinType;
         private System.Windows.Forms.ColumnHeader columnHeaderCount;
         private System.Windows.Forms.ColumnHeader columnHeaderValue;
+        private System.Windows.Forms.GroupBox groupBoxTempBoxCoinStock;
+        private System.Windows.Forms.ListView listViewTempBoxInventory;
+        private System.Windows.Forms.ColumnHeader columnHeaderCoinTypeTEMP;
+        private System.Windows.Forms.ColumnHeader columnHeaderCointTEMP;
+        private System.Windows.Forms.ColumnHeader columnHeaderValueTEMP;
     }
 }
 
