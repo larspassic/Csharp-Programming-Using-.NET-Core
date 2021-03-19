@@ -381,5 +381,11 @@ namespace WindowsFormsApp
             isLocked = true;
             RefreshServiceTab();
         }
+
+        //Button to bring up the service notes form
+        private void buttonServiceNotes_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

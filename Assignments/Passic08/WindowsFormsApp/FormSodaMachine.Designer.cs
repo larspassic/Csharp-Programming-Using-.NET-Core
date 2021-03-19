@@ -50,6 +50,7 @@ namespace WindowsFormsApp
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabVend = new System.Windows.Forms.TabPage();
             this.tabService = new System.Windows.Forms.TabPage();
+            this.buttonLockServiceTab = new System.Windows.Forms.Button();
             this.labelIncorrectPassword = new System.Windows.Forms.Label();
             this.buttonPasswordSubmit = new System.Windows.Forms.Button();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -72,7 +73,7 @@ namespace WindowsFormsApp
             this.listBoxCanStock = new System.Windows.Forms.ListBox();
             this.buttonRefillCanRack = new System.Windows.Forms.Button();
             this.labelService = new System.Windows.Forms.Label();
-            this.buttonLockServiceTab = new System.Windows.Forms.Button();
+            this.buttonServiceNotes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegularFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrangeFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLemonFlavor)).BeginInit();
@@ -291,6 +292,7 @@ namespace WindowsFormsApp
             // 
             // tabService
             // 
+            this.tabService.Controls.Add(this.buttonServiceNotes);
             this.tabService.Controls.Add(this.buttonLockServiceTab);
             this.tabService.Controls.Add(this.labelIncorrectPassword);
             this.tabService.Controls.Add(this.buttonPasswordSubmit);
@@ -308,6 +310,16 @@ namespace WindowsFormsApp
             this.tabService.Text = "Service";
             this.tabService.UseVisualStyleBackColor = true;
             this.tabService.Enter += new System.EventHandler(this.tabService_Enter);
+            // 
+            // buttonLockServiceTab
+            // 
+            this.buttonLockServiceTab.Location = new System.Drawing.Point(618, 384);
+            this.buttonLockServiceTab.Name = "buttonLockServiceTab";
+            this.buttonLockServiceTab.Size = new System.Drawing.Size(132, 23);
+            this.buttonLockServiceTab.TabIndex = 16;
+            this.buttonLockServiceTab.Text = "Lock Service Tab 🔒";
+            this.buttonLockServiceTab.UseVisualStyleBackColor = true;
+            this.buttonLockServiceTab.Click += new System.EventHandler(this.buttonLockServiceTab_Click);
             // 
             // labelIncorrectPassword
             // 
@@ -506,15 +518,15 @@ namespace WindowsFormsApp
             this.labelService.TabIndex = 4;
             this.labelService.Text = "Service";
             // 
-            // buttonLockServiceTab
+            // buttonServiceNotes
             // 
-            this.buttonLockServiceTab.Location = new System.Drawing.Point(618, 384);
-            this.buttonLockServiceTab.Name = "buttonLockServiceTab";
-            this.buttonLockServiceTab.Size = new System.Drawing.Size(132, 23);
-            this.buttonLockServiceTab.TabIndex = 16;
-            this.buttonLockServiceTab.Text = "Lock Service Tab 🔒";
-            this.buttonLockServiceTab.UseVisualStyleBackColor = true;
-            this.buttonLockServiceTab.Click += new System.EventHandler(this.buttonLockServiceTab_Click);
+            this.buttonServiceNotes.Location = new System.Drawing.Point(618, 9);
+            this.buttonServiceNotes.Name = "buttonServiceNotes";
+            this.buttonServiceNotes.Size = new System.Drawing.Size(132, 23);
+            this.buttonServiceNotes.TabIndex = 17;
+            this.buttonServiceNotes.Text = "Service Notes";
+            this.buttonServiceNotes.UseVisualStyleBackColor = true;
+            this.buttonServiceNotes.Click += new System.EventHandler(this.buttonServiceNotes_Click);
             // 
             // FormSodaMachine
             // 
@@ -586,6 +598,7 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Button buttonPasswordSubmit;
         private System.Windows.Forms.Label labelIncorrectPassword;
         private System.Windows.Forms.Button buttonLockServiceTab;
+        private System.Windows.Forms.Button buttonServiceNotes;
     }
 }
 

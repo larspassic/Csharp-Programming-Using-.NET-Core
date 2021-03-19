@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+//Assignment 08
+//Author: Passic, Lars, 2011958
+
 namespace WindowsFormsApp
 {
-    public partial class Form2 : Form
+    public partial class FormServiceNotes : Form
     {
-        public Form2()
+        public FormServiceNotes()
         {
             InitializeComponent();
         }
