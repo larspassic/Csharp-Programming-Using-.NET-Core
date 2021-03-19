@@ -31,11 +31,11 @@ namespace WindowsFormsApp
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemTools = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemNew = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSave = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemTools = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemFilenames = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,19 +62,12 @@ namespace WindowsFormsApp
             this.toolStripMenuItemFile.Size = new System.Drawing.Size(37, 20);
             this.toolStripMenuItemFile.Text = "File";
             // 
-            // toolStripMenuItemTools
-            // 
-            this.toolStripMenuItemTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemFilenames});
-            this.toolStripMenuItemTools.Name = "toolStripMenuItemTools";
-            this.toolStripMenuItemTools.Size = new System.Drawing.Size(46, 20);
-            this.toolStripMenuItemTools.Text = "Tools";
-            // 
             // toolStripMenuItemNew
             // 
             this.toolStripMenuItemNew.Name = "toolStripMenuItemNew";
             this.toolStripMenuItemNew.Size = new System.Drawing.Size(103, 22);
             this.toolStripMenuItemNew.Text = "New";
+            this.toolStripMenuItemNew.Click += new System.EventHandler(this.toolStripMenuItemNew_Click);
             // 
             // toolStripMenuItemOpen
             // 
@@ -94,20 +87,28 @@ namespace WindowsFormsApp
             this.toolStripMenuItemExit.Size = new System.Drawing.Size(103, 22);
             this.toolStripMenuItemExit.Text = "Exit";
             // 
+            // toolStripMenuItemTools
+            // 
+            this.toolStripMenuItemTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemFilenames});
+            this.toolStripMenuItemTools.Name = "toolStripMenuItemTools";
+            this.toolStripMenuItemTools.Size = new System.Drawing.Size(46, 20);
+            this.toolStripMenuItemTools.Text = "Tools";
+            // 
             // toolStripMenuItemFilenames
             // 
             this.toolStripMenuItemFilenames.Name = "toolStripMenuItemFilenames";
             this.toolStripMenuItemFilenames.Size = new System.Drawing.Size(127, 22);
             this.toolStripMenuItemFilenames.Text = "Filenames";
             // 
-            // Form2
+            // FormServiceNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
-            this.Name = "Form2";
+            this.Name = "FormServiceNotes";
             this.Text = "Form2";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
