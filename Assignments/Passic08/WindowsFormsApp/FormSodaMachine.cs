@@ -385,7 +385,8 @@ namespace WindowsFormsApp
         //Button to bring up the service notes form
         private void buttonServiceNotes_Click(object sender, EventArgs e)
         {
-            
+            Form ServiceNotes = new FormServiceNotes();
+            ServiceNotes.Show();
         }
     }
 }

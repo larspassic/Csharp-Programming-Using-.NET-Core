@@ -50,6 +50,7 @@ namespace WindowsFormsApp
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabVend = new System.Windows.Forms.TabPage();
             this.tabService = new System.Windows.Forms.TabPage();
+            this.buttonServiceNotes = new System.Windows.Forms.Button();
             this.buttonLockServiceTab = new System.Windows.Forms.Button();
             this.labelIncorrectPassword = new System.Windows.Forms.Label();
             this.buttonPasswordSubmit = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@ namespace WindowsFormsApp
             this.listBoxCanStock = new System.Windows.Forms.ListBox();
             this.buttonRefillCanRack = new System.Windows.Forms.Button();
             this.labelService = new System.Windows.Forms.Label();
-            this.buttonServiceNotes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegularFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrangeFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLemonFlavor)).BeginInit();
@@ -311,6 +311,16 @@ namespace WindowsFormsApp
             this.tabService.UseVisualStyleBackColor = true;
             this.tabService.Enter += new System.EventHandler(this.tabService_Enter);
             // 
+            // buttonServiceNotes
+            // 
+            this.buttonServiceNotes.Location = new System.Drawing.Point(618, 9);
+            this.buttonServiceNotes.Name = "buttonServiceNotes";
+            this.buttonServiceNotes.Size = new System.Drawing.Size(132, 23);
+            this.buttonServiceNotes.TabIndex = 17;
+            this.buttonServiceNotes.Text = "Service Notes";
+            this.buttonServiceNotes.UseVisualStyleBackColor = true;
+            this.buttonServiceNotes.Click += new System.EventHandler(this.buttonServiceNotes_Click);
+            // 
             // buttonLockServiceTab
             // 
             this.buttonLockServiceTab.Location = new System.Drawing.Point(618, 384);
@@ -356,7 +366,7 @@ namespace WindowsFormsApp
             this.textBoxPasswordBox.Location = new System.Drawing.Point(320, 385);
             this.textBoxPasswordBox.Name = "textBoxPasswordBox";
             this.textBoxPasswordBox.Size = new System.Drawing.Size(100, 23);
-            this.textBoxPasswordBox.TabIndex = 12;
+            this.textBoxPasswordBox.TabIndex = 0;
             this.textBoxPasswordBox.UseSystemPasswordChar = true;
             this.textBoxPasswordBox.Enter += new System.EventHandler(this.textBoxPasswordBox_Enter);
             // 
@@ -517,16 +527,6 @@ namespace WindowsFormsApp
             this.labelService.Size = new System.Drawing.Size(76, 25);
             this.labelService.TabIndex = 4;
             this.labelService.Text = "Service";
-            // 
-            // buttonServiceNotes
-            // 
-            this.buttonServiceNotes.Location = new System.Drawing.Point(618, 9);
-            this.buttonServiceNotes.Name = "buttonServiceNotes";
-            this.buttonServiceNotes.Size = new System.Drawing.Size(132, 23);
-            this.buttonServiceNotes.TabIndex = 17;
-            this.buttonServiceNotes.Text = "Service Notes";
-            this.buttonServiceNotes.UseVisualStyleBackColor = true;
-            this.buttonServiceNotes.Click += new System.EventHandler(this.buttonServiceNotes_Click);
             // 
             // FormSodaMachine
             // 
