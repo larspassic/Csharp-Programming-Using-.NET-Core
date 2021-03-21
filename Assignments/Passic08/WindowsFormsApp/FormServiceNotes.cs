@@ -23,6 +23,11 @@ namespace WindowsFormsApp
         {
             //Create a new note - need to add as a child to the FormServiceNotes form
             Form Note = new FormNote();
+
+            //Make the parent the service notes form
+            Note.MdiParent = this;
+
+            //Actually show the individual note
             Note.Show();
         }
     }
