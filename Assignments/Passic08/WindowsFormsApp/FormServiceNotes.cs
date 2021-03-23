@@ -29,6 +29,8 @@ namespace WindowsFormsApp
 
             //Actually show the individual note
             Note.Show();
+
+            
         }
     }
 }
