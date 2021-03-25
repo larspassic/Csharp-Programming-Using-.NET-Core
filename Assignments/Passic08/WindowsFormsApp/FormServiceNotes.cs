@@ -23,31 +23,42 @@ namespace WindowsFormsApp
         private void toolStripMenuItemNew_Click(object sender, EventArgs e)
         {
             //Create a new note - need to add as a child to the FormServiceNotes form
-            Form Note = new FormNote();
+            Form note = new FormNote();
 
             //Make the parent the service notes form
-            Note.MdiParent = this;
+            note.MdiParent = this;
 
             //Actually show the individual note
-            Note.Show();
+            note.Show();
 
 
         }
 
         private void toolStripMenuItemOpen_Click(object sender, EventArgs e)
         {
+            //Create a new instance of the note child object
+            FormNote note = new FormNote();
+
+            //Make this a child form
+            note.MdiParent = this;
+
+            
             //Use the OpenFileDialog and a new instance of Note to display a file specified by the user
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            //
+            //If the result of the OpbenFileDialog experience was "OK"
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 //stream reader?
                 StreamReader streamReader = new StreamReader(openFileDialog.FileName);
-                ActiveMdiChild. streamReader.ReadToEnd
 
-
+                //Bring the contents in from the streamReader and change the title of the small note window
+                note.NoteContents = streamReader.ReadToEnd();
+                note.Text = openFileDialog.FileName.ToString();
+                note.Show();
             }
+
+
 
         }
 
@@ -63,17 +74,19 @@ namespace WindowsFormsApp
             //If the result of the save file dialog experience was "OK"
             if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
             {
-                //Write the contents of the note to the place that was chosen by the user
-                using (StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName))
+                //Check ActiveMdiChild first to determine what to read in
+                if (this.ActiveMdiChild != null)
                 {
-                    //Use ActiveMDIChild to determine which Note to save to disk
-                    //This is NOT working
-                    //How am I supposed to pull the next out of the currently active child note??
-                    streamWriter.WriteLine(ActiveMdiChild.Text);
+
+                    //Write the contents of the note to the place that was chosen by the user
+                    using (StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName))
+                    {
+                        //use the Active MDI child note object to call the NoteContents property
+                        streamWriter.WriteLine((this.ActiveMdiChild as FormNote).NoteContents);
+                    }
+
                 }
-
             }
-
 
         }
 
