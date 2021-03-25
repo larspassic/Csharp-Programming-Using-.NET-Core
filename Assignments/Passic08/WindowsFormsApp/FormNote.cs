@@ -27,6 +27,9 @@ namespace WindowsFormsApp
             {
                 return textBoxFormNote.Text;
             }
+            
+            //Not sure how to do this.
+            //I need to be able to bring date in to this form note by using this property
             set
             {
                 textBoxFormNote.Text = NoteContents;

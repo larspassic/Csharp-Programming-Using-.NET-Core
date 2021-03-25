@@ -115,7 +115,6 @@ namespace WindowsFormsApp
             this.IsMdiContainer = true;
             this.Name = "FormServiceNotes";
             this.Text = "Service Notes";
-            this.Load += new System.EventHandler(this.FormServiceNotes_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
