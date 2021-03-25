@@ -10,9 +10,29 @@ namespace WindowsFormsApp
 {
     public partial class FormNote : Form
     {
+        
+        
         public FormNote()
         {
             InitializeComponent();
         }
+
+        
+        
+        //Internal property?
+        //"Internal" aka "Project Public" (not available outside the project)
+        internal string NoteContents
+        {
+            get
+            {
+                return textBoxFormNote.Text;
+            }
+            set
+            {
+                textBoxFormNote.Text = NoteContents;
+            }
+        }
+
+
     }
 }

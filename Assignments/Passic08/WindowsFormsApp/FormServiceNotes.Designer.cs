@@ -61,6 +61,7 @@ namespace WindowsFormsApp
             this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
             this.toolStripMenuItemFile.Size = new System.Drawing.Size(37, 20);
             this.toolStripMenuItemFile.Text = "File";
+            this.toolStripMenuItemFile.Click += new System.EventHandler(this.toolStripMenuItemFile_Click);
             // 
             // toolStripMenuItemNew
             // 
@@ -74,18 +75,21 @@ namespace WindowsFormsApp
             this.toolStripMenuItemOpen.Name = "toolStripMenuItemOpen";
             this.toolStripMenuItemOpen.Size = new System.Drawing.Size(103, 22);
             this.toolStripMenuItemOpen.Text = "Open";
+            this.toolStripMenuItemOpen.Click += new System.EventHandler(this.toolStripMenuItemOpen_Click);
             // 
             // toolStripMenuItemSave
             // 
             this.toolStripMenuItemSave.Name = "toolStripMenuItemSave";
             this.toolStripMenuItemSave.Size = new System.Drawing.Size(103, 22);
             this.toolStripMenuItemSave.Text = "Save";
+            this.toolStripMenuItemSave.Click += new System.EventHandler(this.toolStripMenuItemSave_Click);
             // 
             // toolStripMenuItemExit
             // 
             this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
             this.toolStripMenuItemExit.Size = new System.Drawing.Size(103, 22);
             this.toolStripMenuItemExit.Text = "Exit";
+            this.toolStripMenuItemExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
             // 
             // toolStripMenuItemTools
             // 
@@ -110,7 +114,8 @@ namespace WindowsFormsApp
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Name = "FormServiceNotes";
-            this.Text = "Form2";
+            this.Text = "Service Notes";
+            this.Load += new System.EventHandler(this.FormServiceNotes_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

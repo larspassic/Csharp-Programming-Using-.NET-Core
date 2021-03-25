@@ -29,24 +29,24 @@ namespace WindowsFormsApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxFormNote = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxFormNote
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(304, 201);
-            this.textBox1.TabIndex = 0;
+            this.textBoxFormNote.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxFormNote.Location = new System.Drawing.Point(0, 0);
+            this.textBoxFormNote.Multiline = true;
+            this.textBoxFormNote.Name = "textBoxFormNote";
+            this.textBoxFormNote.Size = new System.Drawing.Size(304, 201);
+            this.textBoxFormNote.TabIndex = 0;
             // 
             // FormNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 201);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxFormNote);
             this.Name = "FormNote";
             this.Text = "FormNote";
             this.ResumeLayout(false);
@@ -56,6 +56,6 @@ namespace WindowsFormsApp
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxFormNote;
     }
 }

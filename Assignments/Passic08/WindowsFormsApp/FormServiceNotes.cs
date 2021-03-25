@@ -18,6 +18,8 @@ namespace WindowsFormsApp
             InitializeComponent();
         }
 
+
+
         //When File -> New is clicked
         private void toolStripMenuItemNew_Click(object sender, EventArgs e)
         {
@@ -31,6 +33,40 @@ namespace WindowsFormsApp
             Note.Show();
 
             
+        }
+
+        private void toolStripMenuItemOpen_Click(object sender, EventArgs e)
+        {
+            //Use the OpenFileDialog and a new instance of Note to display a file specified by the user
+
+
+        }
+
+        private void toolStripMenuItemSave_Click(object sender, EventArgs e)
+        {
+            //Use SaveFileDialog to save the contents of a Note to a file.
+            //Use ActiveMDIChild to determine which Note to save to disk.
+            
+        }
+
+        private void FormServiceNotes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItemFile_Click(object sender, EventArgs e)
+        {
+            //Check ActiveMDIChild to activate or deactivate Save button
+            if (this.ActiveMdiChild == null)
+            {
+                toolStripMenuItemSave.Enabled = false;
+            }
+        }
+
+        private void toolStripMenuItemExit_Click(object sender, EventArgs e)
+        {
+            //Close the service notes form
+            this.Close();
         }
     }
 }
