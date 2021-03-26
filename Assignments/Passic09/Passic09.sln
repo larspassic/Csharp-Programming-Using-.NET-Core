@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsApp", "WindowsFormsApp\WindowsFormsApp.csproj", "{A74B9D73-C026-418C-9187-67DCCF1858EF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Supplied 6.0 Vend Lib", "Supplied 6.0 Vend Lib\Supplied 6.0 Vend Lib.csproj", "{9EF3B928-C017-42FF-88D3-C0509AD6E010}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A74B9D73-C026-418C-9187-67DCCF1858EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A74B9D73-C026-418C-9187-67DCCF1858EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A74B9D73-C026-418C-9187-67DCCF1858EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EF3B928-C017-42FF-88D3-C0509AD6E010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EF3B928-C017-42FF-88D3-C0509AD6E010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EF3B928-C017-42FF-88D3-C0509AD6E010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF3B928-C017-42FF-88D3-C0509AD6E010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
