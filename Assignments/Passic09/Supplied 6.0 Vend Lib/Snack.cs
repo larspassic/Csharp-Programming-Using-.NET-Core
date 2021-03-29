@@ -11,6 +11,7 @@ namespace Food
 {
     public abstract class Snack
     {
+        //These are properties
         public readonly PurchasePrice price;
         public readonly string name;
 

@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using System.Text;
 using Supplied_06._0_Vend_Lib;
 
+//Assignment 09
+//Author: Passic, Lars, 2011958
+
 namespace Food
 {
     public class HealthFood : Snack
     {
+        //These are properties?
         public readonly PurchasePrice price;
         public readonly string name;
 
-        public Snack(string name, PurchasePrice price)
+        //This is a constructor
+        public HealthFood(string name, PurchasePrice price, DateTime freshUntil) : base (name, price)
         {
             this.name = name;
             this.price = price;
         }
+
+        public readonly DateTime freshUntil;
 
         public override string ToString()
         {
