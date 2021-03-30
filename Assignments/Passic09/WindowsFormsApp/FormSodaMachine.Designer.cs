@@ -90,11 +90,12 @@ namespace WindowsFormsApp
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTitle.Location = new System.Drawing.Point(109, 12);
+            this.labelTitle.Location = new System.Drawing.Point(100, 16);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(374, 25);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Please insert money to buy a can of soda";
+            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelExactChangeRequired
             // 

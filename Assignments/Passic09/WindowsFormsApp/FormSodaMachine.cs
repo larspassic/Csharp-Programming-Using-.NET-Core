@@ -25,6 +25,9 @@ namespace WindowsFormsApp
 
             //Set the exact change label
             RefreshExactChangeWarningLabel();
+
+            //Update title label with today's price
+            labelTitle.Text = $"Please insert {sodaPrice.PriceDecimal:c} to buy a can of soda";
         }
 
         //Establish today's soda purcahse price
@@ -38,6 +41,8 @@ namespace WindowsFormsApp
 
         //Hard-code the password as a string?
         string actualPassword = "service";
+
+        
 
         //Create the primary CoinBox object which holds the change
         //Adding seed money as a list of coins per the assignment instructions
