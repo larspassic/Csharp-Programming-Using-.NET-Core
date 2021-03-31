@@ -10,9 +10,10 @@ namespace Food
 {
     class Apple : HealthFood
     {
-        public Apple(string name, PurchasePrice price) : base(name, price)
+        //This is a constructor
+        public Apple(string name, PurchasePrice price DateTime freshUntil) : base(name, price)
         {
-
+            
         }
     }
 

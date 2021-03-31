@@ -10,6 +10,7 @@ namespace Food
 {
     class Banana : HealthFood
     {
+        //This is a constructor
         public Banana (string name, PurchasePrice price) : base (name, price)
         {
 
