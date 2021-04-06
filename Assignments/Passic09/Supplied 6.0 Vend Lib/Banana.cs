@@ -11,9 +11,15 @@ namespace Food
     class Banana : HealthFood
     {
         //This is a constructor
-        public Banana (string name, PurchasePrice price) : base (name, price)
+        public Banana (string name, PurchasePrice price) : base (name, price, DateTime.Now.AddDays(7))
         {
 
+        }
+
+        public override string ToString()
+        {
+            string message = "Peel me!";
+            return base.ToString() + message;
         }
     }
 }

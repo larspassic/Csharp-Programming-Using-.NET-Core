@@ -11,7 +11,7 @@ namespace Food
     class PotatoChips : JunkFood
     {
         //This is a constructor
-        public PotatoChips (string name, PurchasePrice price) : base(name, price)
+        public PotatoChips (string name, PurchasePrice price) : base(name, price, 120)
         {
 
         }

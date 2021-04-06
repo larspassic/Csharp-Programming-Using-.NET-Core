@@ -13,9 +13,8 @@ namespace Food
 
 
         //This is a constructor
-        public CandyBar(string name, PurchasePrice price) : base (name, price)
+        public CandyBar(string name, PurchasePrice price) : base (name, price, 160)
         {
-            this.CaloriesFromFat = 5;
         }
 
     }
