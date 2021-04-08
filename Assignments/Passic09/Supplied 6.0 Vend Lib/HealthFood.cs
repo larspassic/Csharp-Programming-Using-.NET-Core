@@ -23,6 +23,7 @@ namespace Food
 
         public readonly DateTime freshUntil;
 
+        //Override ToString to add the snack food name and price
         public override string ToString()
         {
             return $"Snack Food: {name}, {price.PriceDecimal:c}" +
