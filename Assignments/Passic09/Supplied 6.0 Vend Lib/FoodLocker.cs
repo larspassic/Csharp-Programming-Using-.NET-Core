@@ -13,6 +13,11 @@ namespace Food
         public const int MinimumSize = 1;
         public const int MaximumSize = 10;
 
+        public FoodLocker()
+        {
+
+        }
+
         private int size;
         public int Size
         {
@@ -22,6 +27,12 @@ namespace Food
 
 
             }
+        }
+
+        //The stock method loads a list of Snack objects in to the Store field.
+        public void Stock()
+        {
+
         }
 
     }

@@ -278,6 +278,7 @@ namespace Supplied_06._0_Vend_Lib
                 {
                     result = true;
                 }
+                
                 // withdraw an overage if necessary and deposit it into Destination
                 else if (amountLeftToTransfer > 0M && ExceedIfRequired)
                 {
