@@ -17,5 +17,10 @@ namespace Food
         {
         }
 
+        public override object Clone()
+        {
+            return new CandyBar(name, price);
+        }
+
     }
 }

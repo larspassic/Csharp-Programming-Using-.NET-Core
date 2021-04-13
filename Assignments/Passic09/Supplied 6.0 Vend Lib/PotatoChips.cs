@@ -15,5 +15,10 @@ namespace Food
         {
 
         }
+
+        public override object Clone()
+        {
+            return new PotatoChips(name, price);
+        }
     }
 }
