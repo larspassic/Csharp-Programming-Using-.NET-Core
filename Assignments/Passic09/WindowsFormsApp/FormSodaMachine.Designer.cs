@@ -78,6 +78,7 @@ namespace WindowsFormsApp
             this.listBoxSnacks = new System.Windows.Forms.ListBox();
             this.textBoxSnacks = new System.Windows.Forms.TextBox();
             this.labelSnackInfo = new System.Windows.Forms.Label();
+            this.buttonStockSnacks = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegularFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrangeFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLemonFlavor)).BeginInit();
@@ -537,6 +538,7 @@ namespace WindowsFormsApp
             // 
             // tabSnacks
             // 
+            this.tabSnacks.Controls.Add(this.buttonStockSnacks);
             this.tabSnacks.Controls.Add(this.labelSnackInfo);
             this.tabSnacks.Controls.Add(this.textBoxSnacks);
             this.tabSnacks.Controls.Add(this.listBoxSnacks);
@@ -573,6 +575,16 @@ namespace WindowsFormsApp
             this.labelSnackInfo.Size = new System.Drawing.Size(65, 15);
             this.labelSnackInfo.TabIndex = 2;
             this.labelSnackInfo.Text = "Snack info:";
+            // 
+            // buttonStockSnacks
+            // 
+            this.buttonStockSnacks.Location = new System.Drawing.Point(33, 392);
+            this.buttonStockSnacks.Name = "buttonStockSnacks";
+            this.buttonStockSnacks.Size = new System.Drawing.Size(198, 23);
+            this.buttonStockSnacks.TabIndex = 3;
+            this.buttonStockSnacks.Text = "Stock Machine with Snacks";
+            this.buttonStockSnacks.UseVisualStyleBackColor = true;
+            this.buttonStockSnacks.Click += new System.EventHandler(this.buttonStockSnacks_Click);
             // 
             // FormSodaMachine
             // 
@@ -651,6 +663,7 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Label labelSnackInfo;
         private System.Windows.Forms.TextBox textBoxSnacks;
         private System.Windows.Forms.ListBox listBoxSnacks;
+        private System.Windows.Forms.Button buttonStockSnacks;
     }
 }
 

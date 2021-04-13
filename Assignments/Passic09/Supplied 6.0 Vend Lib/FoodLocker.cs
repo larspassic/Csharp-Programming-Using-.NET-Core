@@ -8,7 +8,7 @@ using Supplied_06._0_Vend_Lib;
 
 namespace Food
 {
-    class FoodLocker
+    public class FoodLocker
     {
         public const int MinimumSize = 1;
         public const int MaximumSize = 10;
@@ -56,6 +56,8 @@ namespace Food
         //Method to choose a random snack object
         private Snack chooseRandomSnack()
         {
+            //Dot next returns between minValue and one below maxValue
+            //So no need to do snackCatalog.count-1
             int snackIndex = randomFoodChooser.Next(0, snackCatalog.Count);
             return snackCatalog[snackIndex].Clone() as Snack;
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Supplied_06._0_Vend_Lib;
+using Food;
 
 //Assignment 09
 //Author: Passic, Lars, 2011958
@@ -42,6 +43,9 @@ namespace WindowsFormsApp
         //Hard-code the password as a string?
         string actualPassword = "service";
 
+        //Create a snack FoodLocker object
+        //Somehow need to be able to use this from the Food namespace??
+        FoodLocker foodLocker = new FoodLocker();
         
 
         //Create the primary CoinBox object which holds the change
@@ -392,6 +396,11 @@ namespace WindowsFormsApp
         {
             Form ServiceNotes = new FormServiceNotes();
             ServiceNotes.Show();
+        }
+
+        private void buttonStockSnacks_Click(object sender, EventArgs e)
+        {
+            foodLocker.Stock();
         }
     }
 }
