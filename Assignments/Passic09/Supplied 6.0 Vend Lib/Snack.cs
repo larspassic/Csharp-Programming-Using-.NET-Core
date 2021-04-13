@@ -9,7 +9,7 @@ using Supplied_06._0_Vend_Lib;
 
 namespace Food
 {
-    public abstract class Snack
+    public abstract class Snack : ICloneable
     {
         //These are properties
         public readonly PurchasePrice price;
@@ -21,6 +21,8 @@ namespace Food
             this.name = name;
             this.price = price;
         }
+
+        public abstract object Clone();
 
         //Override the ToString method for the snack class
         public override string ToString()
