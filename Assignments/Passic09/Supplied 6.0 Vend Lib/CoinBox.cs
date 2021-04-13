@@ -259,6 +259,7 @@ namespace Supplied_06._0_Vend_Lib
                 decimal amountRemoved = 0M;
                 decimal amountDeposited = 0M;
                 decimal amountLeftToTransfer = Amount;
+                
                 // try to withdraw exact amount and deposit it into Destination
                 foreach (Coin.Denomination denominationEnumeral in reversedCoinList)
                 {
