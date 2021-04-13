@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Supplied 6.0 Vend Lib\Supplied 6.0 Vend Lib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Supplied 6.0 Vend Lib">
       <HintPath>..\Supplied 6.0 Vend Lib\bin\Debug\netstandard2.0\Supplied 6.0 Vend Lib.dll</HintPath>
     </Reference>
