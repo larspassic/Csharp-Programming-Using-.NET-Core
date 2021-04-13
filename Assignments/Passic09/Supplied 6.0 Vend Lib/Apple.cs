@@ -21,6 +21,11 @@ namespace Food
             string message = "I keep the doctor away.";
             return base.ToString() + message;
         }
+
+        public override object Clone()
+        {
+            return new Apple(name, price);
+        }
     }
 
 }

@@ -21,5 +21,10 @@ namespace Food
             string message = "Peel me!";
             return base.ToString() + message;
         }
+
+        public override object Clone()
+        {
+            return new Banana(name, price);
+        }
     }
 }

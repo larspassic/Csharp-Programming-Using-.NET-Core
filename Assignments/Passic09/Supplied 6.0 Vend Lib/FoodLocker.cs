@@ -63,7 +63,10 @@ namespace Food
         //Empty list of snacks
         private static List<Snack> snackCatalog = new List<Snack>();
 
-        //Constructor for FoodLocker?
+        //Constructor for FoodLocker? Edit: Nope.
+        //The snack catalog willbe astaticcollection of Snack hierarchy objects
+        //where each concretetype intheSnackhierarchyis represented exactly once 
+        //(i.e.,one Apple, one Banana, one PotatoChip, and one CandyBar).
         static FoodLocker()
         {
             snackCatalog.Add(new Apple("Granny Smith", new PurchasePrice(1.00M)));

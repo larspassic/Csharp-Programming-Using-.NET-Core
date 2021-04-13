@@ -74,6 +74,10 @@ namespace WindowsFormsApp
             this.listBoxCanStock = new System.Windows.Forms.ListBox();
             this.buttonRefillCanRack = new System.Windows.Forms.Button();
             this.labelService = new System.Windows.Forms.Label();
+            this.tabSnacks = new System.Windows.Forms.TabPage();
+            this.listBoxSnacks = new System.Windows.Forms.ListBox();
+            this.textBoxSnacks = new System.Windows.Forms.TextBox();
+            this.labelSnackInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegularFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrangeFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLemonFlavor)).BeginInit();
@@ -84,6 +88,7 @@ namespace WindowsFormsApp
             this.groupBoxChangeBoxCoinStock.SuspendLayout();
             this.groupBoxCanStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCanCount)).BeginInit();
+            this.tabSnacks.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -257,6 +262,7 @@ namespace WindowsFormsApp
             // 
             this.tabControl1.Controls.Add(this.tabVend);
             this.tabControl1.Controls.Add(this.tabService);
+            this.tabControl1.Controls.Add(this.tabSnacks);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -529,6 +535,45 @@ namespace WindowsFormsApp
             this.labelService.TabIndex = 4;
             this.labelService.Text = "Service";
             // 
+            // tabSnacks
+            // 
+            this.tabSnacks.Controls.Add(this.labelSnackInfo);
+            this.tabSnacks.Controls.Add(this.textBoxSnacks);
+            this.tabSnacks.Controls.Add(this.listBoxSnacks);
+            this.tabSnacks.Location = new System.Drawing.Point(4, 24);
+            this.tabSnacks.Name = "tabSnacks";
+            this.tabSnacks.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSnacks.Size = new System.Drawing.Size(768, 429);
+            this.tabSnacks.TabIndex = 2;
+            this.tabSnacks.Text = "Snacks";
+            this.tabSnacks.UseVisualStyleBackColor = true;
+            // 
+            // listBoxSnacks
+            // 
+            this.listBoxSnacks.FormattingEnabled = true;
+            this.listBoxSnacks.ItemHeight = 15;
+            this.listBoxSnacks.Location = new System.Drawing.Point(33, 40);
+            this.listBoxSnacks.Name = "listBoxSnacks";
+            this.listBoxSnacks.Size = new System.Drawing.Size(198, 334);
+            this.listBoxSnacks.TabIndex = 0;
+            // 
+            // textBoxSnacks
+            // 
+            this.textBoxSnacks.Location = new System.Drawing.Point(265, 40);
+            this.textBoxSnacks.Multiline = true;
+            this.textBoxSnacks.Name = "textBoxSnacks";
+            this.textBoxSnacks.Size = new System.Drawing.Size(252, 180);
+            this.textBoxSnacks.TabIndex = 1;
+            // 
+            // labelSnackInfo
+            // 
+            this.labelSnackInfo.AutoSize = true;
+            this.labelSnackInfo.Location = new System.Drawing.Point(265, 19);
+            this.labelSnackInfo.Name = "labelSnackInfo";
+            this.labelSnackInfo.Size = new System.Drawing.Size(65, 15);
+            this.labelSnackInfo.TabIndex = 2;
+            this.labelSnackInfo.Text = "Snack info:";
+            // 
             // FormSodaMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -550,6 +595,8 @@ namespace WindowsFormsApp
             this.groupBoxCanStock.ResumeLayout(false);
             this.groupBoxCanStock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCanCount)).EndInit();
+            this.tabSnacks.ResumeLayout(false);
+            this.tabSnacks.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -600,6 +647,10 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Label labelIncorrectPassword;
         private System.Windows.Forms.Button buttonLockServiceTab;
         private System.Windows.Forms.Button buttonServiceNotes;
+        private System.Windows.Forms.TabPage tabSnacks;
+        private System.Windows.Forms.Label labelSnackInfo;
+        private System.Windows.Forms.TextBox textBoxSnacks;
+        private System.Windows.Forms.ListBox listBoxSnacks;
     }
 }
 
