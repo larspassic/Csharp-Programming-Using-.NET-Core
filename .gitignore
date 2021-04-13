@@ -1,6 +1,5 @@
 *.v2
 *.cache
-*.dll
 *.pdb
 *.json
 *.props
