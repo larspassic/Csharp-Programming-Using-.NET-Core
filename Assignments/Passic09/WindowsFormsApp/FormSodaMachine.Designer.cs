@@ -586,6 +586,7 @@ namespace WindowsFormsApp
             this.listBoxSnacks.Name = "listBoxSnacks";
             this.listBoxSnacks.Size = new System.Drawing.Size(198, 334);
             this.listBoxSnacks.TabIndex = 0;
+            this.listBoxSnacks.SelectedIndexChanged += new System.EventHandler(this.listBoxSnacks_SelectedIndexChanged);
             // 
             // FormSodaMachine
             // 

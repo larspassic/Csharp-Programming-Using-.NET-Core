@@ -431,5 +431,10 @@ namespace WindowsFormsApp
                 listBoxSnacks.Items.Add(s.name);
             }
         }
+
+        private void listBoxSnacks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxSnacks.Text = foodLocker.Store[listBoxSnacks.SelectedIndex].ToString();
+        }
     }
 }
