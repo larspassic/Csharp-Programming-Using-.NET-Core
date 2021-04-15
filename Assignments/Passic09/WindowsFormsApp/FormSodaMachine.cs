@@ -29,6 +29,11 @@ namespace WindowsFormsApp
 
             //Update title label with today's price
             labelTitle.Text = $"Please insert {sodaPrice.PriceDecimal:c} to buy a can of soda";
+
+            //Stock the foodlocker on vending machine startup
+            foodLocker.Stock();
+
+
         }
 
         //Establish today's soda purcahse price
@@ -46,6 +51,8 @@ namespace WindowsFormsApp
         //Create a snack FoodLocker object
         //Somehow need to be able to use this from the Food namespace??
         FoodLocker foodLocker = new FoodLocker();
+        
+        
         
 
         //Create the primary CoinBox object which holds the change
@@ -403,14 +410,8 @@ namespace WindowsFormsApp
             //Actually stock the food locker
             foodLocker.Stock();
 
-            //Clear all of the list items - they are now out of date
-            listBoxSnacks.Items.Clear();
-
-            //Loop through the items in foodlocker
-            foreach (Snack x in foodLocker.Store)
-            {
-                listBoxSnacks.Items.Add(x.name);
-            }
+            //Refactored to use the new method to update the list box
+            RefreshListBoxSnacks();
 
         }
 

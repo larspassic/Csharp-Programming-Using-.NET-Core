@@ -42,6 +42,8 @@ namespace Food
             updateFoodLockerDisplayData();
         }
 
+        
+
         //Clear and update the winforms list object
         private void updateFoodLockerDisplayData()
         {
