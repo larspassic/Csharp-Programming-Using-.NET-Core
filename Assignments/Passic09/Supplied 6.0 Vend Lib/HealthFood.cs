@@ -8,20 +8,16 @@ using Supplied_06._0_Vend_Lib;
 
 namespace Food
 {
-    public class HealthFood : Snack
+    public abstract class HealthFood : Snack
     {
-        //These are properties?
-        public readonly PurchasePrice price;
-        public readonly string name;
 
         //This is a constructor
         public HealthFood(string name, PurchasePrice price, DateTime freshUntil) : base (name, price)
         {
-            this.name = name;
-            this.price = price;
+            FreshUntil = freshUntil;
         }
 
-        public readonly DateTime freshUntil;
+        public readonly DateTime FreshUntil;
 
         //Override ToString to add the snack food name and price
         public override string ToString()

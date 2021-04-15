@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using Supplied_06._0_Vend_Lib;
 
@@ -10,6 +11,8 @@ namespace Food
 {
     public class FoodLocker
     {
+        public ObservableCollection<Snack> FoodLockerDisplayData = new ObservableCollection<Snack>();
+
         public const int MinimumSize = 1;
         public const int MaximumSize = 10;
 
@@ -43,10 +46,11 @@ namespace Food
         private void updateFoodLockerDisplayData()
         {
             //Clear the display data of objects
+            FoodLockerDisplayData.Clear();
 
             foreach (Snack s in Store)
             {
-                updateFoodLockerDisplayData.Add(s);
+                FoodLockerDisplayData.Add(s);
             }
         }
 

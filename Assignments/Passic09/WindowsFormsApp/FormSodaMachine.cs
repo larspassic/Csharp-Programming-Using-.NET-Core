@@ -400,7 +400,35 @@ namespace WindowsFormsApp
 
         private void buttonStockSnacks_Click(object sender, EventArgs e)
         {
+            //Actually stock the food locker
             foodLocker.Stock();
+
+            //Clear all of the list items - they are now out of date
+            listBoxSnacks.Items.Clear();
+
+            //Loop through the items in foodlocker
+            foreach (Snack x in foodLocker.Store)
+            {
+                listBoxSnacks.Items.Add(x.name);
+            }
+
+        }
+
+        private void tabSnacks_Enter(object sender, EventArgs e)
+        {
+            RefreshListBoxSnacks();
+        }
+
+        private void RefreshListBoxSnacks()
+        {
+            //First clear out the old listbox entries
+            listBoxSnacks.Items.Clear();
+
+            //Then loop through the food locker store and create a new item for each one
+            foreach (Snack s in foodLocker.Store)
+            {
+                listBoxSnacks.Items.Add(s.name);
+            }
         }
     }
 }

@@ -75,10 +75,10 @@ namespace WindowsFormsApp
             this.buttonRefillCanRack = new System.Windows.Forms.Button();
             this.labelService = new System.Windows.Forms.Label();
             this.tabSnacks = new System.Windows.Forms.TabPage();
-            this.listBoxSnacks = new System.Windows.Forms.ListBox();
-            this.textBoxSnacks = new System.Windows.Forms.TextBox();
-            this.labelSnackInfo = new System.Windows.Forms.Label();
             this.buttonStockSnacks = new System.Windows.Forms.Button();
+            this.labelSnackInfo = new System.Windows.Forms.Label();
+            this.textBoxSnacks = new System.Windows.Forms.TextBox();
+            this.listBoxSnacks = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegularFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrangeFlavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLemonFlavor)).BeginInit();
@@ -549,32 +549,7 @@ namespace WindowsFormsApp
             this.tabSnacks.TabIndex = 2;
             this.tabSnacks.Text = "Snacks";
             this.tabSnacks.UseVisualStyleBackColor = true;
-            // 
-            // listBoxSnacks
-            // 
-            this.listBoxSnacks.FormattingEnabled = true;
-            this.listBoxSnacks.ItemHeight = 15;
-            this.listBoxSnacks.Location = new System.Drawing.Point(33, 40);
-            this.listBoxSnacks.Name = "listBoxSnacks";
-            this.listBoxSnacks.Size = new System.Drawing.Size(198, 334);
-            this.listBoxSnacks.TabIndex = 0;
-            // 
-            // textBoxSnacks
-            // 
-            this.textBoxSnacks.Location = new System.Drawing.Point(265, 40);
-            this.textBoxSnacks.Multiline = true;
-            this.textBoxSnacks.Name = "textBoxSnacks";
-            this.textBoxSnacks.Size = new System.Drawing.Size(252, 180);
-            this.textBoxSnacks.TabIndex = 1;
-            // 
-            // labelSnackInfo
-            // 
-            this.labelSnackInfo.AutoSize = true;
-            this.labelSnackInfo.Location = new System.Drawing.Point(265, 19);
-            this.labelSnackInfo.Name = "labelSnackInfo";
-            this.labelSnackInfo.Size = new System.Drawing.Size(65, 15);
-            this.labelSnackInfo.TabIndex = 2;
-            this.labelSnackInfo.Text = "Snack info:";
+            this.tabSnacks.Enter += new System.EventHandler(this.tabSnacks_Enter);
             // 
             // buttonStockSnacks
             // 
@@ -585,6 +560,32 @@ namespace WindowsFormsApp
             this.buttonStockSnacks.Text = "Stock Machine with Snacks";
             this.buttonStockSnacks.UseVisualStyleBackColor = true;
             this.buttonStockSnacks.Click += new System.EventHandler(this.buttonStockSnacks_Click);
+            // 
+            // labelSnackInfo
+            // 
+            this.labelSnackInfo.AutoSize = true;
+            this.labelSnackInfo.Location = new System.Drawing.Point(265, 19);
+            this.labelSnackInfo.Name = "labelSnackInfo";
+            this.labelSnackInfo.Size = new System.Drawing.Size(65, 15);
+            this.labelSnackInfo.TabIndex = 2;
+            this.labelSnackInfo.Text = "Snack info:";
+            // 
+            // textBoxSnacks
+            // 
+            this.textBoxSnacks.Location = new System.Drawing.Point(265, 40);
+            this.textBoxSnacks.Multiline = true;
+            this.textBoxSnacks.Name = "textBoxSnacks";
+            this.textBoxSnacks.Size = new System.Drawing.Size(252, 180);
+            this.textBoxSnacks.TabIndex = 1;
+            // 
+            // listBoxSnacks
+            // 
+            this.listBoxSnacks.FormattingEnabled = true;
+            this.listBoxSnacks.ItemHeight = 15;
+            this.listBoxSnacks.Location = new System.Drawing.Point(33, 40);
+            this.listBoxSnacks.Name = "listBoxSnacks";
+            this.listBoxSnacks.Size = new System.Drawing.Size(198, 334);
+            this.listBoxSnacks.TabIndex = 0;
             // 
             // FormSodaMachine
             // 
